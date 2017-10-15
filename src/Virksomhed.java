@@ -4,29 +4,31 @@ public class Virksomhed {
     private String virkNavn;
     private int antalVirkDeltagere;
 
-    private ArrayList<Deltager> deltagere;
-    private ArrayList<Hold> holdListe;
+    private ArrayList<Deltager> deltagere = new ArrayList<>();
+    private ArrayList<Hold> holdListe = new ArrayList<>();
 
     private static int antalVirk;
+    private static ArrayList<Virksomhed> virkListe = new ArrayList<>();
 
     //Contructor
     public Virksomhed() {
     }
 
-    public Virksomhed(String virkNavn, int antalVirkDeltagere) {
+    public Virksomhed(String virkNavn) {
 
         //Variable definitioner
         this.virkNavn = virkNavn;
-        this.antalVirkDeltagere = antalVirkDeltagere;
+
+        //Static variable definitioner
+        antalVirk++;
+        virkListe.add(this);
     }
 
     //Addere
-    public void addDeltagere (Deltager deltager){
-        deltagere.add(deltager);
-    }
-
     public void addHold (Hold hold){
+
         holdListe.add(hold);
+        antalVirkDeltagere += hold.getAntalHoldDeltagere();
     }
 
     //Setter
@@ -52,9 +54,6 @@ public class Virksomhed {
     }
 
     //Get fordeling af hold - mangler!
-
-
-    //Add deltagere og hold
 
 
     //Delete Virk

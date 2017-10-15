@@ -6,29 +6,30 @@ public class Hold {
     private Virksomhed virksomhed;
     private Deltager holdKaptajn;
 
-    private ArrayList <Deltager> deltagere;
+    private ArrayList <Deltager> deltagere = new ArrayList<>();
 
     private static int antalHold;
 
 
     //Constructor
     public Hold(){
-
+        this("Intet holdNavn", null);
     }
 
-    public Hold(String holdNavn, int antalHoldDeltagere,
-                     Virksomhed virksomhed, Deltager holdkaptajn){
+    public Hold(String holdNavn, Virksomhed virksomhed){
+
+        //variabler
         this.holdNavn = holdNavn;
-        this.antalHoldDeltagere = antalHoldDeltagere;
         this.virksomhed = virksomhed;
-        this.holdKaptajn = holdkaptajn;
 
-
+        //static
+        antalHold++;
     }
 
     //Adder metoder
     public void addDeltager(Deltager deltager){
         deltagere.add(deltager);
+        antalHoldDeltagere++;
     }
 
     //Getter metoder

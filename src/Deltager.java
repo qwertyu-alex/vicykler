@@ -18,6 +18,21 @@ public class Deltager {
     public Deltager(){
     }
 
+
+    public Deltager(String deltagerNavn, String cyklistType, String deltagerEmail, Hold hold, Virksomhed virksomhed){
+        this.deltagerNavn = deltagerNavn;
+        //Der kan kun være 4 typer: Indsæt logik
+        this.cyklistType = cyklistType;
+        this.deltagerEmail = deltagerEmail;
+        this.hold = hold;
+        this.virksomhed = virksomhed;
+
+
+        //Static variabler definitioner
+        antalDeltagere++;
+    }
+
+/*
     public Deltager(String cyklistType, String deltagerNavn, String deltagerEmail,
                          Virksomhed virksomhed, Hold hold, int cykelDage, double antalKm){
 
@@ -30,9 +45,19 @@ public class Deltager {
         this.cykelDage = cykelDage;
         this.antalKm = antalKm;
 
-        //Static variabler definitioner
-        antalDeltagere++;
         antalCykelDageAlle += cykelDage;
+    }*/
+
+    //Adder
+    public void addCykelDage(){
+        cykelDage++; //5+1 = 6 dage person
+        antalCykelDageAlle++;
+    }
+
+    public void addAntalKmAlle(int km){
+        antalKmAlle -= antalKm;
+        antalKm += km;
+        antalKmAlle += antalKm;
     }
 
 
@@ -49,6 +74,10 @@ public class Deltager {
         return deltagerEmail;
     }
 
+    public Hold getHold() {
+        return hold;
+    }
+
     public Virksomhed getVirksomhed() {
         return virksomhed;
     }
@@ -60,10 +89,8 @@ public class Deltager {
 
     //Static Getter
     public static int getAntalDeltagere(){
-        //Kode mangler
-        return 0;
+        return antalDeltagere;
     }
-
 
     //Setter
     public void setCyklistType(String cyklistType) {
@@ -77,4 +104,6 @@ public class Deltager {
     public void setDeltagerEmail(String deltagerEmail) {
         this.deltagerEmail = deltagerEmail;
     }
+
+
 }
