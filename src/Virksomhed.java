@@ -48,7 +48,7 @@ public class Virksomhed {
     }
 
     public ArrayList<Hold> getHold() {
-        return hold;
+        return holdList;
     }
 
     //Get fordeling af hold - mangler!
