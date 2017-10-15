@@ -30,7 +30,6 @@ public class Hold {
         return deltagere;
     }
 
-
     //Setter metoder
     public void setHoldNavn(String holdNavn){
         this.holdNavn = holdNavn;
