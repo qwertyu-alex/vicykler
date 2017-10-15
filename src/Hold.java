@@ -22,6 +22,13 @@ public class Hold {
         this.antalHoldDeltagere = antalHoldDeltagere;
         this.virksomhed = virksomhed;
         this.holdKaptajn = holdkaptajn;
+
+
+    }
+
+    //Adder metoder
+    public void addDeltager(Deltager deltager){
+        deltagere.add(deltager);
     }
 
     //Getter metoder
