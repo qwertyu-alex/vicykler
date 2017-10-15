@@ -5,26 +5,36 @@ public class Virksomhed {
     private int antalVirkDeltagere;
 
     private ArrayList<Deltager> deltagere;
-    private ArrayList<Hold> hold;
+    private ArrayList<Hold> holdListe;
 
     private static int antalVirk;
 
-    // Oprette En Contructor
-    public Virksomhed(){
-
+    //Contructor
+    public Virksomhed() {
     }
 
     public Virksomhed(String virkNavn, int antalVirkDeltagere) {
+
+        //Variable definitioner
         this.virkNavn = virkNavn;
         this.antalVirkDeltagere = antalVirkDeltagere;
     }
 
-    // Oprette Setter Metode
+    //Addere
+    public void addDeltagere (Deltager deltager){
+        deltagere.add(deltager);
+    }
+
+    public void addHold (Hold holdListe){
+        holdListe.add(holdListe);
+    }
+
+    //Setter
     public void setVirkNavn(String virkNavn) {
         this.virkNavn = virkNavn;
     }
 
-    // Oprette Getter Metode
+    //Getter
     public String getVirkNavn() {
         return virkNavn;
     }
