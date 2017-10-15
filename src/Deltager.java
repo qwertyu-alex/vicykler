@@ -15,7 +15,7 @@ public class Deltager {
 
 
     //Constructor
-    public void Deltager(String cyklistType, String deltagerNavn, String deltagerEmail,
+    public Deltager(String cyklistType, String deltagerNavn, String deltagerEmail,
                          Virksomhed virksomhed, Hold hold, int cykelDage, double antalKm){
 
         //Variable definitioner

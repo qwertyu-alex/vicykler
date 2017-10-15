@@ -10,7 +10,7 @@ public class Virksomhed {
     private static int antalVirk;
 
     // Oprette En Contructor
-    public void Virksomhed(String virkNavn, int antalVirkDeltagere) {
+    public Virksomhed(String virkNavn, int antalVirkDeltagere) {
         this.virkNavn = virkNavn;
         this.antalVirkDeltagere = antalVirkDeltagere;
     }

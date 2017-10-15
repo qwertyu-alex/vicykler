@@ -10,7 +10,7 @@ public class Hold {
 
     private static int antalHold;
 
-    public void Hold(String holdNavn, int antalHoldDeltagere,
+    public Hold(String holdNavn, int antalHoldDeltagere,
                      Virksomhed virksomhed, Deltager holdkaptajn){
         this.holdNavn = holdNavn;
         this.antalHoldDeltagere = antalHoldDeltagere;
