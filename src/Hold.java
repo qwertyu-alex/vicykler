@@ -10,16 +10,36 @@ public class Hold {
 
     private static int antalHold;
 
-    public void Hold(){
-    }
-
     public void Hold(String holdNavn, int antalHoldDeltagere,
-                     Virksomhed virksomhed, Deltager deltager){
-
-        deltagere.add(deltager);
+                     Virksomhed virksomhed, Deltager holdkaptajn){
+        this.holdNavn = holdNavn;
+        this.antalHoldDeltagere = antalHoldDeltagere;
 
     }
 
-    //Oliver MVP
+    //Getter metoder
+    public String getHoldNavn(){
+        return holdNavn;
+    }
+
+    public int getAntalHoldDeltagere() {
+        return antalHoldDeltagere;
+    }
+
+    public ArrayList<Deltager> getDeltagere() {
+        return deltagere;
+    }
+
+
+    //Setter metoder
+    public void setHoldNavn(String holdNavn){
+        this.holdNavn = holdNavn;
+    }
+
+    public void setHoldkaptajn(Deltager holdkaptajn) {
+        this.holdkaptajn = holdkaptajn;
+    }
+
+    //Delete
 
 }
