@@ -25,8 +25,8 @@ public class Virksomhed {
         deltagere.add(deltager);
     }
 
-    public void addHold (Hold holdListe){
-        holdListe.add(holdListe);
+    public void addHold (Hold hold){
+        holdListe.add(hold);
     }
 
     //Setter
