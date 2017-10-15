@@ -15,6 +15,9 @@ public class Deltager {
 
 
     //Constructor
+    public Deltager(){
+    }
+
     public Deltager(String cyklistType, String deltagerNavn, String deltagerEmail,
                          Virksomhed virksomhed, Hold hold, int cykelDage, double antalKm){
 
@@ -44,6 +47,10 @@ public class Deltager {
 
     public String getDeltagerEmail() {
         return deltagerEmail;
+    }
+
+    public Virksomhed getVirksomhed() {
+        return virksomhed;
     }
 
     public String getInfo(){
