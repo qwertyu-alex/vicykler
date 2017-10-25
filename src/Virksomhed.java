@@ -4,7 +4,7 @@ public class Virksomhed {
     private String virkNavn;
     private int antalVirkDeltagere;
 
-    private ArrayList<Deltager> deltagere = new ArrayList<>();
+    private ArrayList<Participant> deltagere = new ArrayList<>();
     private ArrayList<Hold> holdListe = new ArrayList<>();
 
     private static int antalVirk;
@@ -45,7 +45,7 @@ public class Virksomhed {
         return antalVirkDeltagere;
     }
 
-    public ArrayList<Deltager> getDeltagere() {
+    public ArrayList<Participant> getDeltagere() {
         return deltagere;
     }
 
