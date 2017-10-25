@@ -4,9 +4,9 @@ public class Hold {
     private String holdNavn;
     private int antalHoldDeltagere;
     private Virksomhed virksomhed;
-    private Participant holdKaptajn;
+    private Deltager holdKaptajn;
 
-    private ArrayList <Participant> deltagere = new ArrayList<>();
+    private ArrayList <Deltager> deltagere = new ArrayList<>();
 
     private static int antalHold;
 
@@ -27,8 +27,8 @@ public class Hold {
     }
 
     //Adder metoder
-    public void addDeltager(Participant participant){
-        deltagere.add(participant);
+    public void addDeltager(Deltager deltager){
+        deltagere.add(deltager);
         antalHoldDeltagere++;
     }
 
@@ -41,11 +41,11 @@ public class Hold {
         return antalHoldDeltagere;
     }
 
-    public ArrayList<Participant> getDeltagere() {
+    public ArrayList<Deltager> getDeltagere() {
         return deltagere;
     }
 
-    public Participant getHoldKaptajn() {
+    public Deltager getHoldKaptajn() {
         return holdKaptajn;
     }
 
@@ -59,7 +59,7 @@ public class Hold {
         this.holdNavn = holdNavn;
     }
 
-    public void setHoldkaptajn(Participant holdkaptajn) {
+    public void setHoldkaptajn(Deltager holdkaptajn) {
         this.holdKaptajn = holdkaptajn;
     }
 
