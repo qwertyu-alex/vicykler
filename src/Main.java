@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
         Virksomhed Google = new Virksomhed("Google");
-        Deltager John = new Deltager();
-        Deltager Peter = new Deltager();
+        Participant John = new Participant();
+        Participant Peter = new Participant();
 
 
         Hold alpha = new Hold();
