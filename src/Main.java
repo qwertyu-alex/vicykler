@@ -1,18 +1,17 @@
 public class Main {
     public static void main(String[] args) {
 
-        Virksomhed Google = new Virksomhed("Google");
-        Deltager John = new Deltager();
-        Deltager Peter = new Deltager();
+        Firm Google = new Firm("Google");
+        Participant John = new Participant();
+        Participant Peter = new Participant();
 
 
-        Hold alpha = new Hold();
-        Google.addHold(alpha);
-        Google.addHold(new Hold());
+        Team alpha = new Team();
+        alpha.addParticipant(John);
+        Google.addTeam(alpha);
+        Google.addTeam(new Team());
 
-        System.out.println(Google.getAntalVirkDeltagere());
-
-
+        System.out.println(Google.getNumberOfFirmParticipants());
 
     }
 }

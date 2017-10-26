@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class Team { //Hold
-    private String teamName; //holdNavn
-    private int numberOfTeamParticipants; //antalHoldDeltagere
-    private Firm firm; //Virksomhed
-    private Participant teamCaptain; //Deltager holdKaptajn
+public class Team {
+    private String teamName;
+    private int numberOfTeamParticipants;
+    private Firm firm;
+    private Participant teamCaptain;
 
-    private ArrayList <Participant> participant = new ArrayList<>();
+    private ArrayList <Participant> participants = new ArrayList<>();
 
-    private static int numberOfTeams; //antalhold
+    private static int numberOfTeams;
 
 
     //Constructor
@@ -16,7 +16,7 @@ public class Team { //Hold
         this("Intet holdNavn", null);
     }
 
-    public Hold(String teamName, Firm firm){
+    public Team(String teamName, Firm firm){
 
         //variabler
         this.teamName = teamName;
@@ -25,10 +25,9 @@ public class Team { //Hold
         //static
         numberOfTeams++;
     }
-
     //Adder metoder
-    public void addParticipant(Deltager deltager){
-        participant.add(participant);
+    public void addParticipant(Participant participant){
+        participants.add(participant);
         numberOfTeamParticipants++;
     }
 
@@ -41,11 +40,11 @@ public class Team { //Hold
         return numberOfTeamParticipants;
     }
 
-    public ArrayList<Deltager> getParticipants() {
-        return;
+    public ArrayList<Participant> getParticipants() {
+        return participants;
     }
 
-    public Deltager getTeamCaptain() {
+    public Participant getTeamCaptain() {
         return teamCaptain;
     }
 
@@ -55,11 +54,11 @@ public class Team { //Hold
     }
 
     //Setter metoder
-    public void setHoldNavn(String teamName){
+    public void setTeamName(String teamName){
         this.teamName = teamName;
     }
 
-    public void setHoldkaptajn(Deltager holdkaptajn) {
+    public void setTeamCaptain(Participant teamCaptain) {
         this.teamCaptain = teamCaptain;
     }
 

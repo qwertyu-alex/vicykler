@@ -5,7 +5,7 @@ public class Firm {
     private int numberOfFirmParticipants;
 
     private ArrayList<Participant> participants = new ArrayList<>();
-    private ArrayList<Team> holdListe = new ArrayList<>();
+    private ArrayList<Team> teamList = new ArrayList<>();
 
     private static int numberOfFirms;
     private static ArrayList<Firm> firmList = new ArrayList<>();
@@ -25,14 +25,14 @@ public class Firm {
     }
 
     //Addere
-    public void addFirm (Firm firm){
+    public void addTeam (Team team){
 
-        firmList.add(firm);
-        numberOfFirmParticipants += Team.getnumberOfFirmParticipants();
+        teamList.add(team);
+        numberOfFirmParticipants += team.getNumberOfTeamParticipants();
     }
 
     //Setter
-    public void setVirkNavn(String firmName) {
+    public void setFirmName(String firmName) {
         this.firmName = firmName;
     }
 
@@ -41,20 +41,19 @@ public class Firm {
         return firmName;
     }
 
-    public int getnumberOfFirmParticipants() {
-        return getnumberOfFirmParticipants();
+    public int getNumberOfFirmParticipants() {
+        return numberOfFirmParticipants;
     }
 
     public ArrayList<Participant> getParticipants() {
         return participants;
     }
 
-    public ArrayList<Firm> getFirm() {
-        return firmList;
+    public ArrayList<Team> getTeam() {
+        return teamList;
     }
 
     //Get fordeling af hold - mangler!
-
 
     //Delete Virk
 

@@ -4,8 +4,8 @@ public class Participant {
     private String participantName;
     private String participantEmail;
     private Firm firm;
-    private Team team;
-    private int cyclingDays;
+    private Team team; // arraylist
+    private int numberOfCyclictDays;
     private double numberOfKm;
 
     private static int numberOfParticipants = 0 ;
@@ -29,12 +29,12 @@ public class Participant {
     }
 
     //Adder
-    public void addCyclingDays(){
-        cyclingDays++; //5+1 = 6 dage person
+    public void addCyclistDays(){
+        numberOfCyclictDays++; //5+1 = 6 dage person
         numberOfCyclingDaysAll++;
     }
 
-    public void getNumberOfKmAll(int km){
+    public void addNumberOfKmAll(int km){
         numberOfKmAll -= numberOfKm;
         numberOfKm += km;
         numberOfKmAll += numberOfKm;
@@ -66,8 +66,8 @@ public class Participant {
         return numberOfKm;
     }
 
-    public int getCyclingDays() {
-        return cyclingDays;
+    public int getNumberOfCyclictDays() {
+        return numberOfCyclictDays;
     }
 
     public static int getNumberOfCyclingDaysAll() {
@@ -89,11 +89,11 @@ public class Participant {
     }
 
     //Setter
-    public void setCyclistType(String cyclistType) {
-        this.cyclistType = cyclistType;
+    public void setCyklistType(String cyclistType) {
+        this.cyclistType= cyclistType;
     }
 
-    public void setParticipantName(String participantName) {
+    public void setDeltagerNavn(String participantName) {
         this.participantName = participantName;
     }
 
