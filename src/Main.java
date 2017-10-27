@@ -12,6 +12,7 @@ public class Main {
         Google.addTeam(new Team());
 
         System.out.println(Google.getNumberOfFirmParticipants());
+        //memes
 
     }
 }
