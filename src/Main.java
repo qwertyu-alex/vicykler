@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        Firm Google = new Firm("Google");
+        /*Firm Google = new Firm("Google");
         Participant John = new Participant();
         Participant Peter = new Participant();
 
@@ -11,8 +11,9 @@ public class Main {
         Google.addTeam(alpha);
         Google.addTeam(new Team());
 
-        System.out.println(Google.getNumberOfFirmParticipants());
-        //memes
+        System.out.println(Google.getNumberOfFirmParticipants()); */
+
+        Guest.createUser();
 
     }
 }
