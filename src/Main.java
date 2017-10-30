@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(Google.getNumberOfFirmParticipants()); */
 
-        Guest.createUser();
-
+        MainController maincontroller = new MainController();
+        maincontroller.run();
     }
 }
