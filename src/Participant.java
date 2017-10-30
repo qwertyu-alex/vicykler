@@ -1,14 +1,18 @@
+import java.util.ArrayList;
+
 public class Participant {
     //Variabler
-    private String cyclistType;
     private String participantName;
+    private String cyclistType;
     private String participantEmail;
     private Firm firm;
     private Team team; // arraylist
     private int numberOfCyclictDays;
     private double numberOfKm;
+    private String participantPassword;
 
-    private static int numberOfParticipants = 0 ;
+    private static int numberOfParticipants = 0;
+    private static ArrayList<Participant> participants = new ArrayList<>();
     private static int numberOfCyclingDaysAll = 0;
     private static double numberOfKmAll = 0;
 
@@ -16,16 +20,16 @@ public class Participant {
     public Participant(){
     }
 
-    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm){
+    public Participant(String participantName, String cyclistType, String participantEmail, String participantPassword){
         this.participantName = participantName;
         //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
         this.participantEmail = participantEmail;
-        this.team = team;
-        this.firm = firm;
+        this.participantPassword = participantPassword;
 
         //Static variabler definitioner
         numberOfParticipants++;
+        participants.add(this);
     }
 
     //Adder
@@ -78,6 +82,10 @@ public class Participant {
         return numberOfKmAll;
     }
 
+    public String getPassword() {
+        return participantPassword;
+    }
+
     public String getInfo(){
         //Kode mangler
         return null;
@@ -86,6 +94,10 @@ public class Participant {
     //Static Getter
     public static int getNumberOfParticipants(){
         return numberOfParticipants;
+    }
+
+    public static ArrayList<Participant> getParticipants() {
+        return participants;
     }
 
     //Setter
@@ -99,5 +111,17 @@ public class Participant {
 
     public void setParticipantEmail(String participantEmail) {
         this.participantEmail = participantEmail;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    public void setFirm(Firm firm) {
+        this.firm = firm;
+    }
+
+    public void setPassword(String participantPassword) {
+        this.participantPassword = participantPassword;
     }
 }
