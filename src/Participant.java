@@ -22,6 +22,12 @@ public class Participant {
     public Participant(){
     }
 
+    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm){
+        this(participantName, cyclistType, participantEmail);
+        this.team = team;
+        this.firm = firm;
+    }
+
     public Participant(String participantName, String cyclistType, String participantEmail, String participantPassword){
         this.participantName = participantName;
         //Der kan kun være 4 typer: Indsæt logik
@@ -32,6 +38,10 @@ public class Participant {
         //Static variabler definitioner
         numberOfParticipants++;
         participants.add(this);
+    }
+
+    public Participant(String participantName, String cyclistType, String participantEmail){
+        this(participantName, cyclistType, participantEmail, "Hej1");
     }
 
     //Adder
