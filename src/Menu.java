@@ -6,6 +6,10 @@ public class Menu {
     Scanner input = new Scanner(System.in);
 
 //Admin menu
+
+    public Menu(){
+    }
+
     public void showAdminMenu(){
         System.out.println("Admin menu");
         System.out.println("1) Tilføj firma");

@@ -3,14 +3,12 @@ import java.util.ArrayList; //import af Arraylist
 public class Data {
     //Attributter
     private ArrayList<Participant> participants;
-    private ArrayList<Firm> firms;
-    private ArrayList<Team> teams;
+
 
     //Constructor
     public Data() {
         this.participants = new ArrayList<Participant>();
-        this.firms = new ArrayList<Firm>();
-        this.teams = new ArrayList<Team>();
+
     }
 
 
@@ -32,34 +30,12 @@ public class Data {
         Team f3hold1 = new Team("f3hold1 - Sprinterne", firma1);
         Team f3hold2 = new Team("f3hold2 - De fordømte", firma1);
 
-        //firma 4 - hold & og 2
-        Firm firma4 = new Firm("firma4");
-        Team f4hold1 = new Team("f4hold1", firma1);
-        Team f4hold2 = new Team("f4hold2", firma1);
-
-        //firma 5 - hold & og 2
-        Firm firma5 = new Firm("firma5");
-        Team f5hold1 = new Team("f5hold1", firma1);
-        Team f5hold2 = new Team("f5hold2", firma1);
 
         //Tilføj firmaer til Arraylisten "firms"
-        firms.add(firma1);
-        firms.add(firma2);
-        firms.add(firma3);
-        firms.add(firma4);
-        firms.add(firma5);
+
 
         //Tilføj hold til Arrraylisten "teams"
-        teams.add(f1hold1);
-        teams.add(f1hold2);
-        teams.add(f2hold1);
-        teams.add(f2hold2);
-        teams.add(f3hold1);
-        teams.add(f3hold2);
-        teams.add(f4hold1);
-        teams.add(f4hold2);
-        teams.add(f5hold1);
-        teams.add(f5hold2);
+
 
 
         //opret deltagere og tildel dem firma og hold
@@ -76,7 +52,6 @@ public class Data {
         Participant par8 = new Participant("Jesus Kristus", "Entusiast", "Jesus@gmail.com", f1hold2, firma1);
         Participant par9 = new Participant("Muhammed", "Cruiser", "Muhammed@gmail.com", f1hold2, firma1);
         Participant par10 = new Participant("Johannes Døbberen", "Debutant", "Johannes@gmail.com", f1hold2, firma1);
-
 
         //Firma 2 - hold 1
         Participant par11 = new Participant("Pia kærsgård", "Mester", "Pia@gmail.com", f2hold1, firma2);
@@ -140,8 +115,6 @@ public class Data {
         participants.add(par28);
         participants.add(par29);
         participants.add(par30);
-
-
     }
 
     //Getters
@@ -150,28 +123,15 @@ public class Data {
         return participants;
     }
 
-    public ArrayList<Firm> getFirms() {
-        return firms;
-    }
-
-    public ArrayList<Team> getTeams() {
-        return teams;
-    }
-
     public void printData() {
         Data data = new Data();
         data.generateData();
 
         ArrayList<Participant> participants = data.getParticipants();
-        ArrayList<Firm> firms = data.getFirms();
-        ArrayList<Team> teams = data.getTeams();
 
         System.out.printf("%-5s %-25s %-15s %-25s %-35s %-20s", "Nr:", "Navn:", "Cykel type:", "Email:", "Hold:", "Firma");
 
         int i = 0;
-        int t = 0;
-        int f = 0;
-        int t1 = 0;
 
         for (Participant participant : participants) {
             System.out.printf("\n%-5d %-25s %-15s %-25s %-35s %-20s", i + 1, participants.get(i).getParticipantName(), participants.get(i).getCyclistType(), participants.get(i).getParticipantEmail(), participants.get(i).getTeam().getTeamName(), participants.get(i).getFirm().getFirmName());
