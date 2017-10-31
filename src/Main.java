@@ -13,7 +13,12 @@ public class Main {
 
         System.out.println(Google.getNumberOfFirmParticipants()); */
 
-        MainController maincontroller = new MainController();
-        maincontroller.run();
+//        MainController maincontroller = new MainController();
+//        maincontroller.run();
+
+        TestAfData test = new TestAfData();
+        test.testData();
+
+
     }
 }

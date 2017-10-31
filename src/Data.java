@@ -1,5 +1,5 @@
 import java.util.ArrayList; //import af Arraylist
-
+//Credits to Mikkel
 public class Data {
     //Attributter
     private ArrayList<Participant> participants;
