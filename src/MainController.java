@@ -1,5 +1,4 @@
-
-/*import java.util.Scanner;
+import java.util.Scanner;
 
 public class MainController {
 
@@ -12,6 +11,18 @@ public class MainController {
 
     public void run(){
 
+        Participant oliver =  Guest.createParticipant();
+        Participant alex =  Guest.createParticipant();
+
+        System.out.println(Participant.getNumberOfParticipants());
+
+        for (Participant e:Participant.getParticipants()) {
+            System.out.println(e.getParticipantName());
+        }
+
+
+
+        /*
         System.out.println("Velkommen til ViCyklerTilArbejdes forside");
         System.out.println("Venligst indtast dit brugernavn");
         //username = input.next();
@@ -45,10 +56,6 @@ public class MainController {
     public User findUser(String username, String password){
         for(user.getUsername().equals(username) && user.getPassword().equals(password)){
             return user;
-        }
+        }*/
     }
-
-    return null;
-
 }
-*/
