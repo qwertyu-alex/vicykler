@@ -16,8 +16,8 @@ public class Main {
 //        MainController maincontroller = new MainController();
 //        maincontroller.run();
 
-        TestAfData test = new TestAfData();
-        test.testData();
+        Data data = new Data();
+        data.printData();
 
 
     }

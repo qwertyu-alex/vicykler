@@ -11,6 +11,8 @@ public class MainController {
 
     public void run(){
 
+
+
         Participant oliver =  Guest.createParticipant();
         Participant alex =  Guest.createParticipant();
 
