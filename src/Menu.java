@@ -19,8 +19,8 @@ public class Menu {
         System.out.println("5) Overblik over et firmas hold og tilhørende holdkaptajn");
         System.out.println("6) Se information om et hold og dets deltagere");
         System.out.println("7) Oplysninger om alle tilmeldte hold og deres deltagere");
-        System.out.println("8) Satestik over fordelingen af hold på firmaerne");
-        System.out.println("9) Ændr i et holds oplysninger");
+        System.out.println("8) Statistik over fordelingen af hold på firmaerne");
+        System.out.println("9) Ændre i et holds oplysninger");
         System.out.println("10) Fjern deltager fra hold");
         System.out.println("11) Slet hold");
 
