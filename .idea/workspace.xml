@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="76e9da67-2ac1-4588-a227-9f9ea96bb52b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TestAfData.java" afterPath="" />
+    <list default="true" id="76e9da67-2ac1-4588-a227-9f9ea96bb52b" name="Default" comment="memes">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Data.java" afterPath="$PROJECT_DIR$/src/Data.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainController.java" afterPath="$PROJECT_DIR$/src/MainController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,13 +120,13 @@
         <entry file="file://$PROJECT_DIR$/src/Data.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3220">
-              <caret line="167" column="8" lean-forward="false" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+              <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
               <folding>
-                <marker date="1509448707534" expanded="false" signature="6796:6807" ph=" { " />
-                <marker date="1509448707534" expanded="false" signature="6827:6833" ph=" }" />
-                <marker date="1509448707534" expanded="false" signature="6872:6883" ph=" { " />
-                <marker date="1509448707534" expanded="false" signature="6896:6902" ph=" }" />
-                <marker date="1509448707534" expanded="false" signature="6965:6971" ph=" }" />
+                <marker date="1509448725204" expanded="false" signature="6796:6807" ph=" { " />
+                <marker date="1509448725204" expanded="false" signature="6827:6833" ph=" }" />
+                <marker date="1509448725204" expanded="false" signature="6872:6883" ph=" { " />
+                <marker date="1509448725204" expanded="false" signature="6896:6902" ph=" }" />
+                <marker date="1509448725204" expanded="false" signature="6965:6971" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -532,11 +528,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509446909839</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="memes">
+      <created>1509448729583</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1509448729583</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39211000" />
+    <option name="totallyTimeSpent" value="39233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -882,13 +885,13 @@
     <entry file="file://$PROJECT_DIR$/src/Data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3220">
-          <caret line="167" column="8" lean-forward="false" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
           <folding>
-            <marker date="1509448707534" expanded="false" signature="6796:6807" ph=" { " />
-            <marker date="1509448707534" expanded="false" signature="6827:6833" ph=" }" />
-            <marker date="1509448707534" expanded="false" signature="6872:6883" ph=" { " />
-            <marker date="1509448707534" expanded="false" signature="6896:6902" ph=" }" />
-            <marker date="1509448707534" expanded="false" signature="6965:6971" ph=" }" />
+            <marker date="1509448725204" expanded="false" signature="6796:6807" ph=" { " />
+            <marker date="1509448725204" expanded="false" signature="6827:6833" ph=" }" />
+            <marker date="1509448725204" expanded="false" signature="6872:6883" ph=" { " />
+            <marker date="1509448725204" expanded="false" signature="6896:6902" ph=" }" />
+            <marker date="1509448725204" expanded="false" signature="6965:6971" ph=" }" />
           </folding>
         </state>
       </provider>
