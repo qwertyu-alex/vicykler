@@ -10,17 +10,20 @@ public class MainController {
     }
 
     public void run(){
-
-
+        /*
+        Data data = new Data();
+        data.generateData();
 
         Participant oliver =  Guest.createParticipant();
-        Participant alex =  Guest.createParticipant();
 
         System.out.println(Participant.getNumberOfParticipants());
 
         for (Participant e:Participant.getParticipants()) {
             System.out.println(e.getParticipantName());
-        }
+        }*/
+
+        Menu menu = new Menu();
+        menu.showAdminMenu();
 
 
 
