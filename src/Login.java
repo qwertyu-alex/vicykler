@@ -1,4 +1,4 @@
-//Alexander Le && Oliver Lange.,
+//Alexander Le && Oliver Lange.,-
 import java.util.*;
 
 public class Login {
