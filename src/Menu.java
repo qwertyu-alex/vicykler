@@ -3,14 +3,20 @@
 import java.util.Scanner;
 
 public class Menu {
-    Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
 
 //Admin menu
-
-    public Menu(){
+    public static void run(){
+        showGuestMenu();
     }
 
-    public void showAdminMenu(){
+    public static void run(Object o){
+        showAdminMenu();
+        showParticpantsMenu();
+        showTeamCaptainMenu();
+    }
+
+    public static void showAdminMenu(){
         System.out.println("Admin menu");
         System.out.println("1) Tilføj firma"); //tjek
         System.out.println("2) Slet deltager"); //tjek
@@ -65,7 +71,7 @@ public class Menu {
     }
 
 //Participant menu
-    public void showParticpantsMenu(){
+    public static void showParticpantsMenu(){
         System.out.println("Deltager menu");
         System.out.println("1) Tilføj et hold"); //opret hold tjek
         System.out.println("2) Se information om en deltager"); //tjek
@@ -99,21 +105,31 @@ public class Menu {
     }
 
 //Guest menu
-    public void showGuestMenu(){
-        System.out.println("Gæste menu");
-        System.out.println("Se statistikker");
-        System.out.println("Login");
-        System.out.println("Opret bruger");
-        switch(input.nextInt()){
-            case 1:
-                //indsæt metode
-                break;
-        }
+    public static void showGuestMenu(){
+        do {
+            System.out.println("Gæste menu");
+            System.out.println("1) Se statistikker");
+            System.out.println("2) Login");
+            System.out.println("3) Opret bruger");
+            switch(input.nextInt()){
+                case 1:
+                    //indsæt metode
+                    break;
+                case 2:
+                    Login.run();
+                    break;
+                case 3:
+                    CreateParticipant.run();
+                    break;
+                default:
+                    break;
+            }
+        } while (true);
     }
 
 //Team captain menu
    //tilføj alt det som deltager kan
-    public void showTeamCaptainMenu(){
+    public static void showTeamCaptainMenu(){
         System.out.println("Holdkaptajn menu");
         System.out.println("1) Slet hold"); //tjek
         System.out.println("2) Tilføj deltager til hold"); //tjek

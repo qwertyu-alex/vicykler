@@ -12,6 +12,7 @@ public class Participant {
     private int numberOfCyclictDays;
     private double numberOfKm;
     private String participantPassword;
+    private String participantID;
 
     private static int numberOfParticipants = 0;
     private static ArrayList<Participant> participants = new ArrayList<>();
@@ -22,22 +23,23 @@ public class Participant {
     public Participant(){
     }
 
-    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm){
-        this(participantName, cyclistType, participantEmail);
-        this.team = team;
-        this.firm = firm;
-    }
-
     public Participant(String participantName, String cyclistType, String participantEmail, String participantPassword){
         this.participantName = participantName;
         //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
         this.participantEmail = participantEmail;
         this.participantPassword = participantPassword;
+        this.participantID = "#" + Integer.toString(numberOfParticipants+1);
 
         //Static variabler definitioner
         numberOfParticipants++;
         participants.add(this);
+    }
+
+    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm){
+        this(participantName, cyclistType, participantEmail);
+        this.team = team;
+        this.firm = firm;
     }
 
     public Participant(String participantName, String cyclistType, String participantEmail){
@@ -94,9 +96,11 @@ public class Participant {
         return numberOfKmAll;
     }
 
-    public String getPassword() {
+    public String getParticipantPassword() {
         return participantPassword;
     }
+
+    public String getparticipantID(){ return participantID; }
 
     public String getInfo(){
         //Kode mangler
