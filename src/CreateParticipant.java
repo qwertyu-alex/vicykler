@@ -6,7 +6,9 @@ import java.util.regex.Pattern;
 public class CreateParticipant {
     static Scanner input = new Scanner(System.in);
 
-    public static Participant run() {
+    public CreateParticipant(){}
+
+    public Participant run() {
         String[] participantTypes = {"Master", "Enthusiast", "Cruiser", "Debutant"};
 
         //GetName
@@ -30,7 +32,7 @@ public class CreateParticipant {
         return new Participant(participantName, cyclistType, participantEmail, participantPassword);
     }
 
-    public static String validateName() {
+    private String validateName() {
         System.out.println("Indtast dit fulde navn: ");
 
         String name = input.nextLine();
@@ -45,7 +47,7 @@ public class CreateParticipant {
         } while (true);
     }
 
-    public static int validateAge(){
+    private int validateAge(){
         System.out.println("Indtast din alder: ");
         int age;
 
@@ -72,7 +74,7 @@ public class CreateParticipant {
 
 }
 
-    public static String validateType(String[] participantTypes){
+    private String validateType(String[] participantTypes){
         int choice;
         String type = "";
         boolean check = true;
@@ -96,7 +98,7 @@ public class CreateParticipant {
         return type;
     }
 
-    public static String validateEmail() {
+    private String validateEmail() {
         System.out.println("Indtast din Email: ");
         String email = input.next();
         int atPosition = email.indexOf("@");
@@ -118,7 +120,7 @@ public class CreateParticipant {
         } while (true);
     }
 
-    public static String validatePassword() {
+    private String validatePassword() {
         System.out.println("Indtast dit password: ");
         String password = input.next();
         int lenght = password.length();
@@ -189,7 +191,7 @@ public class CreateParticipant {
         return null;
     }
 
-    public static boolean matchPassword(String password){
+    private boolean matchPassword(String password){
             System.out.println("Indtast dit password igen: ");
             String matchPassword = input.next();
             boolean valid;

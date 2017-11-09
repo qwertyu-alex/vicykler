@@ -5,22 +5,20 @@ public class Login {
 
     public Login(){}
 
-
-    public static void run(){
+    public void run(){
         Scanner input = new Scanner(System.in);
         String email;
         String password;
-        Participant participant;
 
         System.out.println("Venligst indtast din email");
         email = input.next();
         System.out.println("Venligst indtast dit password");
         password = input.next();
 
-        participant = findParticipant(email, password);
 
-        if (participant instanceof Participant){
-            Menu.run(participant);
+        //Tjek om der er fundet en bruger
+        if (findParticipant(email, password) instanceof Participant){
+            Menu.run(findParticipant(email, password));
         } else {
             System.out.println("Bruger ikke fundet");
             Menu.run();
@@ -28,7 +26,7 @@ public class Login {
 
     }
 
-    public static Participant findParticipant(String email, String password){
+    public Participant findParticipant(String email, String password){
         for (Participant p : Participant.getParticipants()) {
             if (p.getParticipantEmail().equals(email) && p.getParticipantPassword().equals(password)){
                 return p;

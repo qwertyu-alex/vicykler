@@ -10,6 +10,7 @@ public class MainController {
     }
 
     public void run(){
-        Menu.run();
+        Menu menu = new Menu();
+        menu.run();
     }
 }
