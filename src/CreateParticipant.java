@@ -49,15 +49,26 @@ public class CreateParticipant {
         System.out.println("Indtast din alder: ");
         int age;
 
-        age = input.nextInt();
+
         do {
+            do {
+                age = 0;
+                String in = (input.next());
+                if (Pattern.matches("[0-9]+", in)) {
+                    age = Integer.parseInt(in);
+                } else {
+                    System.out.println("Du skal vælge et tal");
+                }
+
+            } while (age == 0);
+
             if (age > 14 && age < 99) {
                 return age;
             } else {
                 System.out.println("Du skal vælge en alder mellem 15-99");
-                age = input.nextInt();
             }
         }while(true);
+
 
 }
 
