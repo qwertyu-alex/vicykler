@@ -34,13 +34,12 @@ public class Menu {
         if (person instanceof Participant){
             showParticpantsMenu();
         }
-
     }
 
-    //for at teste
     public void run(Data data){
         showGuestMenu();
     }
+
 
     //Guest menu
     private void showGuestMenu(){
@@ -126,7 +125,7 @@ public class Menu {
     private void showParticpantsMenu(){
 
         System.out.println("Deltager menu");
-        System.out.println("1) Tilføj et hold"); //opret hold tjek
+        System.out.println("1) Opret et hold"); //opret hold tjek
         System.out.println("2) Se information om en deltager"); //tjek
         System.out.println("3) Overblik over et firmas hold og tilhørende holdkaptajn"); //tjek
         System.out.println("4) Se information om et hold og dets deltagere"); //tjek
@@ -159,7 +158,7 @@ public class Menu {
 
     //Classes.Team captain menu
     private void showTeamCaptainMenu(TeamCaptain teamCaptain){
-        System.out.println("Holdkaptajn menu");
+        System.out.println("Holdkaptajn menu for " + teamCaptain.getTeam().getTeamName());
         System.out.println("1) Slet hold"); //tjek
         System.out.println("2) Tilføj deltager til hold"); //tjek
         System.out.println("3) Fjern deltager fra hold"); //tjek
@@ -179,9 +178,8 @@ public class Menu {
                 break;
             case 3:
                 //indsæt metode
-                System.out.println("Hvem vil du fjerne?");
-                String fjern = input.next();
-                teamCaptain.removeParticipant(fjern);
+                teamCaptain.removeParticipant();
+                run(teamCaptain);
                 break;
             case 4:
                 //indsæt metode

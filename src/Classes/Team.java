@@ -14,12 +14,7 @@ public class Team {
 
 
     //Constructor
-    public Team(){
-        this("Intet holdNavn", null);
-    }
-
     public Team(String teamName, Firm firm){
-
         //variabler
         this.teamName = teamName;
         this.firm = firm;
@@ -27,6 +22,7 @@ public class Team {
         //static
         numberOfTeams++;
     }
+
     //Adder metoder
     public void addParticipant(Participant participant){
         participants.add(participant);
@@ -40,6 +36,10 @@ public class Team {
 
     public int getNumberOfTeamParticipants() {
         return numberOfTeamParticipants;
+    }
+
+    public Firm getFirm() {
+        return firm;
     }
 
     public ArrayList<Participant> getParticipants() {

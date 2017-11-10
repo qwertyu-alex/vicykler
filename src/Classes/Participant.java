@@ -111,15 +111,14 @@ public class Participant extends Person {
 
     public void setTeam(Team team) {
         this.team = team;
+        team.addParticipant(this);
+        this.firm = team.getFirm();
     }
 
     public static void setParticipants(ArrayList<Participant> participants) {
         Participant.participants = participants;
     }
 
-    public void setFirm(Firm firm) {
-        this.firm = firm;
-    }
 
     public void removeParticipant(int index){
         //fjerner deltageren fra personer

@@ -1,7 +1,7 @@
 package Classes;//Alexander Van Le && Oliver Langeee
 
+import java.util.*;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 public class TeamCaptain extends Participant {
     //Constructor
@@ -17,44 +17,56 @@ public class TeamCaptain extends Participant {
     }
 
 
-    public void removeParticipant(String string){
+    public void removeParticipant(){
+        Scanner input = new Scanner(System.in);
+        String string;
+        ArrayList<Participant> participantsInTheTeam = this.getTeam().getParticipants();
+
+
+        System.out.println("Hvem vil du fjerne?");
+        for (Participant participant: participantsInTheTeam ) {
+            if (participant != this){
+                System.out.println(participant.getEmail());
+            }
+        }
+
         //string kan være email eller ID
-        string = string.toLowerCase();
+        string = input.next().toLowerCase();
+
         int atPosition = string.indexOf("@");
         int dotPosition = string.lastIndexOf('.');
-        ArrayList<Participant> participants = Participant.getParticipants();
 
         //Tjek hvis det er en email
         if (atPosition > 0 && dotPosition > atPosition && dotPosition < (string.length()-2) ) {
-            //Er en email
-
             //Loop igennem alle vores participants fra static arrayliste "participants"
-            for (Participant p: participants) {
+            for (Participant foundParticipant: participantsInTheTeam) {
                 //se om der er en matchende email
-                if (p.getEmail().equals(string)){
-                    //se om de deltageren er i samme hold som holdkaptajnen
-                    if (this.getTeam().equals(p.getTeam())){
-                        //metode som finder den i arraylisten og fjerner den fra systemet
-                        findAndRemove(p, participants);
-                        //gå ud af loop
-                        break;
+                if (foundParticipant.getEmail().toLowerCase().equals(string)){
+                    //metode som finder den i arraylisten og fjerner den fra systemet
+                    if (findAndRemove(foundParticipant, participantsInTheTeam)){
+                        return;
                     }
-
-
-
                 }
             }
+        }
 
+        System.out.println("Intet match - Vil du prøve igen?");
+        System.out.println("1) Ja \t 2) Nej");
+        String answer = input.next();
+        if (answer.equals("1")){
+            removeParticipant();
         }
 
     }
 
-    private void findAndRemove(Participant p, ArrayList<Participant> participants){
+    private boolean findAndRemove (Participant foundParticipant, ArrayList<Participant> participantsInTheTeam){
         //find index af participant i arrayliste "participants"
-        int i = participants.indexOf(p);
-        System.out.println("Deltager, " + p.getName() + ", er fjernet fra listen");
-        p.removeParticipant(i);
-        p = null;
+        int i = participantsInTheTeam.indexOf(foundParticipant);
+        System.out.println("Deltager, " + foundParticipant.getName() + ", er fjernet fra listen");
+        System.out.println();
+        foundParticipant.removeParticipant(i);
+        foundParticipant = null;
+        return true;
     }
 
 }
