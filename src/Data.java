@@ -31,13 +31,6 @@ public class Data {
         Team f3hold2 = new Team("f3hold2 - De fordømte", firma1);
 
 
-        //Tilføj firmaer til Arraylisten "firms"
-
-
-        //Tilføj hold til Arrraylisten "teams"
-
-
-
         //opret deltagere og tildel dem firma og hold
         //firma 1 - hold 1
         Participant par1 = new Participant("Flemming Sørensen", "Entusiast", "Flemming@gmail.com", f1hold1, firma1);
@@ -82,7 +75,6 @@ public class Data {
         Participant par29 = new Participant("One Direction 1", "Cruiser", "Dreng1@gmail.com", f3hold2, firma3);
         Participant par30 = new Participant("Mads Langer", "Debutant", "Mads@gmail.com", f3hold2, firma3);
 
-        //Evt tilføjelse af flere....
 
         //Tilføj Deltager til ArrayListe "participants"
         participants.add(par1);
@@ -134,13 +126,12 @@ public class Data {
         int i = 0;
 
         for (Participant participant : participants) {
-            System.out.printf("\n%-5d %-25s %-15s %-25s %-35s %-20s", i + 1, participants.get(i).getParticipantName(), participants.get(i).getCyclistType(), participants.get(i).getParticipantEmail(), participants.get(i).getTeam().getTeamName(), participants.get(i).getFirm().getFirmName());
-
+            System.out.printf("\n%-5d %-25s %-15s %-25s %-35s %-20s", i + 1, participants.get(i).getName(),
+                    participants.get(i).getCyclistType(), participants.get(i).getEmail(),
+                    participants.get(i).getTeam().getTeamName(), participants.get(i).getFirm().getFirmName());
             i++;
         }
     }
-
-
 }
 
 
