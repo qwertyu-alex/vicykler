@@ -3,10 +3,12 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Guest {
+public class CreateParticipant {
     static Scanner input = new Scanner(System.in);
 
-    public static Participant createParticipant() {
+    public CreateParticipant(){}
+
+    public Participant run() {
         String[] participantTypes = {"Master", "Enthusiast", "Cruiser", "Debutant"};
 
         //GetName
@@ -30,7 +32,7 @@ public class Guest {
         return new Participant(participantName, cyclistType, participantEmail, participantPassword);
     }
 
-    public static String validateName() {
+    private String validateName() {
         System.out.println("Indtast dit fulde navn: ");
 
         String name = input.nextLine();
@@ -45,20 +47,34 @@ public class Guest {
         } while (true);
     }
 
-    public static int validateAge(){
+    private int validateAge(){
         System.out.println("Indtast din alder: ");
-        int age = input.nextInt();
-    do {
-        if (age > 14 && age < 99) {
-            return age;
-        } else {
-            System.out.println("Du skal vælge en alder mellem 15-99");
-            age = input.nextInt();
-        }
-    }while(true);
+        int age;
+
+
+        do {
+            do {
+                age = 0;
+                String in = (input.next());
+                if (Pattern.matches("[0-9]+", in)) {
+                    age = Integer.parseInt(in);
+                } else {
+                    System.out.println("Du skal vælge et tal");
+                }
+
+            } while (age == 0);
+
+            if (age > 14 && age < 99) {
+                return age;
+            } else {
+                System.out.println("Du skal vælge en alder mellem 15-99");
+            }
+        }while(true);
+
+
 }
 
-    public static String validateType(String[] participantTypes){
+    private String validateType(String[] participantTypes){
         int choice;
         String type = "";
         boolean check = true;
@@ -82,7 +98,7 @@ public class Guest {
         return type;
     }
 
-    public static String validateEmail() {
+    private String validateEmail() {
         System.out.println("Indtast din Email: ");
         String email = input.next();
         int atPosition = email.indexOf("@");
@@ -104,18 +120,20 @@ public class Guest {
         } while (true);
     }
 
-    public static String validatePassword() {
+    private String validatePassword() {
         System.out.println("Indtast dit password: ");
         String password = input.next();
         int lenght = password.length();
         int numberCount = 0;
         int capitalCount = 0;
         boolean error;
+        boolean onlyNumAndLetter = false;
 
         do {
             lenght = password.length();
             numberCount = 0;
             capitalCount = 0;
+            onlyNumAndLetter = false;
 
             for (int i = 0; i < lenght; i++) {
                 // kan ikke tage imod ÆØÅ
@@ -126,7 +144,7 @@ public class Guest {
                 if ((password.charAt(i) > 47 && password.charAt(i) < 58)
                         || (password.charAt(i) > 64 && password.charAt(i) < 91)
                         || (password.charAt(i) > 98 && password.charAt(i) < 123)) {
-                } else {System.out.println("Dit password må kun indeholde bogstaver og tal");}
+                } else {onlyNumAndLetter = true;}
 
                 if ((password.charAt(i) > 47 && password.charAt(i) < 58)) {
                     numberCount++;
@@ -140,6 +158,12 @@ public class Guest {
             error = false;
 
             //error checking
+            if (onlyNumAndLetter){
+                System.out.println("Dit password må kun indeholde bogstaver og tal");
+                error = true;
+            }
+
+
             if (numberCount < 1) {
                 System.out.println("Dit password skal indeholde mindst ét tal");
                 error = true;
@@ -159,7 +183,7 @@ public class Guest {
                 return (password);
             }
 
-            System.out.println("Indtast andet password:");
+            System.out.println("Indtast nyt password:");
 
             password = input.next();
 
@@ -167,7 +191,7 @@ public class Guest {
         return null;
     }
 
-    public static boolean matchPassword(String password){
+    private boolean matchPassword(String password){
             System.out.println("Indtast dit password igen: ");
             String matchPassword = input.next();
             boolean valid;
