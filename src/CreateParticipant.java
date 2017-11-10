@@ -29,7 +29,7 @@ public class CreateParticipant {
         //CheckPassword
         boolean passCheck = matchPassword(participantPassword);
 
-        return new Participant(participantName, cyclistType, participantEmail, participantPassword);
+        return new Participant(participantName, participantEmail, participantPassword, cyclistType);
     }
 
     private String validateName() {
@@ -110,9 +110,9 @@ public class CreateParticipant {
                 return email;
             } else {
                 System.out.println("Denne email kan ikke valideres, skriv venligst en ny: ");
-                System.out.println("atPosition:" + atPosition);
+ /*               System.out.println("atPosition:" + atPosition);
                 System.out.println("dotPosition:" + dotPosition);
-                System.out.println("email.length(): " + email.length());
+                System.out.println("email.length(): " + email.length());*/
                 email = input.next();
                 atPosition = email.indexOf("@");
                 dotPosition = email.lastIndexOf('.');

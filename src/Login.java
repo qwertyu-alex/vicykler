@@ -5,7 +5,7 @@ public class Login {
 
     public Login(){}
 
-    public void run(){
+    public void run(Menu menu){
         Scanner input = new Scanner(System.in);
         String email;
         String password;
@@ -18,17 +18,17 @@ public class Login {
 
         //Tjek om der er fundet en bruger
         if (findParticipant(email, password) instanceof Participant){
-            Menu.run(findParticipant(email, password));
+            menu.run(findParticipant(email, password));
         } else {
             System.out.println("Bruger ikke fundet");
-            Menu.run();
+            menu.run();
         }
 
     }
 
     public Participant findParticipant(String email, String password){
         for (Participant p : Participant.getParticipants()) {
-            if (p.getParticipantEmail().equals(email) && p.getParticipantPassword().equals(password)){
+            if (p.getEmail().equals(email) && p.getPassword().equals(password)){
                 return p;
             }
         }

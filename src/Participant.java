@@ -7,8 +7,8 @@ public class Participant extends Person {
 //    private String participantName;
     private String cyclistType;
     //    private String participantEmail;
-    private Firm firm;
-    private Team team; // arraylist
+    private Firm firm = null;
+    private Team team = null; // arraylist
     private int numberOfCyclictDays;
     private double numberOfKm;
     //    private String participantPassword;
@@ -20,7 +20,7 @@ public class Participant extends Person {
     private static double numberOfKmAll = 0;
 
     //Constructor
-    public Participant(String name, String cyclistType, String email, String password) {
+    public Participant(String name, String email, String password, String cyclistType) {
         super(name, email, password);
         //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
@@ -31,14 +31,18 @@ public class Participant extends Person {
         participants.add(this);
     }
 
-    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm) {
-        this(participantName, cyclistType, participantEmail);
-        this.team = team;
-        this.firm = firm;
-    }
+    //Overloaded contructor
+    public Participant(Participant participant){
+        super(participant.getName(), participant.getEmail(), participant.getPassword());
+        this.cyclistType = participant.getCyclistType();
+        //hvis der er forbundet et hold;
+        if (participant.getTeam() != null){
+            this.team = participant.getTeam();
+        }
+        if (participant.getFirm() != null){
+            this.firm = participant.getFirm();
+        }
 
-    public Participant(String participantName, String cyclistType, String participantEmail) {
-        this(participantName, cyclistType, participantEmail, "Hej1");
     }
 
     //Adder
@@ -108,6 +112,10 @@ public class Participant extends Person {
 
     public void setTeam(Team team) {
         this.team = team;
+    }
+
+    public static void setParticipants(ArrayList<Participant> participants) {
+        Participant.participants = participants;
     }
 
     public void setFirm(Firm firm) {

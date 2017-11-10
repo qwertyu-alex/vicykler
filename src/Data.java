@@ -8,7 +8,7 @@ public class Data {
     //Constructor
     public Data() {
         this.participants = new ArrayList<Participant>();
-
+        generateData();
     }
 
 
@@ -31,21 +31,29 @@ public class Data {
         Team f3hold2 = new Team("f3hold2 - De fordømte", firma1);
 
 
+        //Tilføj firmaer til Arraylisten "firms"
+
+
+        //Tilføj hold til Arrraylisten "teams"
+
+
+
         //opret deltagere og tildel dem firma og hold
         //firma 1 - hold 1
-        Participant par1 = new Participant("Flemming Sørensen", "Entusiast", "Flemming@gmail.com", f1hold1, firma1);
-        Participant par2 = new Participant("Lennert Andersen", "Mester", "Lennert@gmail.com", f1hold1, firma1);
-        Participant par3 = new Participant("Poul Ridderstjerne", "Cruiser", "Poul@gmail.com", f1hold1, firma1);
-        Participant par4 = new Participant("Bjarne Simonsen", "Debutant", "Bjarne@gmail.com", f1hold1, firma1);
-        Participant par5 = new Participant("Søren Espensen", "Entusiast", "Søren@gmail.com", f1hold1, firma1);
+        /*
+        Participant par1 = new Participant("Flemming Sørensen", "Entusiast", "Flemming@gmail.com");
+        Participant par2 = new Participant("Lennert Andersen", "Mester", "Lennert@gmail.com");
+        Participant par3 = new Participant("Poul Ridderstjerne", "Cruiser", "Poul@gmail.com");
+        Participant par4 = new Participant("Bjarne Simonsen", "Debutant", "Bjarne@gmail.com");
+        Participant par5 = new Participant("Søren Espensen", "Entusiast", "Søren@gmail.com");*/
 
         //Firma 1 - hold 2
-        Participant par6 = new Participant("Frodo DatFrodo", "Debutant", "Frodo@gmail.com", f1hold2, firma1);
-        Participant par7 = new Participant("Kesi Natteravn", "Cruiser", "Kesi@gmail.com", f1hold2, firma1);
-        Participant par8 = new Participant("Jesus Kristus", "Entusiast", "Jesus@gmail.com", f1hold2, firma1);
-        Participant par9 = new Participant("Muhammed", "Cruiser", "Muhammed@gmail.com", f1hold2, firma1);
-        Participant par10 = new Participant("Johannes Døbberen", "Debutant", "Johannes@gmail.com", f1hold2, firma1);
-
+        Participant par6 = new Participant("Frodo DatFrodo", "Frodo@gmail.com","Alex1", "Master");
+        Participant par7 = new Participant("Kesi Natteravn", "Kesi@gmail.com","Alex1", "Master");
+        Participant par8 = new Participant("Jesus Kristus", "jesus@gmail.com","Alex1", "Master");
+        Participant par9 = new Participant("Muhammed", "Muhammed@gmail.com","Alex1", "Master");
+        Participant par10 = new Participant("Johannes Døbberen", "Johannes@gmail.com","Alex1",  "Master");
+/*
         //Firma 2 - hold 1
         Participant par11 = new Participant("Pia kærsgård", "Mester", "Pia@gmail.com", f2hold1, firma2);
         Participant par12 = new Participant("Lars Løkke", "Debutant", "Lars@gmail.com", f2hold1, firma2);
@@ -53,7 +61,7 @@ public class Data {
         Participant par14 = new Participant("Johannes Smith", "Cruiser", "Johannes@gmail.com", f2hold1, firma2);
         Participant par15 = new Participant("Espen Lunde", "Debutant", "Espen@gmail.com", f2hold1, firma2);
 
-        //Firma 2 - hold 2
+        //Firma 2 - hold 2*//*
         Participant par16 = new Participant("Harry Potter", "Mester", "Harry@gmail.com", f2hold2, firma2);
         Participant par17 = new Participant("Ron Weasley", "Entusiast", "Ron@gmail.com", f2hold2, firma2);
         Participant par18 = new Participant("Hermione etellerandet", "Debutant", "Hermione@gmail.com", f2hold2, firma2);
@@ -75,19 +83,20 @@ public class Data {
         Participant par29 = new Participant("One Direction 1", "Cruiser", "Dreng1@gmail.com", f3hold2, firma3);
         Participant par30 = new Participant("Mads Langer", "Debutant", "Mads@gmail.com", f3hold2, firma3);
 
+        //Evt tilføjelse af flere....*/
 
         //Tilføj Deltager til ArrayListe "participants"
-        participants.add(par1);
+       /* participants.add(par1);
         participants.add(par2);
         participants.add(par3);
         participants.add(par4);
-        participants.add(par5);
+        participants.add(par5);*/
         participants.add(par6);
         participants.add(par7);
         participants.add(par8);
         participants.add(par9);
         participants.add(par10);
-        participants.add(par11);
+ /*       participants.add(par11);
         participants.add(par12);
         participants.add(par13);
         participants.add(par14);
@@ -106,7 +115,7 @@ public class Data {
         participants.add(par27);
         participants.add(par28);
         participants.add(par29);
-        participants.add(par30);
+        participants.add(par30);*/
     }
 
     //Getters
@@ -126,12 +135,13 @@ public class Data {
         int i = 0;
 
         for (Participant participant : participants) {
-            System.out.printf("\n%-5d %-25s %-15s %-25s %-35s %-20s", i + 1, participants.get(i).getName(),
-                    participants.get(i).getCyclistType(), participants.get(i).getEmail(),
-                    participants.get(i).getTeam().getTeamName(), participants.get(i).getFirm().getFirmName());
+            System.out.printf("\n%-5d %-25s %-15s %-25s %-35s %-20s", i + 1, participants.get(i).getName(), participants.get(i).getCyclistType(), participants.get(i).getEmail(), participants.get(i).getTeam().getTeamName(), participants.get(i).getFirm().getFirmName());
+
             i++;
         }
     }
+
+
 }
 
 

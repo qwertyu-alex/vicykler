@@ -11,6 +11,7 @@ public class MainController {
 
     public void run(){
         Menu menu = new Menu();
-        menu.run();
+        Data data = new Data();
+        menu.run(data);
     }
 }

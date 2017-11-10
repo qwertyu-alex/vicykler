@@ -8,19 +8,24 @@ public class Menu {
     public Menu(){}
 
     //default run
-    public static void run(){
+    public void run(){
         showGuestMenu();
     }
 
     //overloaded run
-    public static void run(Object o){
+    public void run(Person person){
         showAdminMenu();
         showParticpantsMenu();
         showTeamCaptainMenu();
     }
 
+    //for at teste
+    public void run(Data data){
+        showTeamCaptainMenu();
+    }
+
     //Guest menu
-    private static void showGuestMenu(){
+    private void showGuestMenu(){
         do {
             System.out.println("Gæste menu");
             System.out.println("1) Se statistikker");
@@ -31,7 +36,7 @@ public class Menu {
                     //indsæt metode
                     break;
                 case 2:
-                    new Login().run();
+                    new Login().run(this);
                     break;
                 case 3:
                     new CreateParticipant().run();
@@ -43,7 +48,7 @@ public class Menu {
     }
 
     //Admin menu
-    private static void showAdminMenu(){
+    private void showAdminMenu(){
         System.out.println("Admin menu");
         System.out.println("1) Tilføj firma"); //tjek
         System.out.println("2) Slet deltager"); //tjek
@@ -98,7 +103,7 @@ public class Menu {
     }
 
     //Participant menu
-    private static void showParticpantsMenu(){
+    private void showParticpantsMenu(){
 
         System.out.println("Deltager menu");
         System.out.println("1) Tilføj et hold"); //opret hold tjek
@@ -133,7 +138,7 @@ public class Menu {
     }
 
     //Team captain menu
-    private static void showTeamCaptainMenu(){
+    private void showTeamCaptainMenu(){
         System.out.println("Holdkaptajn menu");
         System.out.println("1) Slet hold"); //tjek
         System.out.println("2) Tilføj deltager til hold"); //tjek
@@ -154,6 +159,7 @@ public class Menu {
                 break;
             case 3:
                 //indsæt metode
+                new TeamCaptain(new Participant("john", ".@.@@","Meme1", "Master")).removeParticipant("jesus@gmail.com");
                 break;
             case 4:
                 //indsæt metode
