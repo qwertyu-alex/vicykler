@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 public class Menu {
     static Scanner input = new Scanner(System.in);
+    TeamCaptain tea6;
 
-    public Menu(){}
+    public Menu(){
+        this.tea6 = new TeamCaptain(new Participant("Frodo DatFrodo", "Frodo@gmail.com","Alex1", "Master"));
+    }
 
     //default run
     public void run(){
@@ -14,14 +17,27 @@ public class Menu {
 
     //overloaded run
     public void run(Person person){
-        showAdminMenu();
-        showParticpantsMenu();
-        showTeamCaptainMenu();
+
+        System.out.println(person.getClass());
+
+        if (person instanceof Admin){
+            showAdminMenu();
+        }
+
+        if (person instanceof TeamCaptain){
+            showTeamCaptainMenu((TeamCaptain) person);
+        } else if (person instanceof Participant){
+            showParticpantsMenu();
+        }
+
+    //    showTeamCaptainMenu();
     }
 
     //for at teste
     public void run(Data data){
-        showTeamCaptainMenu();
+        showGuestMenu();
+
+       // showTeamCaptainMenu(new TeamCaptain(new Participant("John", ".@.@@", "Hej1", "Master")));
     }
 
     //Guest menu
@@ -138,7 +154,7 @@ public class Menu {
     }
 
     //Team captain menu
-    private void showTeamCaptainMenu(){
+    private void showTeamCaptainMenu(TeamCaptain teamCaptain){
         System.out.println("Holdkaptajn menu");
         System.out.println("1) Slet hold"); //tjek
         System.out.println("2) Tilføj deltager til hold"); //tjek
@@ -159,7 +175,9 @@ public class Menu {
                 break;
             case 3:
                 //indsæt metode
-                new TeamCaptain(new Participant("john", ".@.@@","Meme1", "Master")).removeParticipant("jesus@gmail.com");
+                System.out.println("Hvem vil du fjerne?");
+                String fjern = input.next();
+                teamCaptain.removeParticipant(fjern);
                 break;
             case 4:
                 //indsæt metode

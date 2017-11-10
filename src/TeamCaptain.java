@@ -4,48 +4,58 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class TeamCaptain extends Participant {
-
+    String lol;
     //Constructor
     public TeamCaptain(Participant participant){
         super(participant);
+        participant.removePerson(participant);
+        this.lol = "lol";
     }
 
+    public TeamCaptain(String name, String email, String password, String cyclistType){
+        super(name, email, password, cyclistType);
+        this.lol = "lol";
+    }
+
+
     public void removeParticipant(String string){
+        //string kan være email eller ID
+        string = string.toLowerCase();
         int atPosition = string.indexOf("@");
         int dotPosition = string.lastIndexOf('.');
+        ArrayList<Participant> participants = Participant.getParticipants();
 
-/*        System.out.println(string);
-        System.out.println("a " + atPosition);
-        System.out.println("d " + dotPosition);*/
+        //Tjek hvis det er en email
         if (atPosition > 0 && dotPosition > atPosition && dotPosition < (string.length()-2) ) {
             //Er en email
-            ArrayList<Participant> participants = Participant.getParticipants();
 
             //Loop igennem alle vores participants fra static arrayliste "participants"
             for (Participant p: participants) {
-                //hvis den finder en matchende email
+                //se om der er en matchende email
                 if (p.getEmail().equals(string)){
-                    //find index af participant i arrayliste "participants"
-                    int i = participants.indexOf(p);
-                    System.out.println("Deltager, " + p.getName() + ", er fjernet fra listen");
-
-                    //midlertidig arrayliste til opbevaring af participants uden fjernet participant
-                    ArrayList<Participant> arr = new ArrayList<>();
-                    for (int j = 0; j < participants.size() - 1; j++){
-                        //hvis j ikke er lige så stor som vores index af ønskede fjernet deltager
-                        if (j != i){
-                            //så tilføj participant i ny arrayliste
-                            arr.add(Participant.getParticipants().get(j));
-                        }
+                    //se om de deltageren er i samme hold som holdkaptajnen
+                    if (this.getTeam().equals(p.getTeam())){
+                        //metode som finder den i arraylisten og fjerner den fra systemet
+                        findAndRemove(p, participants);
+                        //gå ud af loop
+                        break;
                     }
-                    Participant.setParticipants(arr);
+
+
+
                 }
             }
 
-        } else{
-            System.out.println("er ikke email");
         }
 
+    }
+
+    private void findAndRemove(Participant p, ArrayList<Participant> participants){
+        //find index af participant i arrayliste "participants"
+        int i = participants.indexOf(p);
+        System.out.println("Deltager, " + p.getName() + ", er fjernet fra listen");
+        p.removeParticipant(i);
+        p = null;
     }
 
 }

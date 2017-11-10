@@ -1,17 +1,23 @@
 //Astrid Christensen
 
+import java.util.ArrayList;
+
 public abstract class Person {
 
     protected String name;
     protected String email;
     protected String password;
 
+    protected static ArrayList<Person> persons = new ArrayList<>();
 
     //Constructer
     public Person(String name, String email, String password){
         this.name = name;
         this.email = email;
         this.password = password;
+
+        //tilføj denne person til arraylisten
+        persons.add(this);
     }
 
     //Getter-metoder
@@ -25,6 +31,10 @@ public abstract class Person {
 
     public String getPassword() {
         return password;
+    }
+
+    public static ArrayList<Person> getPersons() {
+        return persons;
     }
 
     //Setter-metoder
@@ -42,6 +52,19 @@ public abstract class Person {
 
     public void showStatistic(){
 
+    }
+
+    //fjern et element fra person arraylisten
+    public boolean removePerson(Participant participant){
+        for (Person person : persons) {
+            if (person.getEmail().equals(participant.getEmail())){
+                System.out.println(person.getName() + " er fjernet");
+                persons.remove(person);
+                person = null;
+                return true;
+            }
+        }
+        return false;
     }
 }
 

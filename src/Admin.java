@@ -10,8 +10,8 @@ public class Admin extends Person {
     private Scanner input;
 
     //Constructor
-    public Admin(Person person){
-        super("","","");
+    public Admin(String name, String email, String password){
+        super(name,email,password);
         this.participants = new ArrayList<>();
         this.firms = new ArrayList<>();
         this.teams = new ArrayList<>();

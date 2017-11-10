@@ -4,14 +4,11 @@ import java.util.ArrayList;
 
 public class Participant extends Person {
     //Variabler
-//    private String participantName;
     private String cyclistType;
-    //    private String participantEmail;
     private Firm firm = null;
     private Team team = null; // arraylist
     private int numberOfCyclictDays;
     private double numberOfKm;
-    //    private String participantPassword;
     private String participantID;
 
     private static int numberOfParticipants = 0;
@@ -22,6 +19,7 @@ public class Participant extends Person {
     //Constructor
     public Participant(String name, String email, String password, String cyclistType) {
         super(name, email, password);
+
         //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
         this.participantID = "#" + Integer.toString(numberOfParticipants + 1);
@@ -39,6 +37,7 @@ public class Participant extends Person {
         if (participant.getTeam() != null){
             this.team = participant.getTeam();
         }
+        //hvis der er forbundet et firma;
         if (participant.getFirm() != null){
             this.firm = participant.getFirm();
         }
@@ -120,5 +119,13 @@ public class Participant extends Person {
 
     public void setFirm(Firm firm) {
         this.firm = firm;
+    }
+
+    public void removeParticipant(int index){
+        //fjerner deltageren fra personer
+        this.removePerson(this);
+        //fjerner deltageren fra deltagerlisten
+        participants.remove(index);
+
     }
 }
