@@ -85,5 +85,6 @@ public class Admin extends Person {
     }
     public ArrayList<Team> getTeams() {
         return teams;
+
     }
 }
