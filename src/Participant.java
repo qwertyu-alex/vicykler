@@ -2,16 +2,16 @@
 
 import java.util.ArrayList;
 
-public class Participant {
+public class Participant extends Person {
     //Variabler
-    private String participantName;
+//    private String participantName;
     private String cyclistType;
-    private String participantEmail;
+    //    private String participantEmail;
     private Firm firm;
     private Team team; // arraylist
     private int numberOfCyclictDays;
     private double numberOfKm;
-    private String participantPassword;
+    //    private String participantPassword;
     private String participantID;
 
     private static int numberOfParticipants = 0;
@@ -20,36 +20,34 @@ public class Participant {
     private static double numberOfKmAll = 0;
 
     //Constructor
-    public Participant(String participantName, String cyclistType, String participantEmail, String participantPassword){
-        this.participantName = participantName;
+    public Participant(String name, String cyclistType, String email, String password) {
+        super(name, email, password);
         //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
-        this.participantEmail = participantEmail;
-        this.participantPassword = participantPassword;
-        this.participantID = "#" + Integer.toString(numberOfParticipants+1);
+        this.participantID = "#" + Integer.toString(numberOfParticipants + 1);
 
         //Static variabler definitioner
         numberOfParticipants++;
         participants.add(this);
     }
 
-    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm){
+    public Participant(String participantName, String cyclistType, String participantEmail, Team team, Firm firm) {
         this(participantName, cyclistType, participantEmail);
         this.team = team;
         this.firm = firm;
     }
 
-    public Participant(String participantName, String cyclistType, String participantEmail){
+    public Participant(String participantName, String cyclistType, String participantEmail) {
         this(participantName, cyclistType, participantEmail, "Hej1");
     }
 
     //Adder
-    public void addCyclistDays(){
+    public void addCyclistDays() {
         numberOfCyclictDays++; //5+1 = 6 dage person
         numberOfCyclingDaysAll++;
     }
 
-    public void addNumberOfKmAll(int km){
+    public void addNumberOfKmAll(int km) {
         numberOfKmAll -= numberOfKm;
         numberOfKm += km;
         numberOfKmAll += numberOfKm;
@@ -59,14 +57,6 @@ public class Participant {
     //Getter
     public String getCyclistType() {
         return cyclistType;
-    }
-
-    public String getParticipantName() {
-        return participantName;
-    }
-
-    public String getParticipantEmail() {
-        return participantEmail;
     }
 
     public Team getTeam() {
@@ -93,19 +83,17 @@ public class Participant {
         return numberOfKmAll;
     }
 
-    public String getParticipantPassword() {
-        return participantPassword;
+    public String getparticipantID() {
+        return participantID;
     }
 
-    public String getparticipantID(){ return participantID; }
-
-    public String getInfo(){
+    public String getInfo() {
         //Kode mangler
         return null;
     }
 
     //Static Getter
-    public static int getNumberOfParticipants(){
+    public static int getNumberOfParticipants() {
         return numberOfParticipants;
     }
 
@@ -115,15 +103,7 @@ public class Participant {
 
     //Setter
     public void setCyklistType(String cyclistType) {
-        this.cyclistType= cyclistType;
-    }
-
-    public void setDeltagerNavn(String participantName) {
-        this.participantName = participantName;
-    }
-
-    public void setParticipantEmail(String participantEmail) {
-        this.participantEmail = participantEmail;
+        this.cyclistType = cyclistType;
     }
 
     public void setTeam(Team team) {
@@ -132,9 +112,5 @@ public class Participant {
 
     public void setFirm(Firm firm) {
         this.firm = firm;
-    }
-
-    public void setPassword(String participantPassword) {
-        this.participantPassword = participantPassword;
     }
 }
