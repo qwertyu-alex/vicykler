@@ -30,9 +30,7 @@ public class Login {
     private Person findPerson(String email, String password){
         for (Person p : Person.getPersons()) {
             if (p.getEmail().toLowerCase().equals(email) && p.getPassword().equals(password)){
-
                     return p;
-
             }
         }
         return null;

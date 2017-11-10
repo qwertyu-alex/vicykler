@@ -23,19 +23,18 @@ public class Menu {
     //overloaded run
     public void run(Person person){
 
-        System.out.println(person.getClass());
-
         if (person instanceof Admin){
             showAdminMenu();
         }
 
         if (person instanceof TeamCaptain){
             showTeamCaptainMenu((TeamCaptain) person);
-        } else if (person instanceof Participant){
+        }
+
+        if (person instanceof Participant){
             showParticpantsMenu();
         }
 
-    //    showTeamCaptainMenu();
     }
 
     //for at teste
@@ -45,7 +44,6 @@ public class Menu {
 
     //Guest menu
     private void showGuestMenu(){
-        do {
             System.out.println("Gæstemenu");
             System.out.println("1) Se statistikker");
             System.out.println("2) Login");
@@ -56,14 +54,17 @@ public class Menu {
                     break;
                 case 2:
                     new Login().run(this);
+                    run();
                     break;
                 case 3:
                     new CreateParticipant().run();
+                    run();
                     break;
                 default:
+                    System.out.println("Du skal vælge en af følgende:");
+                    run();
                     break;
             }
-        } while (true);
     }
 
     //Classes.Admin menu
@@ -71,7 +72,7 @@ public class Menu {
         System.out.println("Classes.Admin menu");
         System.out.println("1) Tilføj firma"); //tjek
         System.out.println("2) Slet deltager"); //tjek
-        System.out.println("3) Tilføj et hold"); //tjek Opret hold
+        System.out.println("3) Opret et hold"); //tjek Opret hold
         System.out.println("4) Se information om en deltager"); //tjek Oplysninger om deltager
         System.out.println("5) Overblik over et firmas hold og tilhørende holdkaptajn"); //Oversigt over en virk hold og holdkaptajn
         System.out.println("6) Se information om et hold og dets deltagere"); //tjek

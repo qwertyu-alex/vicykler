@@ -145,7 +145,7 @@ public class CreateParticipant {
                 // tredje kigger på små bogstaver 97 = "a", 122 = "z"
                 if ((password.charAt(i) > 47 && password.charAt(i) < 58)
                         || (password.charAt(i) > 64 && password.charAt(i) < 91)
-                        || (password.charAt(i) > 98 && password.charAt(i) < 123)) {
+                        || (password.charAt(i) > 96 && password.charAt(i) < 123)) {
                 } else {onlyNumAndLetter = true;}
 
                 if ((password.charAt(i) > 47 && password.charAt(i) < 58)) {
