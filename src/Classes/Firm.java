@@ -13,9 +13,6 @@ public class Firm {
     private static ArrayList<Firm> firmList = new ArrayList<>();
 
     //Contructor
-    public Firm() {
-    }
-
     public Firm(String firmName) {
 
         //Variable definitioner
@@ -28,7 +25,6 @@ public class Firm {
 
     //Addere
     public void addTeam (Team team){
-
         teamList.add(team);
         numberOfFirmParticipants += team.getNumberOfTeamParticipants();
     }
@@ -55,8 +51,19 @@ public class Firm {
         return teamList;
     }
 
+    public ArrayList<Team> getTeamList() {
+        return teamList;
+    }
+
+    public static int getNumberOfFirms() {
+        return numberOfFirms;
+    }
+
+    public static ArrayList<Firm> getFirmList() {
+        return firmList;
+    }
+
     //Get fordeling af hold - mangler!
 
-    //Delete Virk
 
 }

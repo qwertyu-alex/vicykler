@@ -18,6 +18,7 @@ public class Team {
         //variabler
         this.teamName = teamName;
         this.firm = firm;
+        firm.addTeam(this);
 
         //static
         numberOfTeams++;

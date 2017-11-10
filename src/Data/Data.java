@@ -18,6 +18,9 @@ public class Data {
     public void generateData() {
         Admin adm1 = new Admin("Alex", ".@.@@", "Hej1");
 
+        //firmless
+        Participant lol = new Participant("Lol Natteravn", "lol@gmail.com","Alex1", "Master");
+
         Firm firma1 = new Firm("firma1 - Arla");
         Team team1 = new Team("The Sharks", firma1);
         Team team2 =  new Team("død", firma1);

@@ -24,7 +24,7 @@ public class Menu {
     public void run(Person person){
 
         if (person instanceof Admin){
-            showAdminMenu();
+            showAdminMenu((Admin) person);
         }
 
         if (person instanceof TeamCaptain){
@@ -32,7 +32,7 @@ public class Menu {
         }
 
         if (person instanceof Participant){
-            showParticpantsMenu();
+            showParticpantsMenu((Participant) person);
         }
     }
 
@@ -67,7 +67,7 @@ public class Menu {
     }
 
     //Classes.Admin menu
-    private void showAdminMenu(){
+    private void showAdminMenu(Admin admin){
         System.out.println("Classes.Admin menu");
         System.out.println("1) Tilføj firma"); //tjek
         System.out.println("2) Slet deltager"); //tjek
@@ -122,7 +122,7 @@ public class Menu {
     }
 
     //Classes.Participant menu
-    private void showParticpantsMenu(){
+    private void showParticpantsMenu(Participant participant){
 
         System.out.println("Deltager menu");
         System.out.println("1) Opret et hold"); //opret hold tjek
@@ -134,7 +134,7 @@ public class Menu {
 
         switch(input.nextInt()){
             case 1:
-                //indsæt metode
+                new CreateTeam().run(participant);
                 break;
             case 2:
                 //indsæt metode
