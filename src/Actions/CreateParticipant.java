@@ -1,4 +1,6 @@
-//Oliver Lange && Alexander Van Le
+package Actions;//Oliver Lange && Alexander Van Le
+
+import Classes.Participant;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;

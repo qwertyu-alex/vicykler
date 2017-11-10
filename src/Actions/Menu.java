@@ -1,4 +1,10 @@
-//Astrid Christensen
+package Actions;//Astrid Christensen
+
+import Classes.Admin;
+import Classes.Participant;
+import Classes.Person;
+import Classes.TeamCaptain;
+import Data.Data;
 
 import java.util.Scanner;
 
@@ -7,7 +13,6 @@ public class Menu {
     TeamCaptain tea6;
 
     public Menu(){
-        this.tea6 = new TeamCaptain(new Participant("Frodo DatFrodo", "Frodo@gmail.com","Alex1", "Master"));
     }
 
     //default run
@@ -36,14 +41,12 @@ public class Menu {
     //for at teste
     public void run(Data data){
         showGuestMenu();
-
-       // showTeamCaptainMenu(new TeamCaptain(new Participant("John", ".@.@@", "Hej1", "Master")));
     }
 
     //Guest menu
     private void showGuestMenu(){
         do {
-            System.out.println("Gæste menu");
+            System.out.println("Gæstemenu");
             System.out.println("1) Se statistikker");
             System.out.println("2) Login");
             System.out.println("3) Opret bruger");
@@ -63,9 +66,9 @@ public class Menu {
         } while (true);
     }
 
-    //Admin menu
+    //Classes.Admin menu
     private void showAdminMenu(){
-        System.out.println("Admin menu");
+        System.out.println("Classes.Admin menu");
         System.out.println("1) Tilføj firma"); //tjek
         System.out.println("2) Slet deltager"); //tjek
         System.out.println("3) Tilføj et hold"); //tjek Opret hold
@@ -118,7 +121,7 @@ public class Menu {
         }
     }
 
-    //Participant menu
+    //Classes.Participant menu
     private void showParticpantsMenu(){
 
         System.out.println("Deltager menu");
@@ -153,7 +156,7 @@ public class Menu {
         }
     }
 
-    //Team captain menu
+    //Classes.Team captain menu
     private void showTeamCaptainMenu(TeamCaptain teamCaptain){
         System.out.println("Holdkaptajn menu");
         System.out.println("1) Slet hold"); //tjek

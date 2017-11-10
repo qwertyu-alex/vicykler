@@ -1,4 +1,4 @@
-//Alexander Van Le && Oliver Lange
+package Classes;//Alexander Van Le && Oliver Lange
 
 import java.util.ArrayList;
 
@@ -124,6 +124,7 @@ public class Participant extends Person {
     public void removeParticipant(int index){
         //fjerner deltageren fra personer
         this.removePerson(this);
+
         //fjerner deltageren fra deltagerlisten
         participants.remove(index);
 

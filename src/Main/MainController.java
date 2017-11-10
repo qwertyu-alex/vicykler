@@ -1,12 +1,19 @@
+package Main;
+
 import java.util.Scanner;
+
+import Classes.Person;
+import Data.Data;
+import Actions.Menu;
+
 
 public class MainController {
 
     Scanner input = new Scanner(System.in);
-    //private Data data;
+    //private Data.Data data;
 
     public MainController(){
-        //this.data = new Data();
+        //this.data = new Data.Data();
     }
 
     public void run(){

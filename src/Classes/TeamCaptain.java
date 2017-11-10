@@ -1,20 +1,19 @@
-//Alexander Van Le && Oliver Langeee
+package Classes;//Alexander Van Le && Oliver Langeee
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class TeamCaptain extends Participant {
-    String lol;
     //Constructor
     public TeamCaptain(Participant participant){
         super(participant);
+
+        //fjern personen fra deltager listen og gør ham i stedet for til en holdkaptain
         participant.removePerson(participant);
-        this.lol = "lol";
     }
 
     public TeamCaptain(String name, String email, String password, String cyclistType){
         super(name, email, password, cyclistType);
-        this.lol = "lol";
     }
 
 

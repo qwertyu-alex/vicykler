@@ -1,5 +1,8 @@
+package Classes;
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import Data.Data;
 
 public class Admin extends Person {
     //attribut
