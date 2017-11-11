@@ -65,6 +65,9 @@ public class Team {
         this.teamCaptain = teamCaptain;
     }
 
-    //Delete
+    //Remove
+    public void removeParticipant(Participant participant){
+        participants.remove(participant);
+    }
 
 }

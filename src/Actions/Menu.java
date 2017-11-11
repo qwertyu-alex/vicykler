@@ -134,7 +134,7 @@ public class Menu {
 
         switch(input.nextInt()){
             case 1:
-                new CreateTeam().run(participant);
+                run(new CreateTeam().run(participant));
                 break;
             case 2:
                 //indsæt metode

@@ -22,6 +22,7 @@ public class Data {
         Participant lol = new Participant("Lol Natteravn", "lol@gmail.com","Alex1", "Master");
 
         Firm firma1 = new Firm("firma1 - Arla");
+        Firm firma2 = new Firm("firma2 - NONO");
         Team team1 = new Team("The Sharks", firma1);
         Team team2 =  new Team("død", firma1);
 

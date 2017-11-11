@@ -5,20 +5,34 @@ import java.util.Scanner;
 import Classes.Firm;
 import Classes.Participant;
 import Classes.Team;
+import Classes.TeamCaptain;
 
 
 public class CreateTeam {
     Scanner input = new Scanner(System.in);
     public CreateTeam(){}
 
-    public Team run (Participant participant){
+    public TeamCaptain run (Participant participant){
         //getFirm
         Firm firm = validateFirm(participant);
 
         //getName
         String name = validateName(firm);
 
-        return null;
+        //opret hold
+        Team newTeam = new Team(name, firm);
+
+        //tilføj holdet til participant
+        participant.setTeam(newTeam);
+
+        System.out.println("Hold: \"" + newTeam.getTeamName() + "\" er nu oprettet");
+
+        //ny holdkaptajn
+        TeamCaptain newTeamCaptain = new TeamCaptain(participant);
+        newTeam.setTeamCaptain(newTeamCaptain);
+        participant.getTeam().removeParticipant(participant);
+
+        return newTeamCaptain;
     }
 
     private Firm validateFirm(Participant participant){
@@ -34,6 +48,10 @@ public class CreateTeam {
                 System.out.println(count + ") " + firm.getFirmName());
             }
             int chosenFirm = input.nextInt();
+
+            //sørger for at den ikke bugger
+            input.nextLine();
+
             return Firm.getFirmList().get(chosenFirm - 1);
         }
 
@@ -46,12 +64,8 @@ public class CreateTeam {
         System.out.println("Hvad skal holdnavnet være? Det må ikke være følgende: ");
         //print de eksisterende holdnavne ud
         for (Team team : firm.getTeamList()) {
-                System.out.print(team.getTeamName() + "\t");
+                System.out.println("\"" + team.getTeamName() + "\"");
         }
-
-        //skal være her så det ikke bugger
-        System.out.println();
-        input.nextLine();
 
         //input navnet på hold
         String name = input.nextLine();

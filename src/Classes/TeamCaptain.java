@@ -23,40 +23,44 @@ public class TeamCaptain extends Participant {
         ArrayList<Participant> participantsInTheTeam = this.getTeam().getParticipants();
 
 
-        System.out.println("Hvem vil du fjerne?");
-        for (Participant participant: participantsInTheTeam ) {
-            if (participant != this){
-                System.out.println(participant.getEmail());
+        //tjek hvis der er deltagere i holdet
+        if (participantsInTheTeam.size() > 0){
+            System.out.println("Hvem vil du fjerne?");
+            for (Participant participant: participantsInTheTeam ) {
+                if (participant != this){
+                    System.out.println(participant.getEmail());
+                }
             }
-        }
+            //string kan være email eller ID
+            string = input.next().toLowerCase();
 
-        //string kan være email eller ID
-        string = input.next().toLowerCase();
+            int atPosition = string.indexOf("@");
+            int dotPosition = string.lastIndexOf('.');
 
-        int atPosition = string.indexOf("@");
-        int dotPosition = string.lastIndexOf('.');
-
-        //Tjek hvis det er en email
-        if (atPosition > 0 && dotPosition > atPosition && dotPosition < (string.length()-2) ) {
-            //Loop igennem alle vores participants fra static arrayliste "participants"
-            for (Participant foundParticipant: participantsInTheTeam) {
-                //se om der er en matchende email
-                if (foundParticipant.getEmail().toLowerCase().equals(string)){
-                    //metode som finder den i arraylisten og fjerner den fra systemet
-                    if (findAndRemove(foundParticipant, participantsInTheTeam)){
-                        return;
+            //Tjek hvis det er en email
+            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (string.length()-2) ) {
+                //Loop igennem alle vores participants fra static arrayliste "participants"
+                for (Participant foundParticipant: participantsInTheTeam) {
+                    //se om der er en matchende email
+                    if (foundParticipant.getEmail().toLowerCase().equals(string)){
+                        //metode som finder den i arraylisten og fjerner den fra systemet
+                        if (findAndRemove(foundParticipant, participantsInTheTeam)){
+                            return;
+                        }
                     }
                 }
             }
-        }
 
-        System.out.println("Intet match - Vil du prøve igen?");
-        System.out.println("1) Ja \t 2) Nej");
-        String answer = input.next();
-        if (answer.equals("1")){
-            removeParticipant();
+            System.out.println("Intet match - Vil du prøve igen?");
+            System.out.println("1) Ja \t 2) Nej");
+            String answer = input.next();
+            if (answer.equals("1")){
+                removeParticipant();
+            }
+        } else{
+            //hvis der ikke er nogen deltagere
+            System.out.println("Ingen deltagere i holdet");
         }
-
     }
 
     private boolean findAndRemove (Participant foundParticipant, ArrayList<Participant> participantsInTheTeam){

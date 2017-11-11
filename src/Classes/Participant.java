@@ -127,5 +127,6 @@ public class Participant extends Person {
         //fjerner deltageren fra deltagerlisten
         participants.remove(index);
 
+
     }
 }
