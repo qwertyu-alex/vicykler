@@ -1,37 +1,41 @@
 package Actions;
+import Classes.Firm;
 import Classes.Team;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class SearchForTeam {
-    public SearchForTeam(){}
+public class SearchForFirm {
+    public SearchForFirm(){}
 
-    public Team run (ArrayList<Team> teams){
+    public Firm run (ArrayList<Firm> firms){
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Hold:");
-        for (Team team : teams) {
-            System.out.println(team.getTeamName());
+        System.out.println("Firmaer:");
+        for (Firm firm: firms) {
+            System.out.println(firm.getFirmName());
         }
 
+
         while (true){
-            System.out.println("Indtast holdnavn:");
-            String teamName = input.next().toLowerCase();
+            System.out.println("Indtast firmanavn:");
+            String firmName = input.nextLine().toLowerCase();
             //Loop igennem alle vores teams fra arrayliste "teams"
-            for (Team foundTeam: teams) {
+            for (Firm foundFirm: firms) {
                 //se om der er en matchende email og retuner hvis der er
-                if (foundTeam.getTeamName().toLowerCase().equals(teamName)){
-                    return foundTeam;
+                if (foundFirm.getFirmName().toLowerCase().equals(firmName)){
+                    return foundFirm;
                 }
             }
 
             System.out.println("Intet match - Vil du prøve igen?");
             System.out.println("1) Ja \t 2) Nej");
+            input.next();
             String answer = input.next();
             if (!answer.equals("1")){
                 return null;
             }
         }
     }
+
 }

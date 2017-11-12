@@ -1,9 +1,6 @@
 package Actions;//Astrid Christensen
 
-import Classes.Admin;
-import Classes.Participant;
-import Classes.Person;
-import Classes.TeamCaptain;
+import Classes.*;
 import Data.Data;
 
 import java.util.Scanner;
@@ -151,9 +148,20 @@ public class Menu {
                 //indsæt metode
                 break;
             case 4:
-                //indsæt metode
+
+                //Ud fra en liste over alle firmaer, så vælges der et speficikt firma,
+                //det firma en liste af hold, og et af holdene bliver valgt
+                new ShowTeamInformation().run(
+                    new SearchForTeam().run(
+                        new SearchForFirm().run(Firm.getFirmList()).getTeamList()
+                ));
                 break;
             case 5:
+                for (Firm firm :Firm.getFirmList()) {
+                    for (Team team : firm.getTeamList()) {
+                        new ShowTeamInformation().run(team);
+                    }
+                }
                 //indsæt metode
                 break;
             case 6:
