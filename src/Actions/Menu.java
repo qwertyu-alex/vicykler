@@ -9,14 +9,19 @@ import Data.Data;
 import java.util.Scanner;
 
 public class Menu {
-    static Scanner input = new Scanner(System.in);
-    TeamCaptain tea6;
+    private Scanner input = new Scanner(System.in);
 
-    public Menu(){
-    }
+    //contructor
+    public Menu(){}
 
     //default run
+
     public void run(){
+        showGuestMenu();
+    }
+
+    //run med data
+    public void run(Data data){
         showGuestMenu();
     }
 
@@ -34,10 +39,10 @@ public class Menu {
         if (person instanceof Participant){
             showParticpantsMenu((Participant) person);
         }
-    }
 
-    public void run(Data data){
-        showGuestMenu();
+        if (person == null){
+            showGuestMenu();
+        }
     }
 
 
@@ -47,15 +52,14 @@ public class Menu {
             System.out.println("1) Se statistikker");
             System.out.println("2) Login");
             System.out.println("3) Opret bruger");
-            switch(input.nextInt()){
-                case 1:
+            switch((input.next())){
+                case "1":
                     //indsæt metode
                     break;
-                case 2:
-                    new Login().run(this);
-                    run();
+                case "2":
+                    run(new Login().run(this));
                     break;
-                case 3:
+                case "3":
                     new CreateParticipant().run();
                     run();
                     break;
@@ -82,38 +86,38 @@ public class Menu {
         System.out.println("11) Slet hold");//tjek
 
 
-        switch(input.nextInt()){
-            case 1:
+        switch((input.next())){
+            case "1":
                 //indsæt metode
                 break;
-            case 2:
+            case "2":
                 //indsæt metode
                 break;
-            case 3:
+            case "3":
                 //indsæt metode
                 break;
-            case 4:
+            case "4":
                 //indsæt metode
                 break;
-            case 5:
+            case "5":
                 //indsæt metode
                 break;
-            case 6:
+            case "6":
                 //indsæt metode
                 break;
-            case 7:
+            case "7":
                 //indsæt metode
                 break;
-            case 8:
+            case "8":
                 //indsæt metode
                 break;
-            case 9:
+            case "9":
                 //indsæt metode
                 break;
-            case 10:
+            case "10":
                 //indsæt metode
                 break;
-            case 11:
+            case "11":
                 //indsæt metode
                 break;
             default:
@@ -137,9 +141,13 @@ public class Menu {
                 run(new CreateTeam().run(participant));
                 break;
             case 2:
+                new ParticipantInformation().run(new SearchForParticipant().run(Participant.getParticipants()));
+                run(participant);
                 //indsæt metode
                 break;
             case 3:
+                new ShowTeamsInFirmAndTeamCaptains().run(participant.getFirm());
+                run(participant);
                 //indsæt metode
                 break;
             case 4:

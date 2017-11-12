@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 public class Firm {
     private String firmName;
-    private int numberOfFirmParticipants;
 
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<Team> teamList = new ArrayList<>();
 
-    private static int numberOfFirms;
     private static ArrayList<Firm> firmList = new ArrayList<>();
 
     //Contructor
@@ -19,14 +17,12 @@ public class Firm {
         this.firmName = firmName;
 
         //Static variable definitioner
-        numberOfFirms++;
         firmList.add(this);
     }
 
     //Addere
     public void addTeam (Team team){
         teamList.add(team);
-        numberOfFirmParticipants += team.getNumberOfTeamParticipants();
     }
 
     //Setter
@@ -40,6 +36,11 @@ public class Firm {
     }
 
     public int getNumberOfFirmParticipants() {
+        int numberOfFirmParticipants = 0;
+
+        for (Team team : this.teamList) {
+            numberOfFirmParticipants += team.getParticipants().size();
+        }
         return numberOfFirmParticipants;
     }
 
@@ -47,16 +48,13 @@ public class Firm {
         return participants;
     }
 
-    public ArrayList<Team> getTeam() {
-        return teamList;
-    }
-
     public ArrayList<Team> getTeamList() {
         return teamList;
     }
 
+    //Static metoder
     public static int getNumberOfFirms() {
-        return numberOfFirms;
+        return firmList.size();
     }
 
     public static ArrayList<Firm> getFirmList() {

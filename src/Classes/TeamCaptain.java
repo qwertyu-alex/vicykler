@@ -1,6 +1,6 @@
 package Classes;//Alexander Van Le && Oliver Langeee
 
-import java.util.*;
+import Actions.SearchForParticipant;
 import java.util.ArrayList;
 
 public class TeamCaptain extends Participant {
@@ -16,61 +16,42 @@ public class TeamCaptain extends Participant {
         super(name, email, password, cyclistType);
     }
 
+    @Override
+    public void setTeam(Team team) {
+        super.setTeam(team);
+        if (team.getTeamCaptain() != this){
+            team.setTeamCaptain(this);
+        }
+    }
+
 
     public void removeParticipant(){
-        Scanner input = new Scanner(System.in);
-        String string;
         ArrayList<Participant> participantsInTheTeam = this.getTeam().getParticipants();
-
 
         //tjek hvis der er deltagere i holdet
         if (participantsInTheTeam.size() > 0){
-            System.out.println("Hvem vil du fjerne?");
+            System.out.println("Emailliste over folk på holdet:");
             for (Participant participant: participantsInTheTeam ) {
                 if (participant != this){
                     System.out.println(participant.getEmail());
                 }
             }
-            //string kan være email eller ID
-            string = input.next().toLowerCase();
 
-            int atPosition = string.indexOf("@");
-            int dotPosition = string.lastIndexOf('.');
+            //Tjek om emailen er i listen participantsInTheTeam
+            Participant foundParticipant = (new SearchForParticipant().run(participantsInTheTeam));
 
-            //Tjek hvis det er en email
-            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (string.length()-2) ) {
-                //Loop igennem alle vores participants fra static arrayliste "participants"
-                for (Participant foundParticipant: participantsInTheTeam) {
-                    //se om der er en matchende email
-                    if (foundParticipant.getEmail().toLowerCase().equals(string)){
-                        //metode som finder den i arraylisten og fjerner den fra systemet
-                        if (findAndRemove(foundParticipant, participantsInTheTeam)){
-                            return;
-                        }
-                    }
-                }
+            //Fjern participant
+            if (foundParticipant != null){
+                System.out.println("Deltager, " + foundParticipant.getName() + ", er fjernet fra listen");
+                foundParticipant.removeParticipant();
+                foundParticipant = null;
+            } else {
+                System.out.println("Ingen personer er fjernet fra holdet");
             }
 
-            System.out.println("Intet match - Vil du prøve igen?");
-            System.out.println("1) Ja \t 2) Nej");
-            String answer = input.next();
-            if (answer.equals("1")){
-                removeParticipant();
-            }
         } else{
             //hvis der ikke er nogen deltagere
             System.out.println("Ingen deltagere i holdet");
         }
     }
-
-    private boolean findAndRemove (Participant foundParticipant, ArrayList<Participant> participantsInTheTeam){
-        //find index af participant i arrayliste "participants"
-        int i = participantsInTheTeam.indexOf(foundParticipant);
-        System.out.println("Deltager, " + foundParticipant.getName() + ", er fjernet fra listen");
-        System.out.println();
-        foundParticipant.removeParticipant(i);
-        foundParticipant = null;
-        return true;
-    }
-
 }

@@ -1,0 +1,39 @@
+package Actions;
+
+import Classes.Participant;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SearchForParticipant {
+    public SearchForParticipant(){}
+
+    public Participant run(ArrayList<Participant> participants){
+        Scanner input = new Scanner(System.in);
+
+        while (true){
+            System.out.println("Indtast email:");
+            String string = input.next().toLowerCase();
+            //find @ og . i strengen
+            int atPosition = string.indexOf("@");
+            int dotPosition = string.lastIndexOf('.');
+
+            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (string.length()-2) && string.lastIndexOf("@") == string.indexOf("@") ) {
+                //Loop igennem alle vores participants fra arrayliste "participants"
+                for (Participant foundParticipant: participants) {
+                    //se om der er en matchende email og retuner hvis der er
+                    if (foundParticipant.getEmail().toLowerCase().equals(string)){
+                        return foundParticipant;
+                    }
+                }
+            }
+            System.out.println("Intet match - Vil du prøve igen?");
+            System.out.println("1) Ja \t 2) Nej");
+            String answer = input.next();
+            if (!answer.equals("1")){
+                return null;
+            }
+        }
+
+    }
+}

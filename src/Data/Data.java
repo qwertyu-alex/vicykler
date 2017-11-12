@@ -37,9 +37,10 @@ public class Data {
         par3.setTeam(team1);
         par4.setTeam(team1);
 
-        TeamCaptain tc1 = new TeamCaptain(new Participant("Frodo DatFrodo", "frodo@mail.com","Alex1", "Master"));
+        TeamCaptain tc1 = new TeamCaptain(new Participant("Frodo DatFrodo", "frodo@gmail.com","Alex1", "Master"));
         TeamCaptain tc2 = new TeamCaptain("Hej", "lol@.@", "Hej2", "Master");
         tc1.setTeam(team1);
+        tc2.setTeam(team2);
 
         //Folk fra død
         Participant ppar1 = new Participant("Kesi", "k@mail.com","Alex1", "Master");

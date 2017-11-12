@@ -8,8 +8,6 @@ import Actions.Menu;
 
 
 public class MainController {
-
-    Scanner input = new Scanner(System.in);
     //private Data.Data data;
 
     public MainController(){

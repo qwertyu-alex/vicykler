@@ -63,10 +63,16 @@ public class Participant extends Person {
     }
 
     public Team getTeam() {
+        if (team == null){
+            return null;
+        }
         return team;
     }
 
     public Firm getFirm() {
+        if (firm == null){
+            return null;
+        }
         return firm;
     }
 
@@ -120,12 +126,12 @@ public class Participant extends Person {
     }
 
 
-    public void removeParticipant(int index){
+    public void removeParticipant(){
         //fjerner deltageren fra personer
         this.removePerson(this);
 
         //fjerner deltageren fra deltagerlisten
-        participants.remove(index);
+        participants.remove(this);
 
 
     }

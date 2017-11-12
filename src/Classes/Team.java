@@ -6,7 +6,7 @@ public class Team {
     private String teamName;
     private int numberOfTeamParticipants;
     private Firm firm;
-    private Participant teamCaptain;
+    private TeamCaptain teamCaptain;
 
     private ArrayList <Participant> participants = new ArrayList<>();
 
@@ -47,7 +47,7 @@ public class Team {
         return participants;
     }
 
-    public Participant getTeamCaptain() {
+    public TeamCaptain getTeamCaptain() {
         return teamCaptain;
     }
 
@@ -61,8 +61,11 @@ public class Team {
         this.teamName = teamName;
     }
 
-    public void setTeamCaptain(Participant teamCaptain) {
+    public void setTeamCaptain(TeamCaptain teamCaptain) {
         this.teamCaptain = teamCaptain;
+        if (teamCaptain.getTeam() != this){
+            teamCaptain.setTeam(this);
+        }
     }
 
     //Remove

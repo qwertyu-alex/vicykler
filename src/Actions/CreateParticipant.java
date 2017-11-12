@@ -17,7 +17,7 @@ public class CreateParticipant {
         String participantName = validateName();
 
         //GetAge
-        int age = validateAge();
+        //int age = validateAge();
 
         //GetType
         String cyclistType = validateType(participantTypes);
@@ -107,7 +107,7 @@ public class CreateParticipant {
         int dotPosition = email.lastIndexOf('.');
 
         do {
-            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (email.length()-2) ) {
+            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (email.length()-2) && email.lastIndexOf("@") == email.indexOf("@")) {
                 System.out.println(email);
                 return email;
             } else {

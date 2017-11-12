@@ -50,14 +50,14 @@ public abstract class Person {
         this.password = password;
     }
 
-    public void showStatistic(){
+    public void showStatistics(){
 
     }
 
     //fjern et element fra person arraylisten
-    public boolean removePerson(Participant participant){
-        for (Person person : persons) {
-            if (person.getEmail().equals(participant.getEmail())){
+    public boolean removePerson(Person person){
+        for (Person p : persons) {
+            if (p.getEmail().equals(person.getEmail())){
                 persons.remove(person);
                 person = null;
                 return true;

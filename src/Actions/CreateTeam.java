@@ -9,7 +9,7 @@ import Classes.TeamCaptain;
 
 
 public class CreateTeam {
-    Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
     public CreateTeam(){}
 
     public TeamCaptain run (Participant participant){
@@ -61,10 +61,15 @@ public class CreateTeam {
         boolean error = false;
 
 
-        System.out.println("Hvad skal holdnavnet være? Det må ikke være følgende: ");
-        //print de eksisterende holdnavne ud
-        for (Team team : firm.getTeamList()) {
+        System.out.println("Hvad skal holdnavnet være?");
+
+        //print alle hold i firmaet
+        if (firm.getTeamList().size() != 0){
+            System.out.println("Det må ikke være følgende:");
+            //print de eksisterende holdnavne ud
+            for (Team team : firm.getTeamList()) {
                 System.out.println("\"" + team.getTeamName() + "\"");
+            }
         }
 
         //input navnet på hold

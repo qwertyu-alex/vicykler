@@ -8,7 +8,7 @@ public class Login {
 
     public Login(){}
 
-    public void run(Menu menu){
+    public Person run(Menu menu){
         Scanner input = new Scanner(System.in);
         String email;
         String password;
@@ -20,10 +20,10 @@ public class Login {
 
         //Tjek om der er fundet en bruger
         if (findPerson(email, password) instanceof Person){
-            menu.run(findPerson(email, password));
+            return (findPerson(email, password));
         } else {
             System.out.println("Bruger ikke fundet");
-            menu.run();
+            return null;
         }
     }
 
