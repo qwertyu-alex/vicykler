@@ -58,37 +58,41 @@ public class CreateTeam {
     }
 
     private String validateName(Firm firm){
-        boolean error = false;
+        boolean error;
+        String name = "";
+
+        while (true){
+            error = false;
+
+            System.out.println("Hvad skal holdnavnet være?");
+
+            //print alle hold i firmaet
+            if (firm.getTeamList().size() != 0){
+                System.out.println("Det må ikke være følgende:");
+                //print de eksisterende holdnavne ud
+                for (Team team : firm.getTeamList()) {
+                    System.out.println("\"" + team.getTeamName() + "\"");
+                }
+            }
+
+            //input navnet på hold
+            do {
+                name = input.nextLine();
+            } while (name.equals("\n") || name.length() < 1);
 
 
-        System.out.println("Hvad skal holdnavnet være?");
-
-        //print alle hold i firmaet
-        if (firm.getTeamList().size() != 0){
-            System.out.println("Det må ikke være følgende:");
-            //print de eksisterende holdnavne ud
+            //Tjekke hvis der er andre hold i virksomheden som hedder det samme
             for (Team team : firm.getTeamList()) {
-                System.out.println("\"" + team.getTeamName() + "\"");
+                if (team.getTeamName().toLowerCase().equals(name.toLowerCase())){
+                    error = true;
+                }
+            }
+
+            System.out.println();
+
+            if (!error){
+                return name;
             }
         }
-
-        //input navnet på hold
-        String name = input.nextLine();
-
-        //Tjekke hvis der er andre hold i virksomheden som hedder det samme
-        for (Team team : firm.getTeamList()) {
-            if (team.getTeamName().toLowerCase().equals(name.toLowerCase())){
-                error = true;
-            }
-        }
-
-        System.out.println();
-
-        if (error){
-            validateName(firm);
-        } else {
-            return name;
-        }
-        return null;
     }
 }
