@@ -54,7 +54,7 @@ public class Menu {
                     //indsæt metode
                     break;
                 case "2":
-                    run(new Login().run(this));
+                    run(new Login().run());
                     break;
                 case "3":
                     new CreateParticipant().run();

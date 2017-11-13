@@ -4,21 +4,18 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Data.Data;
 
+
+
 public class Admin extends Person {
     //attribut
     private ArrayList<Participant> participants;
-    private ArrayList<Firm> firms;
     private ArrayList<Team> teams;
     private Data data;
-    private Scanner input;
+    private Scanner input = new Scanner(System.in);
 
     //Constructor
     public Admin(String name, String email, String password){
         super(name,email,password);
-        this.participants = new ArrayList<>();
-        this.firms = new ArrayList<>();
-        this.teams = new ArrayList<>();
-        this.input = new Scanner(System.in);
     }
 
     public void removeParticipant(Participant participant){
@@ -37,6 +34,8 @@ public class Admin extends Person {
 
     //Mikkel
     public void addFirm(){
+        ArrayList<Firm> firms =  Firm.getFirmList();
+
         System.out.println("Tilføj firma menu");
         System.out.println("Indtast navn på det nye firma");
         String firmName = input.nextLine();
@@ -44,10 +43,14 @@ public class Admin extends Person {
         System.out.printf("Du har nu tilføjet firmaet %s til listen over firmaer",firmName);
     }
     public void removeFirm(){
+        ArrayList<Firm> firms =  Firm.getFirmList();
+
         System.out.println("Slet firma menu");
         System.out.println("Liste over firmaer");
         System.out.printf("%-5s %s","Nr:","Firmanavn");
         int i = 1;
+
+
         for(Firm firm : firms){
             System.out.printf("\n%-5d %s",i++,firm.getFirmName());
         }
@@ -57,6 +60,8 @@ public class Admin extends Person {
         firms.remove(removeFirm-1);
     }
     public void changeFirmName(){
+        ArrayList<Firm> firms =  Firm.getFirmList();
+
         System.out.println("Ændre firma navn menu");
         System.out.printf("%-5s %s","Nr:","Firmanavn");
         int i = 1;
@@ -68,26 +73,17 @@ public class Admin extends Person {
         do {
             System.out.println("\nIndtast nummmer på firma du vil ændre navn på");
             numOfFirm = input.nextInt();
-            System.out.printf("Vil du ændre navnet på firmaet %s (j/n)", firms.get(numOfFirm - 1));
+            System.out.printf("Vil du ændre navnet på firmaet %s (j/n)", firms.get(numOfFirm - 1).getFirmName());
             String answer = input.nextLine();
             if (answer.equalsIgnoreCase("j"))
                 safetyCheck = true;
         }while(!safetyCheck);
-        System.out.printf("Hvad vil du ændre firmaet %s's navn til?",firms.get(numOfFirm-1));
+        System.out.printf("Hvad vil du ændre firmaet %s's navn til?",firms.get(numOfFirm-1).getFirmName());
         String newFirmName = input.nextLine();
         firms.get(numOfFirm-1).setFirmName(newFirmName);
     }
 
-
-    //Getters
-    public ArrayList<Participant> getParticipants() {
-        return participants;
-    }
-    public ArrayList<Firm> getFirms() {
-        return firms;
-    }
-    public ArrayList<Team> getTeams() {
-        return teams;
+    public void addAdmin(){
 
     }
 }

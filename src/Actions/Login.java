@@ -8,7 +8,7 @@ public class Login {
 
     public Login(){}
 
-    public Person run(Menu menu){
+    public Person run(){
         Scanner input = new Scanner(System.in);
         String email;
         String password;
