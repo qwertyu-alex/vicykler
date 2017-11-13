@@ -15,25 +15,25 @@ public class SearchForFirm {
 
         System.out.println("Firmaer:");
         for (Firm firm: firms) {
-            System.out.println(firm.getFirmName());
+            System.out.println(firm.getFirmID() + " " + firm.getFirmName());
         }
 
 
         while (true){
-            System.out.println("Indtast firmanavn:");
-            String firmName = input.nextLine().toLowerCase();
+            System.out.println("Indtast firmaets ID-nummer:");
+            String firmID = input.nextLine();
             //Loop igennem alle vores teams fra arrayliste "teams"
             for (Firm foundFirm: firms) {
                 //se om der er en matchende email og retuner hvis der er
-                if (foundFirm.getFirmName().toLowerCase().equals(firmName)){
+                if (foundFirm.getFirmID().equals(firmID)){
                     return foundFirm;
                 }
             }
 
             System.out.println("Intet match - Vil du prøve igen?");
-            System.out.println("1) Ja \t 2) Nej");
+            System.out.println("-1) Ja \t 0) Nej");
             String answer = input.next();
-            if (!answer.equals("1")){
+            if (!answer.equals("Ja")){
                 return null;
             }
         }

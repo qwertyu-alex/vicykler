@@ -4,19 +4,24 @@ import java.util.ArrayList;
 
 public class Firm {
     private String firmName;
+    private String firmID;
+
+    private static int exclusiveFirmID = 0;
+    private static ArrayList<Firm> firmList = new ArrayList<>();
 
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<Team> teamList = new ArrayList<>();
 
-    private static ArrayList<Firm> firmList = new ArrayList<>();
 
     //Contructor
     public Firm(String firmName) {
 
         //Variable definitioner
         this.firmName = firmName;
+        this.firmID = "#" + Integer.toString(exclusiveFirmID + 1);
 
         //Static variable definitioner
+        exclusiveFirmID++;
         firmList.add(this);
     }
 
@@ -33,6 +38,10 @@ public class Firm {
     //Getter
     public String getFirmName() {
         return firmName;
+    }
+
+    public String getFirmID() {
+        return firmID;
     }
 
     public int getNumberOfFirmParticipants() {
@@ -59,6 +68,10 @@ public class Firm {
 
     public static ArrayList<Firm> getFirmList() {
         return firmList;
+    }
+
+    public static int getExclusiveFirmID() {
+        return exclusiveFirmID;
     }
 
     //Get fordeling af hold - mangler!
