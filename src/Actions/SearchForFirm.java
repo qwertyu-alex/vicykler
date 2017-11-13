@@ -1,3 +1,5 @@
+//Alexander Van Lee && Oliver Lange (fiks lige så man kan klikke på nummer uden for)
+
 package Actions;
 import Classes.Firm;
 import Classes.Team;
@@ -30,7 +32,6 @@ public class SearchForFirm {
 
             System.out.println("Intet match - Vil du prøve igen?");
             System.out.println("1) Ja \t 2) Nej");
-            input.next();
             String answer = input.next();
             if (!answer.equals("1")){
                 return null;

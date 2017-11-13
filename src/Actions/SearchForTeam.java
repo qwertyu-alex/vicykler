@@ -1,3 +1,5 @@
+// Alexander Van Lee && Oliver Lange
+
 package Actions;
 import Classes.Team;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class SearchForTeam {
 
         while (true){
             System.out.println("Indtast holdnavn:");
-            String teamName = input.next().toLowerCase();
+            String teamName = input.nextLine().toLowerCase();
             //Loop igennem alle vores teams fra arrayliste "teams"
             for (Team foundTeam: teams) {
                 //se om der er en matchende email og retuner hvis der er

@@ -1,4 +1,6 @@
-package Actions;//Astrid Christensen
+//Astrid Christensen
+
+package Actions;
 
 import Classes.*;
 import Data.Data;
@@ -131,7 +133,7 @@ public class Menu {
         System.out.println("3) Overblik over et firmas hold og tilhørende holdkaptajn"); //tjek
         System.out.println("4) Se information om et hold og dets deltagere"); //tjek
         System.out.println("5) Oplysninger om alle tilmeldte hold og deres deltagere"); //tjek
-        System.out.println("6) Statestik over fordelingen af hold på firmaerne"); //tjek
+        System.out.println("6) Statistik over fordelingen af hold på firmaerne"); //tjek
 
         switch(input.nextInt()){
             case 1:
@@ -151,10 +153,10 @@ public class Menu {
 
                 //Ud fra en liste over alle firmaer, så vælges der et speficikt firma,
                 //det firma en liste af hold, og et af holdene bliver valgt
-                new ShowTeamInformation().run(
-                    new SearchForTeam().run(
-                        new SearchForFirm().run(Firm.getFirmList()).getTeamList()
-                ));
+                Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
+                Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
+                new ShowTeamInformation().run(foundTeam);
+                run(participant);
                 break;
             case 5:
                 for (Firm firm :Firm.getFirmList()) {
@@ -162,10 +164,9 @@ public class Menu {
                         new ShowTeamInformation().run(team);
                     }
                 }
-                //indsæt metode
                 break;
             case 6:
-                //indsæt metode
+                new ShowTeamDistrubtionOfFirms().run();
                 break;
             default:
                 break;
@@ -207,7 +208,12 @@ public class Menu {
                 //indsæt metode
                 break;
             case 7:
-                //indsæt metode
+                //Ud fra en liste over alle firmaer, så vælges der et speficikt firma,
+                //det firma en liste af hold, og et af holdene bliver valgt
+                Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
+                Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
+                new ShowTeamInformation().run(foundTeam);
+                run(teamCaptain);
                 break;
             case 8:
                 //indsæt metode

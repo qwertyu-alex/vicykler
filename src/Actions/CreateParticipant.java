@@ -1,4 +1,6 @@
-package Actions;//Oliver Lange && Alexander Van Le
+//Alexander Van Le && Oliver Lange
+
+package Actions;
 
 import Classes.Participant;
 

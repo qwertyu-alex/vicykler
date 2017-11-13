@@ -1,4 +1,4 @@
-package Classes;//Alexander Van Le && Oliver Langeee
+package Classes;//Alexander Van Le && Oliver Lange
 
 import Actions.SearchForParticipant;
 import java.util.ArrayList;

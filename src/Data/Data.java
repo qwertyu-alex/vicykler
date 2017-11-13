@@ -1,3 +1,5 @@
+//Mikkel Storm
+
 package Data;
 
 import Classes.Admin;
@@ -6,7 +8,6 @@ import Classes.Participant;
 import Classes.TeamCaptain;
 import Classes.Team;
 
-//Credits to Mikkel
 public class Data {
 
     //Constructor

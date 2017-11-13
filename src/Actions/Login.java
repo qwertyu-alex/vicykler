@@ -1,4 +1,6 @@
-package Actions;//Alexander Le && Oliver Lange.,-æøæø
+//Alexander Le && Oliver Lange
+
+package Actions;
 import Actions.Menu;
 import Classes.Person;
 
