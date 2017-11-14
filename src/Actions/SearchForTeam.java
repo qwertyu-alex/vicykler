@@ -1,4 +1,4 @@
-// Alexander Van Lee && Oliver Lange (fiks nummer)
+// Alexander Van Lee && Oliver Lange
 
 package Actions;
 import Classes.Team;

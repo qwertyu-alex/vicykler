@@ -1,4 +1,4 @@
-//Alexander Van Lee && Oliver Lange (fiks lige så man kan klikke på nummer uden for)
+//Alexander Van Lee && Oliver Lange
 
 package Actions;
 import Classes.Firm;
