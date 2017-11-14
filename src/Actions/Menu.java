@@ -72,22 +72,24 @@ public class Menu {
     //Classes.Admin menu
     private void showAdminMenu(Admin admin){
         System.out.println("Classes.Admin menu");
-        System.out.println("1) Tilføj firma"); //tjek
+        System.out.println("1) Tilføj firma");
         System.out.println("2) Slet deltager"); //tjek
         System.out.println("3) Opret et hold"); //tjek Opret hold
-        System.out.println("4) Se information om en deltager"); //tjek Oplysninger om deltager
+        System.out.println("4) Se information om en deltager");
         System.out.println("5) Overblik over et firmas hold og tilhørende holdkaptajn"); //Oversigt over en virk hold og holdkaptajn
         System.out.println("6) Se information om et hold og dets deltagere"); //tjek
         System.out.println("7) Oplysninger om alle tilmeldte hold og deres deltagere"); //tjek
         System.out.println("8) Statistik over fordelingen af hold på firmaerne"); //tjek
-        System.out.println("9) Ændre i et holds oplysninger");  //tjek
+        System.out.println("9) Ændre i et firma og holds oplysninger");  //tjek
         System.out.println("10) Fjern deltager fra hold"); //tjek
         System.out.println("11) Slet hold");//tjek
+        System.out.println("12) Slet firma");
 
 
         switch((input.next())){
             case "1":
-                //indsæt metode
+                admin.addFirm();
+                run(admin);
                 break;
             case "2":
                 //indsæt metode
@@ -96,7 +98,8 @@ public class Menu {
                 //indsæt metode
                 break;
             case "4":
-                //indsæt metode
+                new ParticipantInformation().run(new SearchForParticipant().run(Participant.getParticipants()));
+                run(admin);
                 break;
             case "5":
                 //indsæt metode
@@ -111,13 +114,28 @@ public class Menu {
                 //indsæt metode
                 break;
             case "9":
-                //indsæt metode
+                System.out.println("Ændre i et firma og holds oplysninger");
+                System.out.println( "Tast 1 for at ændre firma navn" +
+                                    "\nTast 2 for at ændre holds navn");
+                int inputAnswer = input.nextInt();
+                if (inputAnswer == 1) {
+                    admin.changeFirmName();
+                }else if (inputAnswer == 2){
+//                    admin.changeTeamName();
+                }else {
+                    System.out.println("Noget gik galt. Du bliver ført tilbage til admin menu");
+                    run(admin);
+                }
                 break;
             case "10":
                 //indsæt metode
                 break;
             case "11":
                 //indsæt metode
+                break;
+            case "12":
+                admin.deleteFirm();
+                run(admin);
                 break;
             default:
                 break;

@@ -74,7 +74,7 @@ public class Firm {
         return exclusiveFirmID;
     }
 
-    //Get fordeling af hold - mangler!
+
 
 
 }
