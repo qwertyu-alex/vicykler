@@ -10,22 +10,28 @@ public class SearchForTeam {
     public SearchForTeam(){}
 
     public Team run (ArrayList<Team> teams){
+        if (teams.size() < 1){
+            System.out.println("Ingen hold");
+            return null;
+        }
+
+
         Scanner input = new Scanner(System.in);
+        int numb = 0;
+
 
         System.out.println("Hold:");
         for (Team team : teams) {
-            System.out.println(team.getTeamName());
+            numb++;
+            System.out.println(numb + ") " + team.getTeamName());
         }
 
         while (true){
-            System.out.println("Indtast holdnavn:");
-            String teamName = input.nextLine().toLowerCase();
+            System.out.println("Indtast holdets nummer:");
+            int choice = input.nextInt();
             //Loop igennem alle vores teams fra arrayliste "teams"
-            for (Team foundTeam: teams) {
-                //se om der er en matchende email og retuner hvis der er
-                if (foundTeam.getTeamName().toLowerCase().equals(teamName)){
-                    return foundTeam;
-                }
+            if (choice < teams.size()+1){
+                return teams.get(choice - 1);
             }
 
             System.out.println("Intet match - Vil du prøve igen?");

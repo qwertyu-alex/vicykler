@@ -9,6 +9,11 @@ public class ShowTeamInformation {
     public ShowTeamInformation(){}
 
     public void run (Team team){
+
+        if (team == null){
+            return;
+        }
+
         int number = 1;
 
         System.out.println("Navn på hold: " + team.getTeamName() + "\t" + "Firma: " + team.getFirm().getFirmName());

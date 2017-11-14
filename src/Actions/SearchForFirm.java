@@ -11,29 +11,33 @@ public class SearchForFirm {
     public SearchForFirm(){}
 
     public Firm run (ArrayList<Firm> firms){
+        if (firms.size() < 1){
+            System.out.println("Ingen firmaer");
+            return null;
+        }
+
         Scanner input = new Scanner(System.in);
+        int numb = 0;
 
         System.out.println("Firmaer:");
         for (Firm firm: firms) {
-            System.out.println(firm.getFirmID() + " " + firm.getFirmName());
+            numb++;
+            System.out.println(numb + ") " + firm.getFirmName());
         }
 
 
         while (true){
-            System.out.println("Indtast firmaets ID-nummer:");
-            String firmID = input.nextLine();
+            System.out.println("Indtast firmaets nummer:");
+            int choice = input.nextInt();
             //Loop igennem alle vores teams fra arrayliste "teams"
-            for (Firm foundFirm: firms) {
-                //se om der er en matchende email og retuner hvis der er
-                if (foundFirm.getFirmID().equals(firmID)){
-                    return foundFirm;
-                }
+            if (choice < firms.size() + 1){
+                return firms.get(choice-1);
             }
 
             System.out.println("Intet match - Vil du prøve igen?");
-            System.out.println("-1) Ja \t 0) Nej");
-            String answer = input.next();
-            if (!answer.equals("Ja")){
+            System.out.println("1) Ja \t 2) Nej");
+            String answer = input.nextLine();
+            if (!answer.equals("1")){
                 return null;
             }
         }
