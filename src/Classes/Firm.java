@@ -74,7 +74,10 @@ public class Firm {
         return exclusiveFirmID;
     }
 
-
+    //Fjerne hold fra ArrayListe
+    public void removeTeam(Team team){
+        teamList.remove(team);
+    }
 
 
 }

@@ -1,4 +1,4 @@
-//Alexander Van Lee
+//Alexander Van Lee & Astrid Christensen
 
 package Actions;
 
@@ -13,6 +13,23 @@ import Classes.TeamCaptain;
 public class CreateTeam {
     private Scanner input = new Scanner(System.in);
     public CreateTeam(){}
+
+
+    public void run(){
+
+        //getFirm
+        Firm firm = validateFirm(null);
+
+        //getName
+        String name = validateName(firm);
+
+        //opret hold
+        Team newTeam = new Team(name, firm);
+
+        System.out.println("Nyt hold oprettet: " + newTeam.getTeamName());
+        System.out.println("");
+
+    }
 
     public TeamCaptain run (Participant participant){
         //getFirm
@@ -39,11 +56,13 @@ public class CreateTeam {
 
     private Firm validateFirm(Participant participant){
         int count = 0;
+        if(participant != null){
+            if (participant.getFirm() != null){
+                System.out.println("Firma: " + participant.getFirm().getFirmName());
+                return participant.getFirm();
+            }
+        }
 
-        if (participant.getFirm() != null){
-            System.out.println("Firma: " + participant.getFirm().getFirmName());
-            return participant.getFirm();
-        } else {
             System.out.println("Vælg et firma:");
             for (Firm firm : Firm.getFirmList()) {
                 count++;
@@ -55,7 +74,6 @@ public class CreateTeam {
             input.nextLine();
 
             return Firm.getFirmList().get(chosenFirm - 1);
-        }
 
     }
 

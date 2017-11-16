@@ -71,7 +71,7 @@ public class Menu {
 
     //Classes.Admin menu
     private void showAdminMenu(Admin admin){
-        System.out.println("Classes.Admin menu");
+        System.out.println("Admin menu");
         System.out.println("1) Tilføj firma");
         System.out.println("2) Slet deltager"); //tjek
         System.out.println("3) Opret et hold"); //tjek Opret hold
@@ -84,6 +84,7 @@ public class Menu {
         System.out.println("10) Fjern deltager fra hold"); //tjek
         System.out.println("11) Slet hold");//tjek
         System.out.println("12) Slet firma");
+        System.out.println("13) Tilføj deltager");
 
 
         switch((input.next())){
@@ -92,10 +93,13 @@ public class Menu {
                 run(admin);
                 break;
             case "2":
-                //indsæt metode
+                admin.removeParticipant();
+                run(admin);
+
                 break;
             case "3":
-                //indsæt metode
+                new CreateTeam().run();
+                run(admin);
                 break;
             case "4":
                 new ParticipantInformation().run(new SearchForParticipant().run(Participant.getParticipants()));
@@ -131,12 +135,15 @@ public class Menu {
                 //indsæt metode
                 break;
             case "11":
-                //indsæt metode
+                admin.removeTeam();
+                run(admin);
                 break;
             case "12":
                 admin.deleteFirm();
                 run(admin);
                 break;
+            case "13":
+                new CreateParticipant().run();
             default:
                 break;
         }

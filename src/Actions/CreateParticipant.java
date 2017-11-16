@@ -15,6 +15,8 @@ public class CreateParticipant {
     public Participant run() {
         String[] participantTypes = {"Master", "Enthusiast", "Cruiser", "Debutant"};
 
+        System.out.println("Opretter deltager");
+
         //GetName
         String participantName = validateName();
 
@@ -37,7 +39,7 @@ public class CreateParticipant {
     }
 
     private String validateName() {
-        System.out.println("Indtast dit fulde navn: ");
+        System.out.println("Indtast deltagernavn: ");
 
         String name = input.nextLine();
 
@@ -52,7 +54,7 @@ public class CreateParticipant {
     }
 
     private int validateAge(){
-        System.out.println("Indtast din alder: ");
+        System.out.println("Indtast alder: ");
         int age;
 
 
@@ -83,7 +85,7 @@ public class CreateParticipant {
         String type = "";
         boolean check = true;
 
-        System.out.println("Indtast nummeret på den type af cyklist, som du er: " + "\n1) " + participantTypes[0] +
+        System.out.println("Indtast nummeret på den typen af cyklist: " + "\n1) " + participantTypes[0] +
                 "\n2) " + participantTypes[1] + "\n3) " + participantTypes[2] + "\n4) " + participantTypes[3]);
 
         do {
@@ -103,7 +105,7 @@ public class CreateParticipant {
     }
 
     private String validateEmail() {
-        System.out.println("Indtast din Email: ");
+        System.out.println("Indtast Email: ");
         String email = input.next();
         int atPosition = email.indexOf("@");
         int dotPosition = email.lastIndexOf('.');
@@ -125,7 +127,7 @@ public class CreateParticipant {
     }
 
     private String validatePassword() {
-        System.out.println("Indtast dit password: ");
+        System.out.println("Indtast password: ");
         String password = input.next();
         int lenght = password.length();
         int numberCount = 0;
@@ -163,23 +165,23 @@ public class CreateParticipant {
 
             //error checking
             if (onlyNumAndLetter){
-                System.out.println("Dit password må kun indeholde bogstaver og tal");
+                System.out.println("Password må kun indeholde bogstaver og tal");
                 error = true;
             }
 
 
             if (numberCount < 1) {
-                System.out.println("Dit password skal indeholde mindst ét tal");
+                System.out.println("Password skal indeholde mindst ét tal");
                 error = true;
             }
 
             if (capitalCount < 1) {
-                System.out.println("Dit password skal indeholde mindst ét stort bogstav");
+                System.out.println("Password skal indeholde mindst ét stort bogstav");
                 error = true;
             }
 
             if (lenght < 4 || lenght > 16) {
-                System.out.println("Dit password skal være mellem 4 - 16 karakterer langt");
+                System.out.println("Password skal være mellem 4 - 16 karakterer langt");
                 error = true;
             }
 
@@ -196,7 +198,7 @@ public class CreateParticipant {
     }
 
     private boolean matchPassword(String password){
-            System.out.println("Indtast dit password igen: ");
+            System.out.println("Indtast password igen: ");
             String matchPassword = input.next();
             boolean valid;
             do {

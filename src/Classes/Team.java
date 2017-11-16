@@ -73,4 +73,10 @@ public class Team {
         participants.remove(participant);
     }
 
+    //Astrid
+    public void removeTeam(){
+        this.firm.removeTeam(this);
+    }
+
+
 }

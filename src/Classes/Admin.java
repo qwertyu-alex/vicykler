@@ -9,7 +9,10 @@ import Actions.CreateTeam;
 import Data.Data;
 import Classes.Team;
 import Classes.Firm;
-
+import Actions.CreateParticipant;
+import Actions.SearchForParticipant;
+import Actions.CreateTeam;
+import Actions.SearchForTeam;
 
 
 public class Admin extends Person {
@@ -26,21 +29,47 @@ public class Admin extends Person {
 
 
     //Astrid
+
     //Sletter deltager fra programmet
     public void deleteParticipant(){
     }
+
     //sletter deltager fra hold
-    public void removeParticipant(Participant participant){
-        participants.remove(participant);
-    }
-    public void addParticipant(Participant participant){
+    public void removeParticipant(){
+
+        System.out.println("Sletter deltager");
+
+        //Denne metode finder en participant ud fra en mail
+        Participant newParticipant = new SearchForParticipant().run(Participant.getParticipants());
+
+        //Denne metode sletter deltageren
+        System.out.println("Sletter " + newParticipant.getName());
+        newParticipant.removeParticipant();
+
+
     }
     public void removeTeam(){
 
-    }
-    public void addTeam(){
+        ArrayList<Team> listTeam = new ArrayList<>();
+
+        //Oprettet en liste over alle hold der findes
+        for (Firm firm:Firm.getFirmList()) {
+            for (Team team:firm.getTeamList()) {
+                listTeam.add(team);
+            }
+        }
+
+        //Her finder det hold i listen vi vil slette
+        Team foundTeam = new SearchForTeam().run(listTeam);
+
+        System.out.println("Du har valgt hold " + foundTeam.getTeamName());
+        foundTeam.removeTeam();
+        foundTeam = null;
+
 
     }
+
+
 
     //Mikkel
     //Denne metode tilføjer et firma til listen over firmaer.
