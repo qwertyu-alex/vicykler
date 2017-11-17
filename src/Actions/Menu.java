@@ -125,7 +125,7 @@ public class Menu {
                 if (inputAnswer == 1) {
                     admin.changeFirmName();
                 }else if (inputAnswer == 2){
-//                    admin.changeTeamName();
+                    admin.changeTeamName();
                 }else {
                     System.out.println("Noget gik galt. Du bliver ført tilbage til admin menu");
                     run(admin);
