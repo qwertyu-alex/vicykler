@@ -213,7 +213,8 @@ public class Menu {
 
         switch(input.nextInt()){
             case 1:
-                //indsæt metode
+                new RemoveTeamAsTeamCaptain().run(teamCaptain);
+                run(teamCaptain);
                 break;
             case 2:
                 //indsæt metode
