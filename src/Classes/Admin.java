@@ -130,23 +130,33 @@ public class Admin extends Person {
         firms.get(numOfFirm-1).setFirmName(newFirmName);
     }
     //Nedenstående metode giver mulighed for at ændre et holds navn
-//    public void changeTeamName(){
-//        //Henter Arraylisten over teams
-//        ArrayList<Team> teams = Team.getTeamList();
-//        //Printer alle hold ud
-//        System.out.println("Ændre hold navn");
-//        System.out.printf("%-5s %s","Nr:","Hold navn");
-//        int i = 1;
-//        for(Team team = teams){
-//            System.out.printf("\n%-5d %s",i++,Team.getTeamName());
-//        }
-//        //Giver mulighed for at vælge et firma man vil ændre navn på
-//        System.out.println("\nIndtast nummmer på hold du vil ændre navn på");
-//        int numOfTeam = input.nextInt();
-//        System.out.printf("Hvad vil du ændre holdet %s's navn til?",Team.get(numOfTeam - 1).getTeamName());
-//        String newTeamName = input.nextLine();
-//        Team.get(numOfTeam-1).setTeamName(newTeamName);
-//    }
+    public void changeTeamName(){
+        //Henter Aarraylisten over firmaer
+        ArrayList<Firm> firms = Firm.getFirmList();
+
+        System.out.println("Ændre hold navn menu");
+        System.out.printf("%-5s %s","Nr:","Firma navn");
+        int i = 1;
+        for(Firm firm : firms){
+            System.out.printf("\n%-5d %s",i++,firm.getFirmName());
+        }
+        System.out.println("\nVælg firma du vil ændre et hold navn i");
+        int numOfFirm = input.nextInt()-1;
+        System.out.printf("%-5s %s","Nr:","hold navn");
+        i = 1;
+        for (Team team:firms.get(numOfFirm).getTeamList()) {
+            System.out.printf("\n%-5d %s",i++,team.getTeamName());
+        }
+
+        System.out.println("\nVælg hold du vil ændre navn på");
+        int numOfTeam = input.nextInt()-1;
+        System.out.println("Du har valgt at ændre navnet på holdet: " + firms.get(numOfFirm).getTeamList().get(numOfTeam).getTeamName());
+        System.out.println("Hvad vil du ændre navnet til?");
+        String antibug = input.nextLine();
+        String newTeamName = input.nextLine();
+        firms.get(numOfFirm).getTeamList().get(numOfTeam).setTeamName(newTeamName);
+        System.out.println("Du har ændret navnet på holdet til: " + newTeamName);
+    }
 
     //Opret et hold
     public void createTeam(){
