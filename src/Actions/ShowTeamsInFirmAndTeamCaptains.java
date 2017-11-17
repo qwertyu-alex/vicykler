@@ -16,7 +16,8 @@ public class ShowTeamsInFirmAndTeamCaptains {
             System.out.println(firm.getFirmName());
             if (firm.getTeamList().size() != 0){
                 for (Team team:firm.getTeamList()) {
-                    System.out.println("\tHoldnavn: " + team.getTeamName()+ "\t" + "Holdkaptajn: " + team.getTeamCaptain().getName());
+                    System.out.println("\nHoldnavn: " + team.getTeamName()+ "\n" + "Holdkaptajn: " + team.getTeamCaptain().getName());
+                    System.out.println("");
                 }
             }
         } else {

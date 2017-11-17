@@ -132,47 +132,30 @@ public class Admin extends Person {
         firms.get(numOfFirm-1).setFirmName(newFirmName);
     }
     //Nedenstående metode giver mulighed for at ændre et holds navn
-//    public void changeTeamName(){
-//        //Henter Arraylisten over teams
-//        ArrayList<Team> teams = Team.getTeamList();
-//        //Printer alle hold ud
-//        System.out.println("Ændre hold navn");
-//        System.out.printf("%-5s %s","Nr:","Hold navn");
-//        int i = 1;
-//        for(Team team = teams){
-//            System.out.printf("\n%-5d %s",i++,Team.getTeamName());
-//        }
-//        //Giver mulighed for at vælge et firma man vil ændre navn på
-//        System.out.println("\nIndtast nummmer på hold du vil ændre navn på");
-//        int numOfTeam = input.nextInt();
-//        System.out.printf("Hvad vil du ændre holdet %s's navn til?",Team.get(numOfTeam - 1).getTeamName());
-//        String newTeamName = input.nextLine();
-//        Team.get(numOfTeam-1).setTeamName(newTeamName);
-//    }
+    public void changeTeamName(){
+        //Henter Arraylisten over teams
 
-    //Opret et hold
-    public void createTeam(){
 
+        //Printer alle hold ud
+        /*System.out.println("Ændre hold navn");
+        System.out.printf("%-5s %s","Nr:","Hold navn");
+        int i = 1;
+        for(Team team = teams){
+            System.out.printf("\n%-5d %s",i++,Firm.getTeamName());
+        }
+
+        //Giver mulighed for at vælge et firma man vil ændre navn på
+        System.out.println("\nIndtast nummmer på hold du vil ændre navn på");
+        int numOfTeam = input.nextInt();
+        System.out.printf("Hvad vil du ændre holdet %s's navn til?",Firm.get(numOfTeam - 1).getTeamName());
+        String newTeamName = input.nextLine();
+        Team.get(numOfTeam-1).setTeamName(newTeamName);*/
     }
+
+
     //Tilføj ekstra admin
-    public void addAdmin(){
-
-    }
-    //Viser informationer om en bestemt deltager
-    public void ParticipantInformation(){
-
-    }
-    //Statistik over et firmaer og tilhørende holdkaptajner
-    public void firmInformation() {
-
-    }
-    //Informationer om hold og deltagere
-    public void teamInformation(){
+    public void addAdmin(){}
 
     }
 
 
-
-
-
-}

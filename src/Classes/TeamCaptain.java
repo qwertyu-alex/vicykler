@@ -54,4 +54,8 @@ public class TeamCaptain extends Participant {
             System.out.println("Ingen deltagere i holdet");
         }
     }
+
+    //Metode til at tilføje deltager til hold
+
+
 }
