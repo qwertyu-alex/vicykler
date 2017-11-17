@@ -439,7 +439,7 @@
       <workItem from="1510501197266" duration="16634000" />
       <workItem from="1510566284988" duration="973000" />
       <workItem from="1510572852996" duration="2063000" />
-      <workItem from="1510907076225" duration="5327000" />
+      <workItem from="1510907076225" duration="5334000" />
     </task>
     <task id="LOCAL-00001" summary="memes">
       <created>1508058702907</created>
@@ -686,11 +686,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510912857476</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="memes">
+      <created>1510912900857</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1510912900857</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115591000" />
+    <option name="totallyTimeSpent" value="115598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
