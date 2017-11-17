@@ -31,6 +31,7 @@ public class Data {
 
         Firm firma1 = generateFirm("Arla");
         Firm firma2 = generateFirm("NONO");
+
         Team team1 = generateTeam("The Sharks", firma1);
         Team team2 =  generateTeam("død", firma1);
 

@@ -14,27 +14,32 @@ public class MainController {
 
 
     public void run(){
+        Person currentPerson = null;
         Data data = new Data();
-
+        GuestController guestController = new GuestController(data);
+        ParticipantController participantController = new ParticipantController(data);
+        TeamCaptainController teamCaptainController = new TeamCaptainController(data);
         AdminController adminController = new AdminController(data);
-        adminController.showAdminMenu();
 
-        /*    if (person instanceof Admin){
-            showAdminMenu((Admin) person);
+        while (true){
+
+            if (currentPerson == null){
+                currentPerson = guestController.showGuestMenu();
+            }
+            if (currentPerson instanceof Participant){
+                currentPerson = participantController.showParticipantsMenu((Participant) currentPerson);
+            }
+
+            if (currentPerson instanceof TeamCaptain){
+                currentPerson = teamCaptainController.showTeamCaptainMenu((TeamCaptain) currentPerson);
+            }
+
+            if (currentPerson instanceof Admin){
+                currentPerson = adminController.showAdminMenu((Admin) currentPerson);
+            }
+
         }
 
-
-        if (person instanceof TeamCaptain){
-            showTeamCaptainMenu((TeamCaptain) person);
-        }
-
-        if (person instanceof Participant){
-            showParticpantsMenu((Participant) person);
-        }
-
-        if (person == null){
-            showGuestMenu();
-        }*/
 
     }
 }

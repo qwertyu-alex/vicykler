@@ -1,10 +1,8 @@
 package Controllers;
 
 import Actions.*;
-import Classes.Admin;
-import Classes.Firm;
-import Classes.Participant;
-import Classes.Team;
+import Classes.*;
+
 import java.util.*;
 import Data.Data;
 
@@ -16,7 +14,7 @@ public class AdminController {
         this.data = data;
     }
 
-    public void showAdminMenu(){
+    public Person showAdminMenu(Admin admin){
         while(true){
             System.out.println("");
             System.out.println("Admin menu");
@@ -33,7 +31,7 @@ public class AdminController {
             System.out.println("11) Slet hold");
             System.out.println("12) Slet firma");
             System.out.println("13) Tilføj deltager");
-            System.out.println("Andet) Log ud");
+            System.out.println("\nAndet) Log ud ");
 
             switch((input.nextLine())){
                 case "1":
@@ -75,7 +73,8 @@ public class AdminController {
                 case "13":
                     addParticipant();
                 default:
-                    return;
+                    System.out.println("Logger ud");
+                    return null;
             }
         }
 
