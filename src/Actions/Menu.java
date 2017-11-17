@@ -71,6 +71,7 @@ public class Menu {
 
     //Classes.Admin menu
     private void showAdminMenu(Admin admin){
+        Participant foundParticipant;
         System.out.println("Admin menu");
         System.out.println("1) Tilføj firma");
         System.out.println("2) Slet deltager"); //tjek
@@ -133,6 +134,15 @@ public class Menu {
                 break;
             case "10":
                 //indsæt metode
+                foundParticipant = new SearchForParticipant().run(Participant.getParticipants());
+                if (foundParticipant != null){
+                    if (foundParticipant.getTeam() != null){
+                        System.out.println("Fjerner " + foundParticipant.getName() + " fra " + foundParticipant.getTeam().getTeamName());
+                        foundParticipant.getTeam().getParticipants().remove(foundParticipant);
+                        foundParticipant.setTeam(null);
+                    }
+                }
+                run(admin);
                 break;
             case "11":
                 admin.removeTeam();
