@@ -117,8 +117,11 @@ public class Participant extends Person {
 
     public void setTeam(Team team) {
         this.team = team;
-        team.addParticipant(this);
-        this.firm = team.getFirm();
+        if (team != null){
+            team.addParticipant(this);
+            this.firm = team.getFirm();
+        }
+
     }
 
     public static void setParticipants(ArrayList<Participant> participants) {

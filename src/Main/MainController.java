@@ -17,9 +17,12 @@ public class MainController {
 
     public void run(){
 
-        Menu menu = new Menu();
+//        Menu menu = new Menu();
+//        Data data = new Data();
+//        menu.run(data);
         Data data = new Data();
-        menu.run(data);
+        Admin admin = new Admin("geh", "geh@he","rewqr");
+        admin.changeTeamName();
 
     }
 }

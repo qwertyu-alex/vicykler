@@ -71,19 +71,19 @@ public class Menu {
 
     //Classes.Admin menu
     private void showAdminMenu(Admin admin){
-        System.out.println("");
+        Participant foundParticipant;
         System.out.println("Admin menu");
         System.out.println("1) Tilføj firma");
-        System.out.println("2) Slet deltager");
-        System.out.println("3) Opret et hold");
+        System.out.println("2) Slet deltager"); //tjek
+        System.out.println("3) Opret et hold"); //tjek Opret hold
         System.out.println("4) Se information om en deltager");
-        System.out.println("5) Overblik over et firmas hold og tilhørende holdkaptajn");
-        System.out.println("6) Se information om et hold og dets deltagere");
-        System.out.println("7) Oplysninger om alle tilmeldte hold og deres deltagere");
-        System.out.println("8) Statistik over fordelingen af hold på firmaerne");
-        System.out.println("9) Ændre i et firma og holds oplysninger");
-        System.out.println("10) Fjern deltager fra hold");
-        System.out.println("11) Slet hold");
+        System.out.println("5) Overblik over et firmas hold og tilhørende holdkaptajn"); //Oversigt over en virk hold og holdkaptajn
+        System.out.println("6) Se information om et hold og dets deltagere"); //tjek
+        System.out.println("7) Oplysninger om alle tilmeldte hold og deres deltagere"); //tjek
+        System.out.println("8) Statistik over fordelingen af hold på firmaerne"); //tjek
+        System.out.println("9) Ændre i et firma og holds oplysninger");  //tjek
+        System.out.println("10) Fjern deltager fra hold"); //tjek
+        System.out.println("11) Slet hold");//tjek
         System.out.println("12) Slet firma");
         System.out.println("13) Tilføj deltager");
 
@@ -103,33 +103,20 @@ public class Menu {
                 run(admin);
                 break;
             case "4":
-                System.out.println("Se information om deltager");
                 new ParticipantInformation().run(new SearchForParticipant().run(Participant.getParticipants()));
                 run(admin);
                 break;
             case "5":
-                Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
-
-                new ShowTeamsInFirmAndTeamCaptains().run(foundFirm);
-                run(admin);
+                //indsæt metode
                 break;
             case "6":
-                Firm foundFirm1 = new SearchForFirm().run(Firm.getFirmList());
-                Team foundTeam = new SearchForTeam().run(foundFirm1.getTeamList());
-                new ShowTeamInformation().run(foundTeam);
-                run(admin);
+                //indsæt metode
                 break;
             case "7":
-                for (Firm firm :Firm.getFirmList()) {
-                    for (Team team : firm.getTeamList()) {
-                        new ShowTeamInformation().run(team);
-                    }
-                }
-                run(admin);
+                //indsæt metode
                 break;
             case "8":
-                new ShowTeamDistrubtionOfFirms().run();
-                run(admin);
+                //indsæt metode
                 break;
             case "9":
                 System.out.println("Ændre i et firma og holds oplysninger");
@@ -147,6 +134,15 @@ public class Menu {
                 break;
             case "10":
                 //indsæt metode
+                foundParticipant = new SearchForParticipant().run(Participant.getParticipants());
+                if (foundParticipant != null){
+                    if (foundParticipant.getTeam() != null){
+                        System.out.println("Fjerner " + foundParticipant.getName() + " fra " + foundParticipant.getTeam().getTeamName());
+                        foundParticipant.getTeam().getParticipants().remove(foundParticipant);
+                        foundParticipant.setTeam(null);
+                    }
+                }
+                run(admin);
                 break;
             case "11":
                 admin.removeTeam();
@@ -167,12 +163,12 @@ public class Menu {
     private void showParticpantsMenu(Participant participant){
 
         System.out.println("Deltager menu");
-        System.out.println("1) Opret et hold");
-        System.out.println("2) Se information om en deltager");
-        System.out.println("3) Overblik over et firmas hold og tilhørende holdkaptajn");
-        System.out.println("4) Se information om et hold og dets deltagere");
-        System.out.println("5) Oplysninger om alle tilmeldte hold og deres deltagere");
-        System.out.println("6) Statistik over fordelingen af hold på firmaerne");
+        System.out.println("1) Opret et hold"); //opret hold tjek
+        System.out.println("2) Se information om en deltager"); //tjek
+        System.out.println("3) Overblik over et firmas hold og tilhørende holdkaptajn"); //tjek
+        System.out.println("4) Se information om et hold og dets deltagere"); //tjek
+        System.out.println("5) Oplysninger om alle tilmeldte hold og deres deltagere"); //tjek
+        System.out.println("6) Statistik over fordelingen af hold på firmaerne"); //tjek
 
         switch(input.nextInt()){
             case 1:
@@ -181,10 +177,12 @@ public class Menu {
             case 2:
                 new ParticipantInformation().run(new SearchForParticipant().run(Participant.getParticipants()));
                 run(participant);
+                //indsæt metode
                 break;
             case 3:
                 new ShowTeamsInFirmAndTeamCaptains().run(participant.getFirm());
                 run(participant);
+                //indsæt metode
                 break;
             case 4:
 
@@ -212,32 +210,26 @@ public class Menu {
 
     //Classes.Team captain menu
     private void showTeamCaptainMenu(TeamCaptain teamCaptain){
-        Participant foundParticipant;
         System.out.println("Holdkaptajn menu for " + teamCaptain.getTeam().getTeamName());
-        System.out.println("1) Slet hold"); //mangler
-        System.out.println("2) Tilføj deltager til hold");
-        System.out.println("3) Fjern deltager fra hold");
-        System.out.println("4) Ændre i et holds oplysninger"); //mangler
-        System.out.println("5) Se information om en deltager");
-        System.out.println("6) Overblik over et firmas hold og tilhørende holdkaptajn");
-        System.out.println("7) Se information om et hold og dets deltagere");
-        System.out.println("8) Oplysninger om alle tilmeldte hold og deres deltagere");
-        System.out.println("9) Statistik over fordelingen af hold på firmaerne");
+        System.out.println("1) Slet hold"); //tjek
+        System.out.println("2) Tilføj deltager til hold"); //tjek
+        System.out.println("3) Fjern deltager fra hold"); //tjek
+        System.out.println("4) Ændre i et holds oplysninger"); //tjek
+        System.out.println("5) Se information om en deltager"); //tjek
+        System.out.println("6) Overblik over et firmas hold og tilhørende holdkaptajn"); //tjek
+        System.out.println("7) Se information om et hold og dets deltagere"); //tjek
+        System.out.println("8) Oplysninger om alle tilmeldte hold og deres deltagere"); //tjek
+        System.out.println("9) Statistik over fordelingen af hold på firmaerne"); //tjek
 
         switch(input.nextInt()){
             case 1:
                 //indsæt metode
                 break;
             case 2:
-                while(true){
-                    foundParticipant = new SearchForParticipant().run(Participant.getParticipants());
-                    if(foundParticipant.getTeam() != null){
-                        foundParticipant.setTeam(teamCaptain.getTeam());
-                    break;
-                    }
-                }
+                //indsæt metode
                 break;
             case 3:
+                //indsæt metode
                 teamCaptain.removeParticipant();
                 run(teamCaptain);
                 break;
@@ -245,32 +237,24 @@ public class Menu {
                 //indsæt metode
                 break;
             case 5:
-                new ParticipantInformation().run(new SearchForParticipant().run(Participant.getParticipants()));
-                run(teamCaptain);
+                //indsæt metode
                 break;
             case 6:
-                Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
-
-                new ShowTeamsInFirmAndTeamCaptains().run(foundFirm);
-                run(teamCaptain);
+                //indsæt metode
                 break;
             case 7:
                 //Ud fra en liste over alle firmaer, så vælges der et speficikt firma,
                 //det firma en liste af hold, og et af holdene bliver valgt
-                /*Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
+                Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
                 Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
                 new ShowTeamInformation().run(foundTeam);
                 run(teamCaptain);
-                break;*/
+                break;
             case 8:
-                for (Firm firm :Firm.getFirmList()) {
-                    for (Team team : firm.getTeamList()) {
-                        new ShowTeamInformation().run(team);
-                    }
-                }
+                //indsæt metode
                 break;
             case 9:
-                new ShowTeamDistrubtionOfFirms().run();
+                //indsæt metode
                 break;
             default:
                 break;

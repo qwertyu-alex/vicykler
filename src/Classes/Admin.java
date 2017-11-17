@@ -140,20 +140,23 @@ public class Admin extends Person {
         System.out.printf("%-5s %s","Nr:","Firma navn");
         int i = 1;
         for(Firm firm : firms){
-            System.out.printf("\n%-5d %s\n",i++,firm.getFirmName());
+            System.out.printf("\n%-5d %s",i++,firm.getFirmName());
         }
-        System.out.println("Vælg firma du vil ændre et hold navn i");
-        int numOfFirm = input.nextInt();
+        System.out.println("\nVælg firma du vil ændre et hold navn i");
+        int numOfFirm = input.nextInt()-1;
         System.out.printf("%-5s %s","Nr:","hold navn");
-        for ( i = 1 ; i < firms.get(numOfFirm).getTeamList().size() ; i++){
-            System.out.printf("\n%-5d %s\n",i++,firms.get(numOfFirm).getTeamList().get(i).getTeamName());
+        i = 1;
+        for (Team team:firms.get(numOfFirm).getTeamList()) {
+            System.out.printf("\n%-5d %s",i++,team.getTeamName());
         }
-        System.out.println("Vælg hold du vil ændre navn på");
-        int numOfTeam = input.nextInt();
-        System.out.println("Du har valgt at ændre navnet på holdet: " + firms.get(numOfFirm-1).getTeamList().get(i-1).getTeamName());
+
+        System.out.println("\nVælg hold du vil ændre navn på");
+        int numOfTeam = input.nextInt()-1;
+        System.out.println("Du har valgt at ændre navnet på holdet: " + firms.get(numOfFirm).getTeamList().get(numOfTeam).getTeamName());
         System.out.println("Hvad vil du ændre navnet til?");
+        String antibug = input.nextLine();
         String newTeamName = input.nextLine();
-        firms.get(numOfFirm-1).getTeamList().get(i-1).setTeamName(newTeamName);
+        firms.get(numOfFirm).getTeamList().get(numOfTeam).setTeamName(newTeamName);
         System.out.println("Du har ændret navnet på holdet til: " + newTeamName);
     }
 
