@@ -96,10 +96,6 @@ public class Participant extends Person {
         return participantID;
     }
 
-    public String getInfo() {
-        //Kode mangler
-        return null;
-    }
 
     //Static Getter
     public static int getNumberOfParticipants() {
@@ -122,6 +118,10 @@ public class Participant extends Person {
             this.firm = team.getFirm();
         }
 
+    }
+
+    public void setFirm(Firm firm){
+        this.firm = firm;
     }
 
     public static void setParticipants(ArrayList<Participant> participants) {

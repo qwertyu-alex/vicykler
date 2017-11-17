@@ -8,6 +8,7 @@ import Data.Data;
 import Actions.Menu;
 
 
+
 public class MainController {
     //private Data.Data data;
 
@@ -20,9 +21,12 @@ public class MainController {
 //        Menu menu = new Menu();
 //        Data data = new Data();
 //        menu.run(data);
+        /*
         Data data = new Data();
         Admin admin = new Admin("geh", "geh@he","rewqr");
         admin.changeTeamName();
+*/
+
 
     }
 }

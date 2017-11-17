@@ -4,6 +4,8 @@ import Classes.Admin;
 import Classes.Participant;
 import Classes.Person;
 import Classes.TeamCaptain;
+import Data.Data;
+
 
 public class MainController {
     public MainController(){
@@ -11,11 +13,16 @@ public class MainController {
     }
 
 
-    public void run(Person person){
-/*
-        if (person instanceof Admin){
+    public void run(){
+        Data data = new Data();
+
+        AdminController adminController = new AdminController(data);
+        adminController.showAdminMenu();
+
+        /*    if (person instanceof Admin){
             showAdminMenu((Admin) person);
         }
+
 
         if (person instanceof TeamCaptain){
             showTeamCaptainMenu((TeamCaptain) person);
@@ -28,6 +35,7 @@ public class MainController {
         if (person == null){
             showGuestMenu();
         }*/
+
     }
 }
 
