@@ -270,11 +270,11 @@ public class Menu {
             case 7:
                 //Ud fra en liste over alle firmaer, så vælges der et speficikt firma,
                 //det firma en liste af hold, og et af holdene bliver valgt
-                /*Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
+                foundFirm = new SearchForFirm().run(Firm.getFirmList());
                 Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
                 new ShowTeamInformation().run(foundTeam);
                 run(teamCaptain);
-                break;*/
+                break;
             case 8:
                 for (Firm firm :Firm.getFirmList()) {
                     for (Team team : firm.getTeamList()) {
