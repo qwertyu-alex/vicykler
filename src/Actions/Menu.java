@@ -147,6 +147,7 @@ public class Menu {
                     System.out.println("Noget gik galt. Du bliver ført tilbage til admin menu");
                     run(admin);
                 }
+                run(admin);
                 break;
             case "10":
                 //indsæt metode
@@ -157,6 +158,7 @@ public class Menu {
                         foundParticipant.setTeam(null);
                     }
                 }
+                run(admin);
                 break;
             case "11":
                 admin.removeTeam();
