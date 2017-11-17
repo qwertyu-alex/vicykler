@@ -16,9 +16,9 @@ public class ShowTeamInformation {
 
         int number = 1;
 
-        System.out.println("Navn på hold: " + team.getTeamName() + "\t" + "Firma: " + team.getFirm().getFirmName());
+        System.out.println("Navn på hold: " + team.getTeamName() + "\n" + "Firma: " + team.getFirm().getFirmName());
         System.out.println("Holdkaptain: " + team.getTeamCaptain().getName());
-        System.out.println("Medlemmere:");
+        System.out.println("Medlemmer:");
         for (Participant participant: team.getParticipants()) {
             System.out.println(number++ + ")\t" + participant.getName());
         }

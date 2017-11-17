@@ -65,8 +65,6 @@ public class Admin extends Person {
         System.out.println("Du har valgt hold " + foundTeam.getTeamName());
         foundTeam.removeTeam();
         foundTeam = null;
-
-
     }
 
 
