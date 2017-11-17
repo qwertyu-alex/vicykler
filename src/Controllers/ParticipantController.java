@@ -54,7 +54,7 @@ public class ParticipantController {
     }
 
     private TeamCaptain createTeam(Participant currentParticipant){
-         return new CreateTeam().run(currentParticipant);
+         return new CreateTeam(data).run(currentParticipant);
     }
 
     private void showParticipantInformation(){
@@ -66,19 +66,19 @@ public class ParticipantController {
     }
 
     private void showTeamInformation(){
-        Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
+        Firm foundFirm = new SearchForFirm().run(data.getFirms());
         Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
         new ShowTeamInformation().run(foundTeam);
     }
 
     private void showAllTeamInformation(){
-        Firm foundFirm = new SearchForFirm().run(Firm.getFirmList());
+        Firm foundFirm = new SearchForFirm().run(data.getFirms());
         Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
         new ShowTeamInformation().run(foundTeam);
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run();
+        new ShowTeamDistrubtionOfFirms().run(data);
     }
 
 

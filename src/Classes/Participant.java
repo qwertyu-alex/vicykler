@@ -11,10 +11,6 @@ public class Participant extends Person {
     private double numberOfKm;
     private String participantID;
 
-    private static int numberOfParticipants = 0;
-    private static ArrayList<Participant> participants = new ArrayList<>();
-    private static int numberOfCyclingDaysAll = 0;
-    private static double numberOfKmAll = 0;
 
     //Constructor
     public Participant(String name, String email, String password, String cyclistType) {
@@ -22,11 +18,7 @@ public class Participant extends Person {
 
         //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
-        this.participantID = "#" + Integer.toString(numberOfParticipants + 1);
 
-        //Static variabler definitioner
-        numberOfParticipants++;
-        participants.add(this);
     }
 
     //Overloaded contructor
@@ -45,16 +37,6 @@ public class Participant extends Person {
     }
 
     //Adder
-    public void addCyclistDays() {
-        numberOfCyclictDays++; //5+1 = 6 dage person
-        numberOfCyclingDaysAll++;
-    }
-
-    public void addNumberOfKmAll(int km) {
-        numberOfKmAll -= numberOfKm;
-        numberOfKm += km;
-        numberOfKmAll += numberOfKm;
-    }
 
 
     //Getter
@@ -76,35 +58,7 @@ public class Participant extends Person {
         return firm;
     }
 
-    public double getNumberOfKm() {
-        return numberOfKm;
-    }
-
-    public int getNumberOfCyclictDays() {
-        return numberOfCyclictDays;
-    }
-
-    public static int getNumberOfCyclingDaysAll() {
-        return numberOfCyclingDaysAll;
-    }
-
-    public static double getNumberOfKmAll() {
-        return numberOfKmAll;
-    }
-
-    public String getparticipantID() {
-        return participantID;
-    }
-
-
     //Static Getter
-    public static int getNumberOfParticipants() {
-        return numberOfParticipants;
-    }
-
-    public static ArrayList<Participant> getParticipants() {
-        return participants;
-    }
 
     //Setter
     public void setCyklistType(String cyclistType) {
@@ -124,18 +78,12 @@ public class Participant extends Person {
         this.firm = firm;
     }
 
-    public static void setParticipants(ArrayList<Participant> participants) {
-        Participant.participants = participants;
-    }
-
-
+/*
     public void removeParticipant(){
         //fjerner deltageren fra personer
         this.removePerson(this);
 
         //fjerner deltageren fra deltagerlisten
         participants.remove(this);
-
-
-    }
+    }*/
 }

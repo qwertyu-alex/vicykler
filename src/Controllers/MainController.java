@@ -21,6 +21,8 @@ public class MainController {
         TeamCaptainController teamCaptainController = new TeamCaptainController(data);
         AdminController adminController = new AdminController(data);
 
+        data.generateData();
+
         while (true){
 
             if (currentPerson == null){

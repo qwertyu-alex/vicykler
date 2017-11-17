@@ -1,7 +1,6 @@
 package Controllers;
 
 import Actions.CreateParticipant;
-import Actions.Login;
 import java.util.*;
 
 import Actions.ShowTeamDistrubtionOfFirms;
@@ -42,15 +41,32 @@ public class GuestController {
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run();
+        new ShowTeamDistrubtionOfFirms().run(data);
     }
 
     private Person login(){
-        return new Login().run();
+        String email;
+        String password;
+
+        System.out.println("Venligst indtast din email");
+        email = input.next().toLowerCase();
+        System.out.println("Venligst indtast dit password");
+        password = input.next();
+
+        //Tjek om der er fundet en bruger
+        for (Person person: data.getPersons()) {
+            if (person.getEmail().toLowerCase().equals(email) && person.getPassword().equals(password)){
+                return person;
+            }
+
+        }
+
+        System.out.println("Bruger ikke fundet");
+        return null;
     }
 
     private void createParticipant(){
-        new CreateParticipant().run();
+        new CreateParticipant().run(data);
     }
 
 }

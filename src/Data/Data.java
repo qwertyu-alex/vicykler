@@ -2,11 +2,7 @@
 
 package Data;
 
-import Classes.Admin;
-import Classes.Firm;
-import Classes.Participant;
-import Classes.TeamCaptain;
-import Classes.Team;
+import Classes.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -14,20 +10,22 @@ import java.util.ArrayList;
 public class Data {
     private ArrayList<Firm> firms = new ArrayList<>();
     private ArrayList<Team> teams = new ArrayList<>();
+    private ArrayList<Person> persons = new ArrayList<>();
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<TeamCaptain> teamCaptains = new ArrayList<>();
+    private ArrayList<Admin> admins = new ArrayList<>();
+
 
     //Constructor
 
     public Data() {
-        generateData();
     }
 
     public void generateData() {
-        Admin adm1 = new Admin("Alex", ".@.@@", "Hej1");
+        Admin adm1 = generateAdmin("Alex", ".@.@@", "Hej1");
 
         //firmless
-        Participant lol = new Participant("Lol Natteravn", "lol@gmail.com","Alex1", "Master");
+        Participant lol = generateParticipant("Lol Natteravn", "lol@gmail.com","Alex1", "Master");
 
         Firm firma1 = generateFirm("Arla");
         Firm firma2 = generateFirm("NONO");
@@ -54,15 +52,24 @@ public class Data {
         ppar1.setTeam(team2);
     }
 
+    public Admin generateAdmin(String name, String email, String password){
+        Admin newAdmin = new Admin(name, email, password);
+        admins.add(newAdmin);
+        persons.add(newAdmin);
+        return newAdmin;
+    }
+
     public TeamCaptain generateTeamCaptain(Participant participant){
         TeamCaptain newTeamCaptain = new TeamCaptain(participant);
         teamCaptains.add(newTeamCaptain);
+        persons.add(newTeamCaptain);
         return newTeamCaptain;
     }
 
     public Participant generateParticipant(String name, String email, String password, String cyclistType){
         Participant newParticipant = new Participant(name, email, password, cyclistType);
         participants.add(newParticipant);
+        persons.add(newParticipant);
         return newParticipant;
     }
 
@@ -94,6 +101,13 @@ public class Data {
         return teamCaptains;
     }
 
+    public ArrayList<Person> getPersons() {
+        return persons;
+    }
+
+    public ArrayList<Admin> getAdmins() {
+        return admins;
+    }
 }
 
 

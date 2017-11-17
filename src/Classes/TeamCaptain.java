@@ -24,7 +24,7 @@ public class TeamCaptain extends Participant {
         }
     }
 
-
+/*
     public void removeParticipant(){
         ArrayList<Participant> participantsInTheTeam = this.getTeam().getParticipants();
 
@@ -53,7 +53,7 @@ public class TeamCaptain extends Participant {
             //hvis der ikke er nogen deltagere
             System.out.println("Ingen deltagere i holdet");
         }
-    }
+    }*/
 
     //Metode til at tilføje deltager til hold
 

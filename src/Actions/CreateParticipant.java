@@ -6,13 +6,14 @@ import Classes.Participant;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import Data.Data;
 
 public class CreateParticipant {
     Scanner input = new Scanner(System.in);
 
     public CreateParticipant(){}
 
-    public Participant run() {
+    public Participant run(Data data) {
         String[] participantTypes = {"Master", "Enthusiast", "Cruiser", "Debutant"};
 
         System.out.println("Opretter deltager");
@@ -35,7 +36,7 @@ public class CreateParticipant {
         //CheckPassword
         boolean passCheck = matchPassword(participantPassword);
 
-        return new Participant(participantName, participantEmail, participantPassword, cyclistType);
+        return data.generateParticipant(participantName, participantEmail, participantPassword, cyclistType);
     }
 
     private String validateName() {

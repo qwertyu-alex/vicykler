@@ -4,10 +4,6 @@ import java.util.ArrayList;
 
 public class Firm {
     private String firmName;
-    private String firmID;
-
-    private static int exclusiveFirmID = 0;
-    private static ArrayList<Firm> firmList = new ArrayList<>();
 
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<Team> teamList = new ArrayList<>();
@@ -18,11 +14,6 @@ public class Firm {
 
         //Variable definitioner
         this.firmName = firmName;
-        this.firmID = "#" + Integer.toString(exclusiveFirmID + 1);
-
-        //Static variable definitioner
-        exclusiveFirmID++;
-        firmList.add(this);
     }
 
     //Addere
@@ -40,19 +31,6 @@ public class Firm {
         return firmName;
     }
 
-    public String getFirmID() {
-        return firmID;
-    }
-
-    public int getNumberOfFirmParticipants() {
-        int numberOfFirmParticipants = 0;
-
-        for (Team team : this.teamList) {
-            numberOfFirmParticipants += team.getParticipants().size();
-        }
-        return numberOfFirmParticipants;
-    }
-
     public ArrayList<Participant> getParticipants() {
         return participants;
     }
@@ -60,20 +38,6 @@ public class Firm {
     public ArrayList<Team> getTeamList() {
         return teamList;
     }
-
-    //Static metoder
-    public static int getNumberOfFirms() {
-        return firmList.size();
-    }
-
-    public static ArrayList<Firm> getFirmList() {
-        return firmList;
-    }
-
-    public static int getExclusiveFirmID() {
-        return exclusiveFirmID;
-    }
-
 
 
     //Fjerne hold fra ArrayListe

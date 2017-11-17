@@ -8,11 +8,15 @@ import Classes.Firm;
 import Classes.Participant;
 import Classes.Team;
 import Classes.TeamCaptain;
-
+import Data.Data;
 
 public class CreateTeam {
     private Scanner input = new Scanner(System.in);
-    public CreateTeam(){}
+    Data data;
+
+    public CreateTeam(Data data){
+        this.data = data;
+    }
 
 
     public void run(){
@@ -64,16 +68,16 @@ public class CreateTeam {
         }
 
             System.out.println("Vælg et firma:");
-            for (Firm firm : Firm.getFirmList()) {
+            for (Firm firm : data.getFirms()) {
                 count++;
-                System.out.println(count + ") " + firm.getFirmName());
+                System.out.println(count + ") " + data.getFirms());
             }
             int chosenFirm = input.nextInt();
 
             //sørger for at den ikke bugger
             input.nextLine();
 
-            return Firm.getFirmList().get(chosenFirm - 1);
+            return data.getFirms().get(chosenFirm - 1);
 
     }
 

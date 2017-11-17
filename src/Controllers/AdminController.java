@@ -118,7 +118,7 @@ public class AdminController {
     }
 
     private void createTeam(){
-        new CreateTeam().run();
+        new CreateTeam(data).run();
     }
 
     private void showParticipantInformation(){
@@ -146,7 +146,7 @@ public class AdminController {
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run();
+        new ShowTeamDistrubtionOfFirms().run(data);
     }
 
     private void changeFirmAndTeamInformation(){
@@ -294,7 +294,7 @@ public class AdminController {
     }
 
     private void addParticipant(){
-        new CreateParticipant().run();
+        new CreateParticipant().run(data);
     }
 
 

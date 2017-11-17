@@ -5,18 +5,13 @@ package Classes;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Actions.CreateTeam;
 import Data.Data;
-import Classes.Team;
-import Classes.Firm;
-import Actions.CreateParticipant;
 import Actions.SearchForParticipant;
-import Actions.CreateTeam;
 import Actions.SearchForTeam;
 
 
 public class Admin extends Person {
-    //attribut
+    //attributer
     private ArrayList<Participant> participants;
     private ArrayList<Team> teams;
     private Data data;
@@ -35,25 +30,25 @@ public class Admin extends Person {
     }
 
     //sletter deltager fra hold
+    /*
     public void removeParticipant(){
 
         System.out.println("Sletter deltager");
 
         //Denne metode finder en participant ud fra en mail
-        Participant newParticipant = new SearchForParticipant().run(Participant.getParticipants());
+        Participant newParticipant = new SearchForParticipant().run(data.getParticipants());
 
         //Denne metode sletter deltageren
         System.out.println("Sletter " + newParticipant.getName());
         newParticipant.removeParticipant();
-
-
-    }
+    }*/
+    /*
     public void removeTeam(){
 
         ArrayList<Team> listTeam = new ArrayList<>();
 
         //Oprettet en liste over alle hold der findes
-        for (Firm firm:Firm.getFirmList()) {
+        for (Firm firm:data.getFirms()) {
             for (Team team:firm.getTeamList()) {
                 listTeam.add(team);
             }
@@ -65,7 +60,7 @@ public class Admin extends Person {
         System.out.println("Du har valgt hold " + foundTeam.getTeamName());
         foundTeam.removeTeam();
         foundTeam = null;
-    }
+    }*/
 
 
 
@@ -73,7 +68,7 @@ public class Admin extends Person {
     //Denne metode tilføjer et firma til listen over firmaer.
     public void addFirm(){
         //henter Arraylisten over firmaer
-        ArrayList<Firm> firms =  Firm.getFirmList();
+        ArrayList<Firm> firms =  data.getFirms();
 
         System.out.println("Tilføj firma menu");
         System.out.println("Indtast navn på det nye firma");
@@ -85,7 +80,7 @@ public class Admin extends Person {
     //Herunder kan der slettes et firma fra Arraylisten "Firms"
     public void deleteFirm(){
         //Henter Arraylisten over firmaer
-        ArrayList<Firm> firms =  Firm.getFirmList();
+        ArrayList<Firm> firms =  data.getFirms();
         //Printer listen over firmaer
         System.out.println("Slet firma menu");
         System.out.println("Liste over firmaer");
@@ -104,7 +99,7 @@ public class Admin extends Person {
     //der sikre man ændre det rigtige firmas navn
     public void changeFirmName(){
         //henter Arraylisten over firmaer
-        ArrayList<Firm> firms =  Firm.getFirmList();
+        ArrayList<Firm> firms =  data.getFirms();
         //Printer listen over firmaer
         System.out.println("Ændre firma navn menu");
         System.out.printf("%-5s %s","Nr:","Firma navn");
@@ -132,7 +127,7 @@ public class Admin extends Person {
     //Nedenstående metode giver mulighed for at ændre et holds navn
     public void changeTeamName(){
         //Henter Aarraylisten over firmaer
-        ArrayList<Firm> firms = Firm.getFirmList();
+        ArrayList<Firm> firms = data.getFirms();
 
         System.out.println("Ændre hold navn menu");
         System.out.printf("%-5s %s","Nr:","Firma navn");

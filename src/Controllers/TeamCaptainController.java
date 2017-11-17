@@ -5,6 +5,7 @@ import Classes.*;
 import Data.Data;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -67,14 +68,79 @@ public class TeamCaptainController {
     }
 
     private void removeTeam(TeamCaptain teamCaptain){
-        new RemoveTeamAsTeamCaptain().run(teamCaptain);
+        ArrayList<Team> listTeam = new ArrayList<>();
+        String confirm;
+
+        System.out.println("Vil du slette dit hold?: " + teamCaptain.getTeam().getTeamName() +
+                "\nIndtast 1 for Ja\nIndtast 2 for Nej");
+
+        boolean keepRunning = true;
+
+        confirm = input.nextLine();
+        while(keepRunning){
+
+            if (confirm.equals("1")){
+
+                //Slette alle medlemmeres hold i holdet
+                for (Participant participant:teamCaptain.getTeam().getParticipants()) {
+                    participant.setTeam(null);
+                }
+                //slet holdet fra virksomheden
+                teamCaptain.getTeam().getFirm().getTeamList().remove(teamCaptain.getTeam());
+
+                //slet holdet fra holdlisten
+                data.getTeams().remove(teamCaptain.getTeam());
+
+                //Fjern holdkaptainen fra holdet
+                teamCaptain.getTeam().setTeamCaptain(null);
+
+                //set holdkaptajnens hold til null
+                teamCaptain.setTeam(null);
+
+                //set holdkaptajnen til en participant
+                data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(), teamCaptain.getPassword(), teamCaptain.getCyclistType());
+
+                System.out.println("Dit hold er nu slettet");
+            } else {
+                System.out.println("Vil du prøve igen? 1) Ja 2) Nej");
+                confirm = input.nextLine();
+                if (!confirm.equals("1")){
+                    keepRunning = false;
+                }
+            }
+        }
+
+        /*
+
+        do {
+            try {
+                confirm = input.nextInt();
+                if (confirm == 1) {
+                    for (Firm firm : data.getFirms()) {
+                        for (Team team : firm.getTeamList()) {
+                            if (team.getTeamCaptain().equals(teamCaptain))
+                                listTeam.remove(team);
+                            System.out.println("Du har slettet dit hold: " + teamCaptain.getTeam().getTeamName());
+                        }
+                    }
+                } else if (confirm == 2) {
+                    System.out.println("Du har valgt IKKE at slette dit hold");
+                    keepRunning = false;
+                } else {
+                    System.out.println("Du skal vælge én enten:\n1) Ja eller 2) Nej");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Du skal vælge et tal\n1) Ja eller 2) Nej");
+                keepRunning = true;
+            }
+        } while (keepRunning);*/
     }
 
     private void addParticipantToTeam(TeamCaptain teamCaptain){
         Participant foundParticipant;
 
         while(true){
-            foundParticipant = new SearchForParticipant().run(Participant.getParticipants());
+            foundParticipant = new SearchForParticipant().run(data.getParticipants());
             if(foundParticipant.getTeam() != null){
                 foundParticipant.setTeam(teamCaptain.getTeam());
                 break;
@@ -100,7 +166,8 @@ public class TeamCaptainController {
             //Fjern participant
             if (foundParticipant != null){
                 System.out.println("Deltager, " + foundParticipant.getName() + ", er fjernet fra listen");
-                foundParticipant.removeParticipant();
+                foundParticipant.getTeam().getParticipants().remove(foundParticipant);
+                foundParticipant.setTeam(null);
             } else {
                 System.out.println("Ingen personer er fjernet fra holdet");
             }
@@ -136,7 +203,7 @@ public class TeamCaptainController {
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run();
+        new ShowTeamDistrubtionOfFirms().run(data);
     }
 }
 

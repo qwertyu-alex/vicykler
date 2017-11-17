@@ -16,7 +16,7 @@ public class RemoveTeamAsTeamCaptain {
 
     public RemoveTeamAsTeamCaptain() {
     }
-
+/*
     public void run(TeamCaptain teamCaptain) {
         ArrayList<Team> listTeam = new ArrayList<>();
         int confirm;
@@ -30,7 +30,7 @@ public class RemoveTeamAsTeamCaptain {
             try {
                 confirm = input.nextInt();
                 if (confirm == 1) {
-                    for (Firm firm : Firm.getFirmList()) {
+                    for (Firm firm : data.getFirms()) {
                         for (Team team : firm.getTeamList()) {
                             if (team.getTeamCaptain().equals(teamCaptain))
                                 listTeam.remove(team);
@@ -49,5 +49,5 @@ public class RemoveTeamAsTeamCaptain {
                 input.next();
             }
         } while (keepRunning);
-    }
+    }*/
 }
