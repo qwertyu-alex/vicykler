@@ -244,23 +244,25 @@ public class AdminController {
         ArrayList<Team> listTeam = new ArrayList<>();
 
         //Oprettet en liste over alle hold der findes
+
+
         for (Firm firm:data.getFirms()) {
-            for (Team team:firm.getTeamList()) {
-                listTeam.add(team);
-            }
+            listTeam.addAll(firm.getTeamList());
         }
 
         //Her finder det hold i listen vi vil slette
         Team foundTeam = new SearchForTeam().run(listTeam);
 
-        //Fjern holdet fra hver enkelte holdmedlem
-        System.out.println("Du har valgt hold " + foundTeam.getTeamName());
-        for (Participant participant:foundTeam.getParticipants()) {
-            participant.setTeam(null);
-        }
+        if (foundTeam != null){
+            //Fjern holdet fra hver enkelte holdmedlem
+            System.out.println("Sletter: " + foundTeam.getTeamName());
+            for (Participant participant:foundTeam.getParticipants()) {
+                participant.setTeam(null);
+            }
 
-        //Fjern holdet fra firmaet
-        foundTeam.getFirm().getTeamList().remove(foundTeam);
+            //Fjern holdet fra firmaet
+            foundTeam.getFirm().getTeamList().remove(foundTeam);
+        }
     }
 
     private void removeFirm(){

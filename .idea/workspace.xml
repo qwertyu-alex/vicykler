@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e9da67-2ac1-4588-a227-9f9ea96bb52b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/App/Actions/ShowTeamsInFirmAndTeamCaptains.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Actions/RemoveTeamAsTeamCaptain.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Actions/CreateParticipant.class" afterPath="$PROJECT_DIR$/out/production/App/Actions/CreateParticipant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Actions/CreateTeam.class" afterPath="$PROJECT_DIR$/out/production/App/Actions/CreateTeam.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Actions/ShowTeamDistrubtionOfFirms.class" afterPath="$PROJECT_DIR$/out/production/App/Actions/ShowTeamDistrubtionOfFirms.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Classes/Firm.class" afterPath="$PROJECT_DIR$/out/production/App/Classes/Firm.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Classes/Participant.class" afterPath="$PROJECT_DIR$/out/production/App/Classes/Participant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Classes/Person.class" afterPath="$PROJECT_DIR$/out/production/App/Classes/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Classes/Team.class" afterPath="$PROJECT_DIR$/out/production/App/Classes/Team.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/App/Classes/TeamCaptain.class" afterPath="$PROJECT_DIR$/out/production/App/Classes/TeamCaptain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/CreateParticipant.java" afterPath="$PROJECT_DIR$/src/Actions/CreateParticipant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/CreateTeam.java" afterPath="$PROJECT_DIR$/src/Actions/CreateTeam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" afterPath="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java" afterPath="$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/Admin.java" afterPath="$PROJECT_DIR$/src/Classes/Admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/Firm.java" afterPath="$PROJECT_DIR$/src/Classes/Firm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/Participant.java" afterPath="$PROJECT_DIR$/src/Classes/Participant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/Person.java" afterPath="$PROJECT_DIR$/src/Classes/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/Team.java" afterPath="$PROJECT_DIR$/src/Classes/Team.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Classes/TeamCaptain.java" afterPath="$PROJECT_DIR$/src/Classes/TeamCaptain.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/AdminController.java" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/GuestController.java" afterPath="$PROJECT_DIR$/src/Controllers/GuestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/ParticipantController.java" afterPath="$PROJECT_DIR$/src/Controllers/ParticipantController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/TeamCaptainController.java" afterPath="$PROJECT_DIR$/src/Controllers/TeamCaptainController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,14 +28,53 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateParticipant.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TeamCaptain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Classes/TeamCaptain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateParticipant.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Actions/CreateParticipant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="1740">
               <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="257" column="41" lean-forward="false" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#268#269#0" expanded="true" />
+                <element signature="e#300#301#0" expanded="true" />
+                <element signature="method#removeParticipant#0;class#AdminController#0" expanded="false" />
+                <element signature="e#5102#5103#0" expanded="true" />
+                <element signature="e#5160#5161#0" expanded="true" />
+                <element signature="e#10895#10896#0" expanded="true" />
+                <element signature="e#10944#10945#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Data/Data.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,18 +96,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
               <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowTeamInformation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamInformation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,28 +130,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1040">
               <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowTeamDistrubtionOfFirms.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchForTeam.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/SearchForTeam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -234,10 +217,8 @@
         <option value="$PROJECT_DIR$/src/Actions/CreateTeam.java" />
         <option value="$PROJECT_DIR$/src/Controllers/ParticipantController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/GuestController.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/AdminController.java" />
         <option value="$PROJECT_DIR$/src/Classes/Admin.java" />
         <option value="$PROJECT_DIR$/src/Classes/Person.java" />
-        <option value="$PROJECT_DIR$/src/Classes/TeamCaptain.java" />
         <option value="$PROJECT_DIR$/src/Classes/Team.java" />
         <option value="$PROJECT_DIR$/src/Classes/Firm.java" />
         <option value="$PROJECT_DIR$/src/Classes/Participant.java" />
@@ -245,6 +226,8 @@
         <option value="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" />
         <option value="$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java" />
         <option value="$PROJECT_DIR$/src/Actions/CreateParticipant.java" />
+        <option value="$PROJECT_DIR$/src/Classes/TeamCaptain.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/AdminController.java" />
       </list>
     </option>
   </component>
@@ -948,11 +931,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510935700061</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="memes">
+      <created>1511003218981</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1511003218981</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134216000" />
+    <option name="totallyTimeSpent" value="134986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
@@ -1048,7 +1038,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1161,35 +1151,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Data/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#removeParticipant#0;class#AdminController#0" expanded="false" />
-            <element signature="e#5102#5103#0" expanded="true" />
-            <element signature="e#5160#5161#0" expanded="true" />
-            <element signature="method#changeFirmAndTeamInformation#0;class#AdminController#0" expanded="false" />
-            <element signature="method#removeParticipantFromTeam#0;class#AdminController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1235,17 +1202,6 @@
           <folding>
             <element signature="e#516#517#0" expanded="true" />
             <element signature="e#561#562#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Classes/TeamCaptain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1375,10 +1331,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/CreateParticipant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
+        <state relative-caret-position="1740">
           <caret line="119" column="0" lean-forward="true" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Classes/TeamCaptain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Data/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="257" column="41" lean-forward="false" selection-start-line="257" selection-start-column="41" selection-end-line="257" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#268#269#0" expanded="true" />
+            <element signature="e#300#301#0" expanded="true" />
+            <element signature="method#removeParticipant#0;class#AdminController#0" expanded="false" />
+            <element signature="e#5102#5103#0" expanded="true" />
+            <element signature="e#5160#5161#0" expanded="true" />
+            <element signature="e#10895#10896#0" expanded="true" />
+            <element signature="e#10944#10945#0" expanded="true" />
           </folding>
         </state>
       </provider>

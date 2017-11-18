@@ -16,8 +16,10 @@ public class TeamCaptain extends Participant {
     @Override
     public void setTeam(Team team) {
         super.setTeam(team);
-        if (team.getTeamCaptain() != this){
-            team.setTeamCaptain(this);
+        if (team != null){
+            if (team.getTeamCaptain() != this){
+                team.setTeamCaptain(this);
+            }
         }
     }
 }
