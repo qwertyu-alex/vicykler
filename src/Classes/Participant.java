@@ -1,15 +1,10 @@
 package Classes;//Alexander Van Le && Oliver Lange
 
-import java.util.ArrayList;
-
 public class Participant extends Person {
     //Variabler
     private String cyclistType;
     private Firm firm = null;
     private Team team = null; // arraylist
-    private int numberOfCyclictDays;
-    private double numberOfKm;
-    private String participantID;
 
 
     //Constructor
@@ -58,7 +53,6 @@ public class Participant extends Person {
         return firm;
     }
 
-    //Static Getter
 
     //Setter
     public void setCyklistType(String cyclistType) {
@@ -78,12 +72,4 @@ public class Participant extends Person {
         this.firm = firm;
     }
 
-/*
-    public void removeParticipant(){
-        //fjerner deltageren fra personer
-        this.removePerson(this);
-
-        //fjerner deltageren fra deltagerlisten
-        participants.remove(this);
-    }*/
 }

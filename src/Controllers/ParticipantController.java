@@ -16,15 +16,15 @@ public class ParticipantController {
 
     public Person showParticipantsMenu(Participant currentParticipant){
         while (true){
-            System.out.println();
-            System.out.println("Deltager menu");
+            System.out.println("\nDeltager menu");
             System.out.println("1) Opret et hold");
             System.out.println("2) Se information om en deltager");
             System.out.println("3) Overblik over et firmas hold og tilhørende holdkaptajn");
             System.out.println("4) Se information om et hold og dets deltagere");
             System.out.println("5) Oplysninger om alle tilmeldte hold og deres deltagere");
             System.out.println("6) Statistik over fordelingen af hold på firmaerne");
-            System.out.println("\nAndet) Log ud ");
+            System.out.println("Andet) Log ud ");
+            System.out.println("_______________________________________________________________");
 
             switch(input.nextLine()){
                 case "1":

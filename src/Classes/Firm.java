@@ -8,7 +8,6 @@ public class Firm {
     private ArrayList<Participant> participants = new ArrayList<>();
     private ArrayList<Team> teamList = new ArrayList<>();
 
-
     //Contructor
     public Firm(String firmName) {
 
@@ -38,12 +37,5 @@ public class Firm {
     public ArrayList<Team> getTeamList() {
         return teamList;
     }
-
-
-    //Fjerne hold fra ArrayListe
-    public void removeTeam(Team team){
-        teamList.remove(team);
-    }
-
 
 }

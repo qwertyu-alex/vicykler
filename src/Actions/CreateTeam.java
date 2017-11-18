@@ -70,14 +70,11 @@ public class CreateTeam {
             System.out.println("Vælg et firma:");
             for (Firm firm : data.getFirms()) {
                 count++;
-                System.out.println(count + ") " + data.getFirms());
+                System.out.println(count + ") " + firm.getFirmName());
             }
-            int chosenFirm = input.nextInt();
+            String chosenFirm = input.nextLine();
 
-            //sørger for at den ikke bugger
-            input.nextLine();
-
-            return data.getFirms().get(chosenFirm - 1);
+            return data.getFirms().get(Integer.parseInt(chosenFirm ) - 1);
 
     }
 

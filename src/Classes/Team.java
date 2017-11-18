@@ -4,13 +4,10 @@ import java.util.ArrayList;
 
 public class Team {
     private String teamName;
-    private int numberOfTeamParticipants;
     private Firm firm;
     private TeamCaptain teamCaptain;
 
     private ArrayList <Participant> participants = new ArrayList<>();
-
-    private static int numberOfTeams;
 
 
     //Constructor
@@ -19,24 +16,16 @@ public class Team {
         this.teamName = teamName;
         this.firm = firm;
         firm.addTeam(this);
-
-        //static
-        numberOfTeams++;
     }
 
     //Adder metoder
     public void addParticipant(Participant participant){
         participants.add(participant);
-        numberOfTeamParticipants++;
     }
 
     //Getter metoder
     public String getTeamName(){
         return teamName;
-    }
-
-    public int getNumberOfTeamParticipants() {
-        return numberOfTeamParticipants;
     }
 
     public Firm getFirm() {
@@ -49,11 +38,6 @@ public class Team {
 
     public TeamCaptain getTeamCaptain() {
         return teamCaptain;
-    }
-
-    //Static getter
-    public static int getNumberOfTeams() {
-        return numberOfTeams;
     }
 
     //Setter metoder
@@ -74,9 +58,10 @@ public class Team {
     }
 
     //Astrid
+    /*
     public void removeTeam(){
         this.firm.removeTeam(this);
-    }
+    }*/
 
 
 }

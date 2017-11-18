@@ -1,3 +1,5 @@
+//Mikkel Storm && Astrid
+
 package Controllers;
 
 import Actions.*;
@@ -16,8 +18,7 @@ public class AdminController {
 
     public Person showAdminMenu(Admin admin){
         while(true){
-            System.out.println("");
-            System.out.println("Admin menu");
+            System.out.println("\nAdmin menu");
             System.out.println("1) Tilføj firma");
             System.out.println("2) Slet deltager");
             System.out.println("3) Opret et hold");
@@ -32,6 +33,8 @@ public class AdminController {
             System.out.println("12) Slet firma");
             System.out.println("13) Tilføj deltager");
             System.out.println("\nAndet) Log ud ");
+            System.out.println("_______________________________________________________________");
+
 
             switch((input.nextLine())){
                 case "1":

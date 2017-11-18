@@ -1,3 +1,5 @@
+//Oliver && Mikkel
+
 package Controllers;
 
 import Actions.*;
@@ -5,7 +7,6 @@ import Classes.*;
 import Data.Data;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -20,7 +21,7 @@ public class TeamCaptainController {
     public Person showTeamCaptainMenu(TeamCaptain teamCaptain){
 
         while(true){
-            System.out.println("Holdkaptajn menu for " + teamCaptain.getTeam().getTeamName());
+            System.out.println("\nHoldkaptajn menu for " + teamCaptain.getTeam().getTeamName());
             System.out.println("1) Slet hold"); //mangler
             System.out.println("2) Tilføj deltager til hold");
             System.out.println("3) Fjern deltager fra hold");
@@ -30,34 +31,35 @@ public class TeamCaptainController {
             System.out.println("7) Se information om et hold og dets deltagere");
             System.out.println("8) Oplysninger om alle tilmeldte hold og deres deltagere");
             System.out.println("9) Statistik over fordelingen af hold på firmaerne");
-            System.out.println("\nAndet) Log ud ");
+            System.out.println("Andet) Log ud ");
+            System.out.println("_______________________________________________________________");
 
-            switch(input.nextInt()){
-                case 1:
+            switch(input.nextLine()){
+                case "1":
                     removeTeam(teamCaptain);
                     break;
-                case 2:
+                case "2":
                     addParticipantToTeam(teamCaptain);
                     break;
-                case 3:
+                case "3":
                     removeParticipantFromTeam(teamCaptain);
                     break;
-                case 4:
+                case "4":
                     //indsæt metode
                     break;
-                case 5:
+                case "5":
                     showParticipantInformation();
                     break;
-                case 6:
+                case "6":
                     firmOverview();
                     break;
-                case 7:
+                case "7":
                     showTeamInformation();
                     break;
-                case 8:
+                case "8":
                     showAllTeamInformation();
                     break;
-                case 9:
+                case "9":
                     showTeamDistrubtionOfFirms();
                     break;
                 default:
@@ -109,31 +111,6 @@ public class TeamCaptainController {
                 }
             }
         }
-
-        /*
-
-        do {
-            try {
-                confirm = input.nextInt();
-                if (confirm == 1) {
-                    for (Firm firm : data.getFirms()) {
-                        for (Team team : firm.getTeamList()) {
-                            if (team.getTeamCaptain().equals(teamCaptain))
-                                listTeam.remove(team);
-                            System.out.println("Du har slettet dit hold: " + teamCaptain.getTeam().getTeamName());
-                        }
-                    }
-                } else if (confirm == 2) {
-                    System.out.println("Du har valgt IKKE at slette dit hold");
-                    keepRunning = false;
-                } else {
-                    System.out.println("Du skal vælge én enten:\n1) Ja eller 2) Nej");
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Du skal vælge et tal\n1) Ja eller 2) Nej");
-                keepRunning = true;
-            }
-        } while (keepRunning);*/
     }
 
     private void addParticipantToTeam(TeamCaptain teamCaptain){

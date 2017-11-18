@@ -1,11 +1,9 @@
-// Alexander Van Lee
+// Alexander Van Le
 
 package Actions;
 
 import Classes.Firm;
 import Classes.Team;
-import Classes.TeamCaptain;
-
 
 public class ShowTeamsInFirmAndTeamCaptains {
     public ShowTeamsInFirmAndTeamCaptains(){}

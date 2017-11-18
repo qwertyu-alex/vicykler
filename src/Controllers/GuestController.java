@@ -18,12 +18,13 @@ public class GuestController {
 
     public Person showGuestMenu(){
         while (true){
-            System.out.println();
-            System.out.println("Gæstemenu");
+            System.out.println("\nGæstemenu");
             System.out.println("1) Se statistikker");
             System.out.println("2) Login");
             System.out.println("3) Opret bruger");
-            switch((input.next())){
+            System.out.println("_______________________________________________________________");
+
+            switch((input.nextLine())){
                 case "1":
                     showTeamDistrubtionOfFirms();
                     break;

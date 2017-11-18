@@ -6,10 +6,12 @@ import Classes.Participant;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import Classes.Person;
 import Data.Data;
 
 public class CreateParticipant {
-    Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
     public CreateParticipant(){}
 
@@ -21,14 +23,11 @@ public class CreateParticipant {
         //GetName
         String participantName = validateName();
 
-        //GetAge
-        //int age = validateAge();
-
         //GetType
         String cyclistType = validateType(participantTypes);
 
         //GetEmail
-        String participantEmail = validateEmail();
+        String participantEmail = validateEmail(data);
 
         //GetPassword
         String participantPassword = validatePassword();
@@ -36,7 +35,12 @@ public class CreateParticipant {
         //CheckPassword
         boolean passCheck = matchPassword(participantPassword);
 
-        return data.generateParticipant(participantName, participantEmail, participantPassword, cyclistType);
+        if (passCheck){
+            return data.generateParticipant(participantName, participantEmail, participantPassword, cyclistType);
+        } else {
+            return null;
+        }
+
     }
 
     private String validateName() {
@@ -54,37 +58,11 @@ public class CreateParticipant {
         } while (true);
     }
 
-    private int validateAge(){
-        System.out.println("Indtast alder: ");
-        int age;
-
-
-        do {
-            do {
-                age = 0;
-                String in = (input.next());
-                if (Pattern.matches("[0-9]+", in)) {
-                    age = Integer.parseInt(in);
-                } else {
-                    System.out.println("Du skal vælge et tal");
-                }
-
-            } while (age == 0);
-
-            if (age > 14 && age < 99) {
-                return age;
-            } else {
-                System.out.println("Du skal vælge en alder mellem 15-99");
-            }
-        }while(true);
-
-
-}
 
     private String validateType(String[] participantTypes){
         int choice;
         String type = "";
-        boolean check = true;
+        boolean check;
 
         System.out.println("Indtast nummeret på den typen af cyklist: " + "\n1) " + participantTypes[0] +
                 "\n2) " + participantTypes[1] + "\n3) " + participantTypes[2] + "\n4) " + participantTypes[3]);
@@ -105,53 +83,66 @@ public class CreateParticipant {
         return type;
     }
 
-    private String validateEmail() {
+    private String validateEmail(Data data) {
         System.out.println("Indtast Email: ");
-        String email = input.next();
-        int atPosition = email.indexOf("@");
-        int dotPosition = email.lastIndexOf('.');
+        String email;
+        int atPosition, dotPosition;
+        boolean alreadyExist;
 
-        do {
-            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (email.length()-2) && email.lastIndexOf("@") == email.indexOf("@")) {
-                System.out.println(email);
-                return email;
+
+        while(true) {
+            email = input.next();
+            atPosition = email.indexOf("@");
+            dotPosition = email.lastIndexOf('.');
+            alreadyExist = false;
+
+            if (atPosition > 0 && dotPosition > atPosition && dotPosition < (email.length()-2)
+                    && email.lastIndexOf("@") == email.indexOf("@")) {
+                for (Person person:data.getPersons()) {
+                    if (email.equals(person.getEmail())){
+                        alreadyExist = true;
+                    }
+                }
+
+                if (!alreadyExist){
+                    System.out.println(email);
+                    return email;
+                } else {
+                    System.out.println("Email eksisterer allerede. Vælg en ny:");
+                    continue;
+                }
+
             } else {
-                System.out.println("Denne email kan ikke valideres, skriv venligst en ny: ");
- /*               System.out.println("atPosition:" + atPosition);
-                System.out.println("dotPosition:" + dotPosition);
-                System.out.println("email.length(): " + email.length());*/
-                email = input.next();
-                atPosition = email.indexOf("@");
-                dotPosition = email.lastIndexOf('.');
+                System.out.println("Denne email er ikke valid, skriv venligst en ny: ");
             }
-        } while (true);
+        }
     }
 
     private String validatePassword() {
         System.out.println("Indtast password: ");
         String password = input.next();
-        int lenght = password.length();
-        int numberCount = 0;
-        int capitalCount = 0;
+        int length;
+        int numberCount;
+        int capitalCount;
         boolean error;
-        boolean onlyNumAndLetter = false;
+        boolean onlyNumAndLetter;
 
         do {
-            lenght = password.length();
+            length = password.length();
             numberCount = 0;
             capitalCount = 0;
             onlyNumAndLetter = false;
 
-            for (int i = 0; i < lenght; i++) {
+            for (int i = 0; i < length; i++) {
                 // kan ikke tage imod ÆØÅ
                 // tager udgangspunkt i ASCII
                 // første kigger på numre "48" = '0' "57" = '9'
                 // anden kigger på store bogstaver 65 = "A", 90 = "Z"
                 // tredje kigger på små bogstaver 97 = "a", 122 = "z"
-                if ((password.charAt(i) > 47 && password.charAt(i) < 58)
-                        || (password.charAt(i) > 64 && password.charAt(i) < 91)
-                        || (password.charAt(i) > 96 && password.charAt(i) < 123)) {
-                } else {onlyNumAndLetter = true;}
+                onlyNumAndLetter = !((password.charAt(i) > 47 && password.charAt(i) < 58)
+                            || (password.charAt(i) > 64 && password.charAt(i) < 91)
+                            || (password.charAt(i) > 96 && password.charAt(i) < 123));
+
 
                 if ((password.charAt(i) > 47 && password.charAt(i) < 58)) {
                     numberCount++;
@@ -181,7 +172,7 @@ public class CreateParticipant {
                 error = true;
             }
 
-            if (lenght < 4 || lenght > 16) {
+            if (length < 4 || length > 16) {
                 System.out.println("Password skal være mellem 4 - 16 karakterer langt");
                 error = true;
             }
