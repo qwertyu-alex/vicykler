@@ -29,7 +29,6 @@ public abstract class Person {
         return password;
     }
 
-
     //Setter-metoder
     public void setName(String name) {
         this.name = name;
@@ -42,17 +41,5 @@ public abstract class Person {
     public void setPassword(String password) {
         this.password = password;
     }
-/*
-    //fjern et element fra person arraylisten
-    public boolean removePerson(Person person){
-        for (Person p : persons) {
-            if (p.getEmail().equals(person.getEmail())){
-                persons.remove(person);
-                person = null;
-                return true;
-            }
-        }
-        return false;
-    }*/
 }
 
