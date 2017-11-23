@@ -25,7 +25,7 @@ public class TeamCaptainController {
             System.out.println("1) Slet hold"); //mangler
             System.out.println("2) Tilføj deltager til hold");
             System.out.println("3) Fjern deltager fra hold");
-            System.out.println("4) Ændre i et holds oplysninger"); //man gler
+            System.out.println("4) Ændre holdnavn oplysninger"); //man gler
             System.out.println("5) Se information om en deltager");
             System.out.println("6) Overblik over et firmas hold og tilhørende holdkaptajn");
             System.out.println("7) Se information om et hold og dets deltagere");
@@ -45,7 +45,7 @@ public class TeamCaptainController {
                     removeParticipantFromTeam(teamCaptain);
                     break;
                 case "4":
-                    //indsæt metode
+                    changeTeamName(teamCaptain);
                     break;
                 case "5":
                     showParticipantInformation();
@@ -159,6 +159,14 @@ public class TeamCaptainController {
         System.out.println("Se information om en deltager");
         new ParticipantInformation().run(new SearchForParticipant().run(data.getParticipants()));
     }
+
+    private void changeTeamName(TeamCaptain teamCaptain){
+        System.out.println("Ændrer holdnavn");
+        System.out.println("Hvad skal det nye holdnavn være?");
+        String name = input.nextLine();
+        teamCaptain.getTeam().setTeamName(name);
+    }
+
 
     private void firmOverview(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
