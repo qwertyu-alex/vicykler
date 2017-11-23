@@ -28,7 +28,7 @@ public class CreateTeam {
         String name = validateName(firm);
 
         //opret hold
-        Team newTeam = new Team(name, firm);
+        Team newTeam = data.generateTeam(name, firm);
 
         System.out.println("Nyt hold oprettet: " + newTeam.getTeamName());
         System.out.println("");

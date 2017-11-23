@@ -116,7 +116,6 @@ public class CreateParticipant {
                     return email;
                 } else {
                     System.out.println("Email eksisterer allerede. Vælg en ny:");
-                    continue;
                 }
 
             } else {
