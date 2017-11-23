@@ -1,3 +1,5 @@
+//Astrid
+
 package Controllers;
 
 import Classes.Admin;
@@ -28,12 +30,12 @@ public class MainController {
             if (currentPerson == null){
                 currentPerson = guestController.showGuestMenu();
             }
-            if (currentPerson instanceof Participant){
-                currentPerson = participantController.showParticipantsMenu((Participant) currentPerson);
-            }
-
             if (currentPerson instanceof TeamCaptain){
                 currentPerson = teamCaptainController.showTeamCaptainMenu((TeamCaptain) currentPerson);
+            }
+
+            if (currentPerson instanceof Participant){
+                currentPerson = participantController.showParticipantsMenu((Participant) currentPerson);
             }
 
             if (currentPerson instanceof Admin){

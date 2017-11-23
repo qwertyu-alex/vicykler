@@ -41,8 +41,8 @@ public class Data {
         generateParticipant("Johannes Døbberen", "Johannes@gmail.com","Alex1",  "Master").setTeam(team1);
 
 
-        TeamCaptain tc1 = generateTeamCaptain(generateParticipant("Frodo DatFrodo", "frodo@gmail.com","Alex1", "Master"));
-        TeamCaptain tc2 = generateTeamCaptain(generateParticipant("Hej", "lol@.@", "Hej2", "Master"));
+        TeamCaptain tc1 = generateTeamCaptain("Frodo DatFrodo", "frodo@gmail.com","Alex1", "Master");
+        TeamCaptain tc2 = generateTeamCaptain("Hej", "lol@.@", "Hej2", "Master");
 
         tc1.setTeam(team1);
         tc2.setTeam(team2);
@@ -59,8 +59,8 @@ public class Data {
         return newAdmin;
     }
 
-    public TeamCaptain generateTeamCaptain(Participant participant){
-        TeamCaptain newTeamCaptain = new TeamCaptain(participant);
+    public TeamCaptain generateTeamCaptain(String name, String email, String password, String cyclistType){
+        TeamCaptain newTeamCaptain = new TeamCaptain(name, email, password, cyclistType);
         teamCaptains.add(newTeamCaptain);
         persons.add(newTeamCaptain);
         return newTeamCaptain;
