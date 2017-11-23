@@ -30,6 +30,7 @@ public class MainController {
             if (currentPerson == null){
                 currentPerson = guestController.showGuestMenu();
             }
+
             if (currentPerson instanceof TeamCaptain){
                 currentPerson = teamCaptainController.showTeamCaptainMenu((TeamCaptain) currentPerson);
             }

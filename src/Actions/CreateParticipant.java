@@ -53,14 +53,14 @@ public class CreateParticipant {
                 return name;
             } else {
                 System.out.println("Et navn kan kun indeholde bogstaver, prøv igen: ");
-                name = input.next();
+                name = input.nextLine();
             }
         } while (true);
     }
 
 
     private String validateType(String[] participantTypes){
-        int choice;
+        String choice;
         String type = "";
         boolean check;
 
@@ -68,15 +68,21 @@ public class CreateParticipant {
                 "\n2) " + participantTypes[1] + "\n3) " + participantTypes[2] + "\n4) " + participantTypes[3]);
 
         do {
-            choice = input.nextInt();
+            choice = input.nextLine();
 
-            if (choice > 0 && choice < 5){
-                type = participantTypes[choice-1];
-                System.out.println("Du er: " + type);
-                check = false;
-            } else {
-                System.out.println("Venligst vælg én af cyklisttyperne");
-                check = true;
+            switch (choice){
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                    type = participantTypes[Integer.parseInt(choice)-1];
+                    System.out.println("Du er: " + type);
+                    check = false;
+                    break;
+                default:
+                    System.out.println("Venligst vælg én af cyklisttyperne");
+                    check = true;
+
             }
         } while (check);
 
@@ -91,13 +97,14 @@ public class CreateParticipant {
 
 
         while(true) {
-            email = input.next();
+            email = input.nextLine();
             atPosition = email.indexOf("@");
             dotPosition = email.lastIndexOf('.');
             alreadyExist = false;
 
+
             if (atPosition > 0 && dotPosition > atPosition && dotPosition < (email.length()-2)
-                    && email.lastIndexOf("@") == email.indexOf("@")) {
+                    && email.lastIndexOf("@") == email.indexOf("@") && !email.contains(" ")) {
                 for (Person person:data.getPersons()) {
                     if (email.equals(person.getEmail())){
                         alreadyExist = true;
@@ -120,7 +127,7 @@ public class CreateParticipant {
 
     private String validatePassword() {
         System.out.println("Indtast password: ");
-        String password = input.next();
+        String password = input.nextLine();
         int length;
         int numberCount;
         int capitalCount;
@@ -183,7 +190,7 @@ public class CreateParticipant {
 
             System.out.println("Indtast nyt password:");
 
-            password = input.next();
+            password = input.nextLine();
 
         }while(error);
         return null;
@@ -191,7 +198,7 @@ public class CreateParticipant {
 
     private boolean matchPassword(String password){
             System.out.println("Indtast password igen: ");
-            String matchPassword = input.next();
+            String matchPassword = input.nextLine();
             boolean valid;
             do {
                 if (password.equals(matchPassword)) {
@@ -202,7 +209,7 @@ public class CreateParticipant {
                 } else {
                     valid = false;
                     System.out.println("Passwords matcher ikke, prøv igen: ");
-                    matchPassword = input.next();
+                    matchPassword = input.nextLine();
                 }
             } while (!valid);
             return false;

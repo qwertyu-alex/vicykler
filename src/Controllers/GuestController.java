@@ -52,9 +52,9 @@ public class GuestController {
         String password;
 
         System.out.println("Venligst indtast din email");
-        email = input.next().toLowerCase();
+        email = input.nextLine().toLowerCase();
         System.out.println("Venligst indtast dit password");
-        password = input.next();
+        password = input.nextLine();
 
         //Tjek om der er fundet en bruger
         for (Person person: data.getPersons()) {

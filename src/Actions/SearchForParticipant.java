@@ -21,7 +21,7 @@ public class SearchForParticipant {
 
         while (true){
             System.out.println("Indtast email:");
-            String string = input.next().toLowerCase();
+            String string = input.nextLine().toLowerCase();
             //find @ og . i strengen
             int atPosition = string.indexOf("@");
             int dotPosition = string.lastIndexOf('.');
@@ -37,7 +37,7 @@ public class SearchForParticipant {
             }
             System.out.println("Intet match - Vil du prøve igen?");
             System.out.println("1) Ja \t 2) Nej");
-            String answer = input.next();
+            String answer = input.nextLine();
             if (!answer.equals("1")){
                 return null;
             }
