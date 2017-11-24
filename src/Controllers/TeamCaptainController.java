@@ -117,7 +117,7 @@ public class TeamCaptainController {
         Participant foundParticipant;
 
         while(true){
-            foundParticipant = new SearchForParticipant().run(data.getParticipants());
+            foundParticipant = SearchForParticipant.run(data.getParticipants());
             if(foundParticipant.getTeam() != null){
                 foundParticipant.setTeam(teamCaptain.getTeam());
                 break;
@@ -138,7 +138,7 @@ public class TeamCaptainController {
             }
 
             //Tjek om emailen er i listen participantsInTheTeam
-            Participant foundParticipant = (new SearchForParticipant().run(participantsInTheTeam));
+            Participant foundParticipant = (SearchForParticipant.run(participantsInTheTeam));
 
             //Fjern participant
             if (foundParticipant != null){
@@ -157,7 +157,7 @@ public class TeamCaptainController {
 
     private void showParticipantInformation(){
         System.out.println("Se information om en deltager");
-        new ParticipantInformation().run(new SearchForParticipant().run(data.getParticipants()));
+        new ParticipantInformation().run(SearchForParticipant.run(data.getParticipants()));
     }
 
     private void changeTeamName(TeamCaptain teamCaptain){
@@ -169,12 +169,12 @@ public class TeamCaptainController {
 
 
     private void firmOverview(){
-        Firm foundFirm = new SearchForFirm().run(data.getFirms());
+        Firm foundFirm = SearchForFirm.run(data.getFirms());
         ShowTeamsInFirmAndTeamCaptains.run(foundFirm);
     }
 
     private void showTeamInformation(){
-        Firm foundFirm = new SearchForFirm().run(data.getFirms());
+        Firm foundFirm = SearchForFirm.run(data.getFirms());
         Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }

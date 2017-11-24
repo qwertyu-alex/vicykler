@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SearchForFirm {
     public SearchForFirm(){}
 
-    public Firm run (ArrayList<Firm> firms){
+    public static Firm run (ArrayList<Firm> firms){
         if (firms.size() < 1){
             System.out.println("Ingen firmaer");
             return null;

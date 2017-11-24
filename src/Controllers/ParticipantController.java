@@ -60,7 +60,7 @@ public class ParticipantController {
     }
 
     private void showParticipantInformation(){
-        new ParticipantInformation().run(new SearchForParticipant().run(data.getParticipants()));
+        new ParticipantInformation().run(SearchForParticipant.run(data.getParticipants()));
     }
 
     private void firmOverview(Participant currentParticipant){
@@ -68,13 +68,13 @@ public class ParticipantController {
     }
 
     private void showTeamInformation(){
-        Firm foundFirm = new SearchForFirm().run(data.getFirms());
+        Firm foundFirm = SearchForFirm.run(data.getFirms());
         Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }
 
     private void showAllTeamInformation(){
-        Firm foundFirm = new SearchForFirm().run(data.getFirms());
+        Firm foundFirm = SearchForFirm.run(data.getFirms());
         Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }

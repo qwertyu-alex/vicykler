@@ -101,7 +101,7 @@ public class AdminController {
         System.out.println("Sletter deltager");
 
         //Denne metode finder en participant ud fra en mail
-        Participant foundParticipant = new SearchForParticipant().run(data.getParticipants());
+        Participant foundParticipant = SearchForParticipant.run(data.getParticipants());
 
         //Denne metode sletter deltageren
         System.out.println("Sletter " + foundParticipant.getName());
@@ -126,16 +126,16 @@ public class AdminController {
 
     private void showParticipantInformation(){
         System.out.println("Se information om en deltager");
-        new ParticipantInformation().run(new SearchForParticipant().run(data.getParticipants()));
+        new ParticipantInformation().run(SearchForParticipant.run(data.getParticipants()));
     }
 
     private void firmOverview(){
-        Firm foundFirm = new SearchForFirm().run(data.getFirms());
+        Firm foundFirm = SearchForFirm.run(data.getFirms());
         ShowTeamsInFirmAndTeamCaptains.run(foundFirm);
     }
 
     private void showTeamInformation(){
-        Firm foundFirm = new SearchForFirm().run(data.getFirms());
+        Firm foundFirm = SearchForFirm.run(data.getFirms());
         Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }
@@ -227,7 +227,7 @@ public class AdminController {
     private void removeParticipantFromTeam(){
         Participant foundParticipant;
 
-        foundParticipant = new SearchForParticipant().run(data.getParticipants());
+        foundParticipant = SearchForParticipant.run(data.getParticipants());
         if (foundParticipant != null){
             if (foundParticipant.getTeam() != null){
                 foundParticipant.getTeam().getParticipants().remove(foundParticipant);

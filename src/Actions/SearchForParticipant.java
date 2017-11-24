@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SearchForParticipant {
     public SearchForParticipant(){}
 
-    public Participant run(ArrayList<Participant> participants){
+    public static Participant run(ArrayList<Participant> participants){
         if (participants.size() < 1){
             System.out.println("Ingen deltagere");
             return null;
