@@ -12,7 +12,7 @@ import Data.Data;
 
 public class CreateTeam {
     private Scanner input = new Scanner(System.in);
-    Data data;
+    private Data data;
 
     public CreateTeam(Data data){
         this.data = data;
