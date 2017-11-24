@@ -75,6 +75,7 @@ public class AdminController {
                     break;
                 case "13":
                     addParticipant();
+                    break;
                 default:
                     System.out.println("Logger ud");
                     return null;
@@ -154,12 +155,21 @@ public class AdminController {
 
     private void changeFirmAndTeamInformation(){
         int i;
+        int inputAnswer;
         ArrayList<Firm> firms =  data.getFirms();
 
         System.out.println("Ændre i et firma og holds oplysninger");
         System.out.println( "Tast 1 for at ændre firma navn" +
                 "\nTast 2 for at ændre holds navn");
-        int inputAnswer = input.nextInt();
+        while (true){
+            try {
+                inputAnswer = input.nextInt();
+                break;
+            } catch (InputMismatchException e){
+                System.out.println("Du skal taste 1 eller 2");
+                input.nextLine();
+            }
+        }
 
         if (inputAnswer == 1) {
             i = 1;
@@ -177,7 +187,15 @@ public class AdminController {
             //Sikkerhedsforanstalting sikre man ikke ændre navnet på det forkerte firma.
             do {
                 System.out.println("\nIndtast nummmer på firma du vil ændre navn på");
-                numOfFirm = input.nextInt();
+                while (true){
+                    try{
+                        numOfFirm = input.nextInt();
+                        break;
+                    } catch (InputMismatchException e){
+                        System.out.println("Indtast venligst et tal");
+                        input.nextLine();
+                    }
+                }
                 System.out.printf("Vil du ændre navnet på firmaet %s (j/n)", firms.get(numOfFirm - 1).getFirmName());
                 answer = input.nextLine();
 
@@ -194,14 +212,21 @@ public class AdminController {
         }else if (inputAnswer == 2){
             i = 1;
             int numOfTeam;
-
+            int numOfFirm;
             System.out.println("Ændre hold navn menu");
             System.out.printf("%-5s %s","Nr:","Firma navn");
             for(Firm firm : firms){
                 System.out.printf("\n%-5d %s",i++,firm.getFirmName());
             }
             System.out.println("\nVælg firma du vil ændre et hold navn i");
-            int numOfFirm = input.nextInt()-1;
+            while (true){
+                try{
+                    numOfFirm = input.nextInt()-1;
+                    break;
+                } catch (InputMismatchException e){
+                    System.out.println("Indtast venligst et tal");
+                }
+            }
             System.out.printf("%-5s %s","Nr:","hold navn");
 
             i = 1;
@@ -210,7 +235,15 @@ public class AdminController {
             }
 
             System.out.println("\nVælg hold du vil ændre navn på");
-            numOfTeam = input.nextInt()-1;
+            while (true){
+                try{
+                    numOfTeam = input.nextInt()-1;
+                    break;
+                } catch (InputMismatchException e){
+                    System.out.println("Indtast venligst et tal");
+                }
+            }
+
 
             System.out.println("Du har valgt at ændre navnet på holdet: " + firms.get(numOfFirm).getTeamList().get(numOfTeam).getTeamName());
             System.out.println("Hvad vil du ændre navnet til?");
@@ -267,6 +300,7 @@ public class AdminController {
 
     private void removeFirm(){
         int i = 1;
+        int removeFirm;
         //Henter Arraylisten over firmaer
         ArrayList<Firm> firms = data.getFirms();
 
@@ -280,7 +314,16 @@ public class AdminController {
 
         //sletter indtastede firma fra listen over firmaer
         System.out.println("\nIndtast nummmer på firma du vil slette");
-        int removeFirm = input.nextInt();
+
+        while (true){
+            try{
+                removeFirm = input.nextInt();
+                break;
+            } catch (InputMismatchException e){
+                System.out.println("Indtast venligst et tal.");
+                input.nextLine();
+            }
+        }
         System.out.printf("Du har nu slette firmaet %s fra listen over firmaer",firms.get(removeFirm-1).getFirmName());
 
         for (Team team:firms.get(removeFirm-1).getTeamList()) {
