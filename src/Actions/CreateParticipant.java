@@ -13,8 +13,6 @@ import Data.Data;
 public class CreateParticipant {
     private static Scanner input = new Scanner(System.in);
 
-    public CreateParticipant(){}
-
     public static Participant run(Data data) {
         String[] participantTypes = {"Master", "Enthusiast", "Cruiser", "Debutant"};
 

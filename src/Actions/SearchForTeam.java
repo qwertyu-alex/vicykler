@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 
 public class SearchForTeam {
-    public SearchForTeam(){}
 
     public static Team run (ArrayList<Team> teams){
         if (teams.size() < 1){

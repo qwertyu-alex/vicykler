@@ -6,7 +6,6 @@ import Classes.Participant;
 import Classes.Team;
 
 public class ShowTeamInformation {
-    public ShowTeamInformation(){}
 
     public static void run (Team team){
 

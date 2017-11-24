@@ -6,8 +6,6 @@ import Classes.Participant;
 import Classes.TeamCaptain;
 
 public class ParticipantInformation {
-    //Contructor
-    public ParticipantInformation(){}
 
     public static void run(Participant participant){
 

@@ -6,8 +6,6 @@ import Data.Data;
 
 public class ShowTeamDistrubtionOfFirms {
 
-    public ShowTeamDistrubtionOfFirms(){}
-
     public static void run(Data data){
         int numberOfTeams = 0;
 

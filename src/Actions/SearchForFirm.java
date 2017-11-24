@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 
 public class SearchForFirm {
-    public SearchForFirm(){}
 
     public static Firm run (ArrayList<Firm> firms){
         if (firms.size() < 1){
