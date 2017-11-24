@@ -6,9 +6,7 @@ import Classes.Firm;
 import Classes.Team;
 
 public class ShowTeamsInFirmAndTeamCaptains {
-    public ShowTeamsInFirmAndTeamCaptains(){}
-
-    public void run(Firm firm){
+    public static void run(Firm firm){
 
         if (firm != null){
             System.out.println(firm.getFirmName());
@@ -21,7 +19,5 @@ public class ShowTeamsInFirmAndTeamCaptains {
         } else {
             System.out.println("Intet firma forbundet med dig");
         }
-
-
     }
 }

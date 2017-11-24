@@ -8,7 +8,7 @@ import Classes.Team;
 public class ShowTeamInformation {
     public ShowTeamInformation(){}
 
-    public void run (Team team){
+    public static void run (Team team){
 
         if (team == null){
             return;

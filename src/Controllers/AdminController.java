@@ -131,19 +131,19 @@ public class AdminController {
 
     private void firmOverview(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
-        new ShowTeamsInFirmAndTeamCaptains().run(foundFirm);
+        ShowTeamsInFirmAndTeamCaptains.run(foundFirm);
     }
 
     private void showTeamInformation(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
         Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
-        new ShowTeamInformation().run(foundTeam);
+        ShowTeamInformation.run(foundTeam);
     }
 
     private void showAllTeamInformation(){
         for (Firm firm :data.getFirms()) {
             for (Team team : firm.getTeamList()) {
-                new ShowTeamInformation().run(team);
+                ShowTeamInformation.run(team);
             }
         }
     }
