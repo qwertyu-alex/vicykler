@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class SearchForTeam {
     public SearchForTeam(){}
 
-    public Team run (ArrayList<Team> teams){
+    public static Team run (ArrayList<Team> teams){
         if (teams.size() < 1){
             System.out.println("Ingen hold");
             return null;

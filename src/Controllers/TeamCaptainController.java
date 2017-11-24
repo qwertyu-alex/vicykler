@@ -175,7 +175,7 @@ public class TeamCaptainController {
 
     private void showTeamInformation(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
-        Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
+        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }
 
@@ -188,7 +188,7 @@ public class TeamCaptainController {
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run(data);
+        ShowTeamDistrubtionOfFirms.run(data);
     }
 }
 

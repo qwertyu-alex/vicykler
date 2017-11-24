@@ -69,18 +69,18 @@ public class ParticipantController {
 
     private void showTeamInformation(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
-        Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
+        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }
 
     private void showAllTeamInformation(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
-        Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
+        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run(data);
+        ShowTeamDistrubtionOfFirms.run(data);
     }
 
 

@@ -44,7 +44,7 @@ public class GuestController {
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run(data);
+        ShowTeamDistrubtionOfFirms.run(data);
     }
 
     private Person login(){

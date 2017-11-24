@@ -136,7 +136,7 @@ public class AdminController {
 
     private void showTeamInformation(){
         Firm foundFirm = new SearchForFirm().run(data.getFirms());
-        Team foundTeam = new SearchForTeam().run(foundFirm.getTeamList());
+        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
         ShowTeamInformation.run(foundTeam);
     }
 
@@ -149,7 +149,7 @@ public class AdminController {
     }
 
     private void showTeamDistrubtionOfFirms(){
-        new ShowTeamDistrubtionOfFirms().run(data);
+        ShowTeamDistrubtionOfFirms.run(data);
     }
 
     private void changeFirmAndTeamInformation(){
@@ -251,7 +251,7 @@ public class AdminController {
         }
 
         //Her finder det hold i listen vi vil slette
-        Team foundTeam = new SearchForTeam().run(listTeam);
+        Team foundTeam = SearchForTeam.run(listTeam);
 
         if (foundTeam != null){
             //Fjern holdet fra hver enkelte holdmedlem

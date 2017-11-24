@@ -8,7 +8,7 @@ public class ShowTeamDistrubtionOfFirms {
 
     public ShowTeamDistrubtionOfFirms(){}
 
-    public void run(Data data){
+    public static void run(Data data){
         int numberOfTeams = 0;
 
         for (Firm firms : data.getFirms()){

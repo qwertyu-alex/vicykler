@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="76e9da67-2ac1-4588-a227-9f9ea96bb52b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" afterPath="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java" afterPath="$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/SearchForTeam.java" afterPath="$PROJECT_DIR$/src/Actions/SearchForTeam.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java" afterPath="$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/AdminController.java" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/GuestController.java" afterPath="$PROJECT_DIR$/src/Controllers/GuestController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/ParticipantController.java" afterPath="$PROJECT_DIR$/src/Controllers/ParticipantController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/TeamCaptainController.java" afterPath="$PROJECT_DIR$/src/Controllers/TeamCaptainController.java" />
     </list>
@@ -29,16 +30,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="GuestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controllers/GuestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+              <folding>
+                <element signature="e#1206#1207#0" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="145" column="16" lean-forward="false" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+              <caret line="253" column="25" lean-forward="false" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
               <folding>
-                <element signature="e#5084#5085#0" expanded="true" />
-                <element signature="e#5142#5143#0" expanded="true" />
-                <marker date="1511515766647" expanded="false" signature="10877:10887" ph=" { " />
-                <marker date="1511515766647" expanded="false" signature="10921:10927" ph=" }" />
+                <element signature="e#5078#5079#0" expanded="true" />
+                <element signature="e#5130#5131#0" expanded="true" />
+                <marker date="1511516010927" expanded="false" signature="10859:10869" ph=" { " />
+                <marker date="1511516010927" expanded="false" signature="10903:10909" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -47,15 +61,15 @@
       <file leaf-file-name="TeamCaptainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/TeamCaptainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="178" column="24" lean-forward="false" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+            <state relative-caret-position="455">
+              <caret line="177" column="25" lean-forward="false" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
               <folding>
                 <element signature="method#removeTeam#0;class#TeamCaptainController#0" expanded="false" />
                 <element signature="method#addParticipantToTeam#0;class#TeamCaptainController#0" expanded="false" />
                 <element signature="method#removeParticipantFromTeam#0;class#TeamCaptainController#0" expanded="false" />
                 <element signature="method#showParticipantInformation#0;class#TeamCaptainController#0" expanded="false" />
-                <marker date="1511515766632" expanded="false" signature="6847:6857" ph=" { " />
-                <marker date="1511515766632" expanded="false" signature="6900:6906" ph=" }" />
+                <element signature="e#6841#6842#0" expanded="true" />
+                <element signature="e#6893#6894#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,8 +78,18 @@
       <file leaf-file-name="ShowTeamDistrubtionOfFirms.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+            <state relative-caret-position="460">
+              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchForTeam.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Actions/SearchForTeam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -81,25 +105,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShowTeamInformation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ShowTeamInformation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamInformation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateTeam.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Actions/CreateTeam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding>
-                <element signature="e#330#331#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -107,11 +118,11 @@
       <file leaf-file-name="ParticipantController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/ParticipantController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+            <state relative-caret-position="232">
+              <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
               <folding>
-                <marker date="1511515766600" expanded="false" signature="2795:2805" ph=" { " />
-                <marker date="1511515766600" expanded="false" signature="2848:2854" ph=" }" />
+                <element signature="e#2783#2784#0" expanded="true" />
+                <element signature="e#2835#2836#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,6 +168,8 @@
       <find>new ShowTeamInformation().run</find>
       <find>new ShowTeamsInFirmAndTeamCaptains()</find>
       <find>new ShowTeamInformation()</find>
+      <find>new ShowTeamDistrubtionOfFirms()</find>
+      <find>new SearchForTeam()</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -165,6 +178,8 @@
       <replace>ShowTeamInformation.run(team);</replace>
       <replace>ShowTeamsInFirmAndTeamCaptains</replace>
       <replace>ShowTeamInformation</replace>
+      <replace>ShowTeamDistrubtionOfFirms</replace>
+      <replace>SearchForTeam</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -204,12 +219,10 @@
         <option value="$PROJECT_DIR$/src/Actions/ParticipantInformation.java" />
         <option value="$PROJECT_DIR$/src/Actions/Login.java" />
         <option value="$PROJECT_DIR$/src/Actions/DeleteTeamAsTeamCaptain.java" />
-        <option value="$PROJECT_DIR$/src/Actions/SearchForTeam.java" />
         <option value="$PROJECT_DIR$/src/Actions/SearchForFirm.java" />
         <option value="$PROJECT_DIR$/src/Main/MainController.java" />
         <option value="$PROJECT_DIR$/src/Actions/Menu.java" />
         <option value="$PROJECT_DIR$/src/Actions/RemoveTeamAsTeamCaptain.java" />
-        <option value="$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java" />
         <option value="$PROJECT_DIR$/src/Classes/Admin.java" />
         <option value="$PROJECT_DIR$/src/Classes/Team.java" />
         <option value="$PROJECT_DIR$/src/Classes/Firm.java" />
@@ -219,15 +232,17 @@
         <option value="$PROJECT_DIR$/src/Data/Data.java" />
         <option value="$PROJECT_DIR$/src/Controllers/MainController.java" />
         <option value="$PROJECT_DIR$/src/Actions/SearchForParticipant.java" />
-        <option value="$PROJECT_DIR$/src/Controllers/GuestController.java" />
         <option value="$PROJECT_DIR$/src/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/Actions/CreateTeam.java" />
         <option value="$PROJECT_DIR$/src/Actions/CreateParticipant.java" />
         <option value="$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java" />
+        <option value="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" />
+        <option value="$PROJECT_DIR$/src/Controllers/GuestController.java" />
+        <option value="$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java" />
         <option value="$PROJECT_DIR$/src/Controllers/AdminController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/ParticipantController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/TeamCaptainController.java" />
-        <option value="$PROJECT_DIR$/src/Actions/ShowTeamInformation.java" />
+        <option value="$PROJECT_DIR$/src/Actions/SearchForTeam.java" />
       </list>
     </option>
   </component>
@@ -513,7 +528,7 @@
       <workItem from="1511425355571" duration="8230000" />
       <workItem from="1511469506578" duration="1000000" />
       <workItem from="1511512219921" duration="385000" />
-      <workItem from="1511512634591" duration="2510000" />
+      <workItem from="1511512634591" duration="2752000" />
     </task>
     <task id="LOCAL-00001" summary="memes">
       <created>1508058702907</created>
@@ -851,11 +866,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511469903054</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="memes">
+      <created>1511515857923</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1511515857923</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150862000" />
+    <option name="totallyTimeSpent" value="151104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
@@ -1134,14 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/SearchForTeam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/SearchForFirm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="820">
@@ -1271,17 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/GuestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="71" column="25" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
-          <folding>
-            <element signature="e#1915#1916#0" expanded="false" />
-            <element signature="e#1964#1965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/CreateParticipant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="895">
@@ -1351,14 +1354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamsInFirmAndTeamCaptains.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -1367,49 +1362,76 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamInformation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/GuestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <folding>
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamDistrubtionOfFirms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="145" column="16" lean-forward="false" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+          <caret line="253" column="25" lean-forward="false" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
           <folding>
-            <element signature="e#5084#5085#0" expanded="true" />
-            <element signature="e#5142#5143#0" expanded="true" />
-            <marker date="1511515766647" expanded="false" signature="10877:10887" ph=" { " />
-            <marker date="1511515766647" expanded="false" signature="10921:10927" ph=" }" />
+            <element signature="e#5078#5079#0" expanded="true" />
+            <element signature="e#5130#5131#0" expanded="true" />
+            <marker date="1511516010927" expanded="false" signature="10859:10869" ph=" { " />
+            <marker date="1511516010927" expanded="false" signature="10903:10909" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/ParticipantController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+        <state relative-caret-position="232">
+          <caret line="77" column="25" lean-forward="false" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
           <folding>
-            <marker date="1511515766600" expanded="false" signature="2795:2805" ph=" { " />
-            <marker date="1511515766600" expanded="false" signature="2848:2854" ph=" }" />
+            <element signature="e#2783#2784#0" expanded="true" />
+            <element signature="e#2835#2836#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/TeamCaptainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="178" column="24" lean-forward="false" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+        <state relative-caret-position="455">
+          <caret line="177" column="25" lean-forward="false" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
           <folding>
             <element signature="method#removeTeam#0;class#TeamCaptainController#0" expanded="false" />
             <element signature="method#addParticipantToTeam#0;class#TeamCaptainController#0" expanded="false" />
             <element signature="method#removeParticipantFromTeam#0;class#TeamCaptainController#0" expanded="false" />
             <element signature="method#showParticipantInformation#0;class#TeamCaptainController#0" expanded="false" />
-            <marker date="1511515766632" expanded="false" signature="6847:6857" ph=" { " />
-            <marker date="1511515766632" expanded="false" signature="6900:6906" ph=" }" />
+            <element signature="e#6841#6842#0" expanded="true" />
+            <element signature="e#6893#6894#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Actions/ShowTeamInformation.java">
+    <entry file="file://$PROJECT_DIR$/src/Actions/SearchForTeam.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding />
         </state>
       </provider>
