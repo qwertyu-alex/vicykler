@@ -299,7 +299,7 @@ public class AdminController {
     }
 
     private void addParticipant(){
-        new CreateParticipant().run(data);
+        CreateParticipant.run(data);
     }
 
 

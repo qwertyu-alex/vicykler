@@ -69,7 +69,7 @@ public class GuestController {
     }
 
     private void createParticipant(){
-        new CreateParticipant().run(data);
+        CreateParticipant.run(data);
     }
 
 }

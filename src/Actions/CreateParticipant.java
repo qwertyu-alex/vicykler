@@ -11,11 +11,11 @@ import Classes.Person;
 import Data.Data;
 
 public class CreateParticipant {
-    private Scanner input = new Scanner(System.in);
+    private static Scanner input = new Scanner(System.in);
 
     public CreateParticipant(){}
 
-    public Participant run(Data data) {
+    public static Participant run(Data data) {
         String[] participantTypes = {"Master", "Enthusiast", "Cruiser", "Debutant"};
 
         System.out.println("Opretter deltager");
@@ -43,7 +43,7 @@ public class CreateParticipant {
 
     }
 
-    private String validateName() {
+    private static String validateName() {
         System.out.println("Indtast deltagernavn: ");
 
         String name = input.nextLine();
@@ -59,7 +59,7 @@ public class CreateParticipant {
     }
 
 
-    private String validateType(String[] participantTypes){
+    private static String validateType(String[] participantTypes){
         String choice;
         String type = "";
         boolean check;
@@ -89,7 +89,7 @@ public class CreateParticipant {
         return type;
     }
 
-    private String validateEmail(Data data) {
+    private static String validateEmail(Data data) {
         System.out.println("Indtast Email: ");
         String email;
         int atPosition, dotPosition;
@@ -124,7 +124,7 @@ public class CreateParticipant {
         }
     }
 
-    private String validatePassword() {
+    private static String validatePassword() {
         System.out.println("Indtast password: ");
         String password = input.nextLine();
         int length;
@@ -195,7 +195,7 @@ public class CreateParticipant {
         return null;
     }
 
-    private boolean matchPassword(String password){
+    private static boolean matchPassword(String password){
             System.out.println("Indtast password igen: ");
             String matchPassword = input.nextLine();
             boolean valid;
