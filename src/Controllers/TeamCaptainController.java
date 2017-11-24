@@ -157,7 +157,7 @@ public class TeamCaptainController {
 
     private void showParticipantInformation(){
         System.out.println("Se information om en deltager");
-        new ParticipantInformation().run(SearchForParticipant.run(data.getParticipants()));
+        ParticipantInformation.run(SearchForParticipant.run(data.getParticipants()));
     }
 
     private void changeTeamName(TeamCaptain teamCaptain){

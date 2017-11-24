@@ -9,7 +9,7 @@ public class ParticipantInformation {
     //Contructor
     public ParticipantInformation(){}
 
-    public void run(Participant participant){
+    public static void run(Participant participant){
 
         if (participant == null){
             return;

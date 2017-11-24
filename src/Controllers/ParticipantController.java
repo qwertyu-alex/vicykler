@@ -60,7 +60,7 @@ public class ParticipantController {
     }
 
     private void showParticipantInformation(){
-        new ParticipantInformation().run(SearchForParticipant.run(data.getParticipants()));
+        ParticipantInformation.run(SearchForParticipant.run(data.getParticipants()));
     }
 
     private void firmOverview(Participant currentParticipant){
