@@ -70,7 +70,6 @@ class TeamCaptainController {
     }
 
     private void removeTeam(TeamCaptain teamCaptain){
-        ArrayList<Team> listTeam = new ArrayList<>();
         String confirm;
 
         System.out.println("Vil du slette dit hold?: " + teamCaptain.getTeam().getTeamName() +
@@ -118,7 +117,7 @@ class TeamCaptainController {
 
         while(true){
             foundParticipant = SearchForParticipant.run(data.getParticipants());
-            if(foundParticipant.getTeam() != null){
+            if(foundParticipant != null){
                 foundParticipant.setTeam(teamCaptain.getTeam());
                 break;
             }
@@ -175,8 +174,12 @@ class TeamCaptainController {
 
     private void showTeamInformation(){
         Firm foundFirm = SearchForFirm.run(data.getFirms());
-        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
-        ShowTeamInformation.run(foundTeam);
+        if (foundFirm != null){
+            Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
+            if (foundTeam != null){
+                ShowTeamInformation.run(foundTeam);
+            }
+        }
     }
 
     private void showAllTeamInformation(){

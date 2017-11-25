@@ -132,7 +132,7 @@ public class CreateParticipant {
         boolean error;
         boolean onlyNumAndLetter;
 
-        do {
+        while (true) {
             length = password.length();
             numberCount = 0;
             capitalCount = 0;
@@ -190,27 +190,22 @@ public class CreateParticipant {
 
             password = input.nextLine();
 
-        }while(error);
-        return null;
+        }
     }
 
     private static boolean matchPassword(String password){
-            System.out.println("Indtast password igen: ");
-            String matchPassword = input.nextLine();
-            boolean valid;
-            do {
-                if (password.equals(matchPassword)) {
-                    valid = true;
-                    System.out.println("Password matcher");
-                    return valid;
+        String matchPassword;
+        System.out.println("Indtast password igen: ");
+        while (true) {
+            matchPassword = input.nextLine();
+            if (password.equals(matchPassword)) {
+                System.out.println("Password matcher");
+                return true;
 
-                } else {
-                    valid = false;
-                    System.out.println("Passwords matcher ikke, prøv igen: ");
-                    matchPassword = input.nextLine();
-                }
-            } while (!valid);
-            return false;
+            } else {
+                System.out.println("Passwords matcher ikke, prøv igen: ");
+            }
+        }
     }
 }
 
