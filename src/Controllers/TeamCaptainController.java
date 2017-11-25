@@ -10,15 +10,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class TeamCaptainController {
-    Data data;
-    Scanner input = new Scanner(System.in);
+class TeamCaptainController {
+    private Data data;
+    private Scanner input = new Scanner(System.in);
 
-    public TeamCaptainController(Data data){
+    TeamCaptainController(Data data){
         this.data = data;
     }
 
-    public Person showTeamCaptainMenu(TeamCaptain teamCaptain){
+    Person showTeamCaptainMenu(TeamCaptain teamCaptain){
 
         while(true){
             System.out.println("\nHoldkaptajn menu for " + teamCaptain.getTeam().getTeamName());

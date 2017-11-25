@@ -8,15 +8,15 @@ import Data.Data;
 import java.util.Scanner;
 
 
-public class ParticipantController {
+class ParticipantController {
     private Data data;
     private Scanner input = new Scanner(System.in);
 
-    public ParticipantController(Data data){
+    ParticipantController(Data data){
         this.data = data;
     }
 
-    public Person showParticipantsMenu(Participant currentParticipant){
+    Person showParticipantsMenu(Participant currentParticipant){
         while (true){
             System.out.println("\nDeltager menu");
             System.out.println("1) Opret et hold");

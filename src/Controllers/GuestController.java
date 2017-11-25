@@ -10,20 +10,21 @@ import Data.Data;
 import Classes.Person;
 
 
-public class GuestController {
+class GuestController {
     private Scanner input = new Scanner(System.in);
     private Data data;
 
-    public GuestController(Data data){
+    GuestController(Data data){
         this.data = data;
     }
 
-    public Person showGuestMenu(){
+    Person showGuestMenu(){
         while (true){
             System.out.println("\nGæstemenu");
             System.out.println("1) Se statistikker");
             System.out.println("2) Login");
             System.out.println("3) Opret bruger");
+            System.out.println("4) Luk programmet");
             System.out.println("_______________________________________________________________");
 
             switch((input.nextLine())){
@@ -35,6 +36,8 @@ public class GuestController {
                 case "3":
                     createParticipant();
                     break;
+                case "4":
+                    return null;
                 default:
                     System.out.println("Du skal vælge en af følgende:");
                     break;

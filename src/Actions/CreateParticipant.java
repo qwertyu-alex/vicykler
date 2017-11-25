@@ -33,6 +33,7 @@ public class CreateParticipant {
         //CheckPassword
         boolean passCheck = matchPassword(participantPassword);
 
+        System.out.println("Bruger er nu oprettet");
         if (passCheck){
             return data.generateParticipant(participantName, participantEmail, participantPassword, cyclistType);
         } else {

@@ -27,29 +27,33 @@ public class Data {
         //firmless
         Participant lol = generateParticipant("Lol Natteravn", "lol@gmail.com","Alex1", "Master");
 
-        Firm firma1 = generateFirm("Arla");
-        Firm firma2 = generateFirm("NONO");
+        //Arla
+        Firm arla = generateFirm("Arla");
 
-        Team team1 = generateTeam("The Sharks", firma1);
-        Team team2 =  generateTeam("død", firma1);
+            //folk fra The sharks
+            Team team1 = generateTeam("The Sharks", arla);
+            generateTeamCaptain("Frodo DatFrodo", "frodo@gmail.com","Alex1", "Master").setTeam(team1);
+            generateParticipant("Kesi Natteravn", "Kesi@gmail.com","Alex1", "Master").setTeam(team1);
+            generateParticipant("Jesus Kristus", "jesus@gmail.com","Alex1", "Master").setTeam(team1);
+            generateParticipant("Muhammed", "Muhammed@gmail.com","Alex1", "Master").setTeam(team1);
+            generateParticipant("Johannes Døbberen", "Johannes@gmail.com","Alex1",  "Master").setTeam(team1);
+
+            //Folk fra død
+            Team team2 = generateTeam("død", arla);
+            generateTeamCaptain("Hej", "lol@.@", "Hej2", "Master").setTeam(team2);
+            generateParticipant("Kesi", "k@mail.com","Alex1", "Master").setTeam(team2);
+            generateParticipant("Meme", "m@mail.com","Alex1", "Master").setTeam(team2);
 
 
-        //folk fra The sharks
-        generateParticipant("Kesi Natteravn", "Kesi@gmail.com","Alex1", "Master").setTeam(team1);
-        generateParticipant("Jesus Kristus", "jesus@gmail.com","Alex1", "Master").setTeam(team1);
-        generateParticipant("Muhammed", "Muhammed@gmail.com","Alex1", "Master").setTeam(team1);
-        generateParticipant("Johannes Døbberen", "Johannes@gmail.com","Alex1",  "Master").setTeam(team1);
+        //NONO
+        Firm nono = generateFirm("Nono");
+            Team team3 = generateTeam("Slagter", nono);
+            generateTeamCaptain("Frodo DatFrodo", "frodo@asd.com","Alex1", "Master").setTeam(team3);
+            generateParticipant("Kesi Natteravn", "Kesi@asd.com","Alex1", "Master").setTeam(team3);
+            generateParticipant("Jesus Kristus", "jesus@asd.com","Alex1", "Master").setTeam(team3);
+            generateParticipant("Muhammed", "Muhammed@sa.com","Alex1", "Master").setTeam(team3);
+            generateParticipant("Johannes Døbberen", "Johannes@asd.com","Alex1",  "Master").setTeam(team3);
 
-
-        TeamCaptain tc1 = generateTeamCaptain("Frodo DatFrodo", "frodo@gmail.com","Alex1", "Master");
-        TeamCaptain tc2 = generateTeamCaptain("Hej", "lol@.@", "Hej2", "Master");
-
-        tc1.setTeam(team1);
-        tc2.setTeam(team2);
-
-        //Folk fra død
-        Participant ppar1 = generateParticipant("Kesi", "k@mail.com","Alex1", "Master");
-        ppar1.setTeam(team2);
     }
 
     public Admin generateAdmin(String name, String email, String password){

@@ -8,15 +8,15 @@ import Classes.*;
 import java.util.*;
 import Data.Data;
 
-public class AdminController {
+class AdminController {
     private Scanner input = new Scanner(System.in);
     private Data data;
 
-    public AdminController(Data data){
+    AdminController(Data data){
         this.data = data;
     }
 
-    public Person showAdminMenu(Admin admin){
+    Person showAdminMenu(Admin admin){
         while(true){
             System.out.println("\nAdmin menu");
             System.out.println("1) Tilføj firma");
@@ -105,20 +105,22 @@ public class AdminController {
         Participant foundParticipant = SearchForParticipant.run(data.getParticipants());
 
         //Denne metode sletter deltageren
-        System.out.println("Sletter " + foundParticipant.getName());
+        System.out.println((foundParticipant!=null?"Sletter " + foundParticipant.getName():"Kan ikke finde den søgte person"));
 
-        //Slet personen i firmaet
-        if (foundParticipant.getFirm() != null){
-            foundParticipant.getFirm().getParticipants().remove(foundParticipant);
+        if (foundParticipant != null){
+            //Slet personen i firmaet
+            if (foundParticipant.getFirm() != null){
+                foundParticipant.getFirm().getParticipants().remove(foundParticipant);
+            }
+
+            //Slet personen i holdet
+            if(foundParticipant.getTeam() != null){
+                foundParticipant.getTeam().getParticipants().remove(foundParticipant);
+            }
+
+            //Slet personen over listen af deltagere
+            data.getParticipants().remove(foundParticipant);
         }
-
-        //Slet personen i holdet
-        if(foundParticipant.getTeam() != null){
-            foundParticipant.getTeam().getParticipants().remove(foundParticipant);
-        }
-
-        //Slet personen over listen af deltagere
-        data.getParticipants().remove(foundParticipant);
     }
 
     private void createTeam(){
@@ -137,8 +139,12 @@ public class AdminController {
 
     private void showTeamInformation(){
         Firm foundFirm = SearchForFirm.run(data.getFirms());
-        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
-        ShowTeamInformation.run(foundTeam);
+        if (foundFirm != null){
+            Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
+            if (foundTeam != null){
+                ShowTeamInformation.run(foundTeam);
+            }
+        }
     }
 
     private void showAllTeamInformation(){

@@ -29,6 +29,9 @@ public class MainController {
 
             if (currentPerson == null){
                 currentPerson = guestController.showGuestMenu();
+                if (currentPerson == null){
+                    break;
+                }
             }
 
             if (currentPerson instanceof TeamCaptain){
