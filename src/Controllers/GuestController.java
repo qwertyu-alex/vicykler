@@ -21,7 +21,7 @@ class GuestController {
     Person showGuestMenu(){
         while (true){
             System.out.println("\nGæstemenu");
-            System.out.println("1) Se statistikker");
+            System.out.println("1) Statistik over fordelingen af hold på firmaerne");
             System.out.println("2) Login");
             System.out.println("3) Opret bruger");
             System.out.println("4) Luk programmet");

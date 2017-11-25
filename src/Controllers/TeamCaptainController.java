@@ -25,7 +25,7 @@ class TeamCaptainController {
             System.out.println("1) Slet hold"); //mangler
             System.out.println("2) Tilføj deltager til hold");
             System.out.println("3) Fjern deltager fra hold");
-            System.out.println("4) Ændre holdnavn oplysninger"); //man gler
+            System.out.println("4) Ændre et holds oplysninger"); //mangler
             System.out.println("5) Se information om en deltager");
             System.out.println("6) Overblik over et firmas hold og tilhørende holdkaptajn");
             System.out.println("7) Se information om et hold og dets deltagere");
