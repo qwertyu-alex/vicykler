@@ -88,14 +88,32 @@ class AdminController {
     private void addFirm(){
         //henter Arraylisten over firmaer
         ArrayList<Firm> firms = data.getFirms();
+        String firmName;
+        boolean skip;
 
         System.out.println("Tilføj firma menu");
         System.out.println("Indtast navn på det nye firma");
-        String firmName = input.nextLine();
 
-        //Tilføjer det indtastede navn på firmaet til Arraylisten over firmaer.
-        firms.add(new Firm(firmName));
-        System.out.printf("Du har nu tilføjet firmaet %s til listen over firmaer",firmName);
+        while (true){
+            skip = false;
+            firmName = input.nextLine();
+
+            for (Firm firm:firms) {
+                if (firm.getFirmName().equals(firmName)){
+                    skip = true;
+                    System.out.println("Dette navn er allerede i brug. Indtast andet navn:");
+                }
+            }
+
+            if (skip){
+                continue;
+            }
+
+            //Tilføjer det indtastede navn på firmaet til Arraylisten over firmaer.
+            firms.add(new Firm(firmName));
+            System.out.printf("Du har nu tilføjet firmaet %s til listen over firmaer",firmName);
+            break;
+        }
     }
 
     private void removeParticipant(){
@@ -324,13 +342,18 @@ class AdminController {
         while (true){
             try{
                 removeFirm = input.nextInt();
-                break;
+                input.nextLine();
+                if (removeFirm-1 < firms.size()){
+                    break;
+                } else {
+                    System.out.println("Vælg venligst et af tallene.");
+                }
             } catch (InputMismatchException e){
-                System.out.println("Indtast venligst et tal.");
+                System.out.println("Vælg venligst et af tallene.");
                 input.nextLine();
             }
         }
-        System.out.printf("Du har nu slette firmaet %s fra listen over firmaer",firms.get(removeFirm-1).getFirmName());
+        System.out.printf("Du har nu slette firmaet %s fra listen over firmaer. \n",firms.get(removeFirm-1).getFirmName());
 
         for (Team team:firms.get(removeFirm-1).getTeamList()) {
 
