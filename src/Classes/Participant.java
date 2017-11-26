@@ -10,8 +10,6 @@ public class Participant extends Person {
     //Constructor
     public Participant(String name, String email, String password, String cyclistType) {
         super(name, email, password);
-
-        //Der kan kun være 4 typer: Indsæt logik
         this.cyclistType = cyclistType;
 
     }
@@ -30,9 +28,6 @@ public class Participant extends Person {
         }
 
     }
-
-    //Adder
-
 
     //Getter
     public String getCyclistType() {
@@ -53,7 +48,6 @@ public class Participant extends Person {
         return firm;
     }
 
-
     //Setter
     public void setCyklistType(String cyclistType) {
         this.cyclistType = cyclistType;
@@ -71,5 +65,4 @@ public class Participant extends Person {
     public void setFirm(Firm firm){
         this.firm = firm;
     }
-
 }
