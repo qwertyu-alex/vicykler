@@ -18,15 +18,14 @@ public class Participant extends Person {
     public Participant(Participant participant){
         super(participant.getName(), participant.getEmail(), participant.getPassword());
         this.cyclistType = participant.getCyclistType();
-        //hvis der er forbundet et hold;
+        //hvis der er forbundet et hold
         if (participant.getTeam() != null){
             this.team = participant.getTeam();
         }
-        //hvis der er forbundet et firma;
+        //hvis der er forbundet et firma
         if (participant.getFirm() != null){
             this.firm = participant.getFirm();
         }
-
     }
 
     //Getter
