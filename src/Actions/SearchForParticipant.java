@@ -35,7 +35,7 @@ public class SearchForParticipant {
                 }
             }
             System.out.println("Intet match - Vil du prøve igen?");
-            System.out.println("1) Ja \t 2) Nej");
+            System.out.println("1) Ja \t Andet) Nej");
             String answer = input.nextLine();
             if (!answer.equals("1")){
                 return null;

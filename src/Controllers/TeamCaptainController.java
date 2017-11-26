@@ -36,7 +36,10 @@ class TeamCaptainController {
 
             switch(input.nextLine()){
                 case "1":
-                    removeTeam(teamCaptain);
+                    Person person = removeTeam(teamCaptain);
+                    if (!(person instanceof TeamCaptain)){
+                        return person;
+                    }
                     break;
                 case "2":
                     addParticipantToTeam(teamCaptain);
@@ -69,8 +72,10 @@ class TeamCaptainController {
         }
     }
 
-    private void removeTeam(TeamCaptain teamCaptain){
+    private Participant removeTeam(TeamCaptain teamCaptain){
         String confirm;
+        Team team = teamCaptain.getTeam();
+        Firm firm = teamCaptain.getTeam().getFirm();
 
         System.out.println("Vil du slette dit hold?: " + teamCaptain.getTeam().getTeamName() +
                 "\nIndtast 1 for Ja\nIndtast 2 for Nej");
@@ -78,35 +83,37 @@ class TeamCaptainController {
         boolean keepRunning = true;
 
         confirm = input.nextLine();
-        while(keepRunning){
-
+        while(true){
             if (confirm.equals("1")){
-
                 //Slette alle medlemmeres hold i holdet
-                for (Participant participant:teamCaptain.getTeam().getParticipants()) {
+                for (Participant participant:team.getParticipants()) {
                     participant.setTeam(null);
                 }
                 //slet holdet fra virksomheden
-                teamCaptain.getTeam().getFirm().getTeamList().remove(teamCaptain.getTeam());
+                firm.getTeamList().remove(team);
 
                 //slet holdet fra holdlisten
-                data.getTeams().remove(teamCaptain.getTeam());
+                data.getTeams().remove(team);
 
                 //Fjern holdkaptainen fra holdet
-                teamCaptain.getTeam().setTeamCaptain(null);
+                team.setTeamCaptain(null);
 
                 //set holdkaptajnens hold til null
                 teamCaptain.setTeam(null);
 
-                //set holdkaptajnen til en participant
-                data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(), teamCaptain.getPassword(), teamCaptain.getCyclistType());
+                //Fjern holdkaptajnen over listen over personer
+                data.getPersons().remove(teamCaptain);
+
+                //gør holdkaptajnen til en participant
+                Participant newParticipant = data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(), teamCaptain.getPassword(), teamCaptain.getCyclistType());
 
                 System.out.println("Dit hold er nu slettet");
+                return newParticipant;
             } else {
                 System.out.println("Vil du prøve igen? 1) Ja 2) Nej");
                 confirm = input.nextLine();
                 if (!confirm.equals("1")){
-                    keepRunning = false;
+                    return teamCaptain;
                 }
             }
         }
@@ -115,24 +122,27 @@ class TeamCaptainController {
     private void addParticipantToTeam(TeamCaptain teamCaptain){
         Participant foundParticipant;
 
-        while(true){
-            foundParticipant = SearchForParticipant.run(data.getParticipants());
-            if(foundParticipant != null){
+        foundParticipant = SearchForParticipant.run(data.getParticipants());
+        if(foundParticipant != null){
+            if (foundParticipant.getTeam() != null){
                 foundParticipant.setTeam(teamCaptain.getTeam());
-                break;
+            } else {
+                System.out.println("Personen er allerede i et hold");
             }
         }
+
     }
 
     private void removeParticipantFromTeam(TeamCaptain teamCaptain){
         ArrayList<Participant> participantsInTheTeam = teamCaptain.getTeam().getParticipants();
 
+        System.out.println("Fjern deltager fra hold");
         //tjek hvis der er deltagere i holdet
         if (participantsInTheTeam.size() > 0){
-            System.out.println("Emailliste over folk på holdet:");
+            System.out.println("Liste over folk på holdet:");
             for (Participant participant: participantsInTheTeam ) {
                 if (participant != teamCaptain){
-                    System.out.println(participant.getEmail());
+                    System.out.println("Navn: " + participant.getName() + ", email: " + participant.getEmail());
                 }
             }
 
@@ -142,7 +152,9 @@ class TeamCaptainController {
             //Fjern participant
             if (foundParticipant != null){
                 System.out.println("Deltager, " + foundParticipant.getName() + ", er fjernet fra listen");
+                //Fjern personen fra holdet
                 foundParticipant.getTeam().getParticipants().remove(foundParticipant);
+                //Fjern holdet fra personen
                 foundParticipant.setTeam(null);
             } else {
                 System.out.println("Ingen personer er fjernet fra holdet");

@@ -32,7 +32,8 @@ class GuestController {
                     showTeamDistrubtionOfFirms();
                     break;
                 case "2":
-                    return login();
+                    Person person = login();
+                    if (person == null){break;} else {return (Person) person;}
                 case "3":
                     createParticipant();
                     break;

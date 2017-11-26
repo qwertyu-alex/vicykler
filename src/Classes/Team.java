@@ -47,8 +47,10 @@ public class Team {
 
     public void setTeamCaptain(TeamCaptain teamCaptain) {
         this.teamCaptain = teamCaptain;
-        if (teamCaptain.getTeam() != this){
-            teamCaptain.setTeam(this);
+        if (teamCaptain != null){
+            if (teamCaptain.getTeam() != (this)){
+                teamCaptain.setTeam(this);
+            }
         }
     }
 

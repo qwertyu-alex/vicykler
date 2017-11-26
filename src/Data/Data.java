@@ -47,6 +47,8 @@ public class Data {
 
         //NONO
         Firm nono = generateFirm("Nono");
+
+            //Team 3
             Team team3 = generateTeam("Slagter", nono);
             generateTeamCaptain("Frodo DatFrodo", "frodo@asd.com","Alex1", "Master").setTeam(team3);
             generateParticipant("Kesi Natteravn", "Kesi@asd.com","Alex1", "Master").setTeam(team3);
