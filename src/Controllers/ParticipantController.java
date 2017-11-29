@@ -56,7 +56,7 @@ class ParticipantController {
     }
 
     private TeamCaptain createTeam(Participant currentParticipant){
-         return new CreateTeam(data).run(currentParticipant);
+         return CreateTeam.run(currentParticipant, data);
     }
 
     private void showParticipantInformation(){

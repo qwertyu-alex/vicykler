@@ -142,7 +142,7 @@ class AdminController {
     }
 
     private void createTeam(){
-        new CreateTeam(data).run();
+        CreateTeam.run(data);
     }
 
     private void showParticipantInformation(){

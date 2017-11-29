@@ -11,18 +11,12 @@ import Classes.TeamCaptain;
 import Data.Data;
 
 public class CreateTeam {
-    private Scanner input = new Scanner(System.in);
-    private Data data;
+    static private Scanner input = new Scanner(System.in);
 
-    public CreateTeam(Data data){
-        this.data = data;
-    }
-
-
-    public void run(){
+    static public Team run(Data data){
 
         //getFirm
-        Firm firm = validateFirm(null);
+        Firm firm = validateFirm(null, data);
 
         //getName
         String name = validateName(firm);
@@ -32,12 +26,12 @@ public class CreateTeam {
 
         System.out.println("Nyt hold oprettet: " + newTeam.getTeamName());
         System.out.println("");
-
+        return newTeam;
     }
 
-    public TeamCaptain run (Participant participant){
+    static public TeamCaptain run (Participant participant, Data data){
         //getFirm
-        Firm firm = validateFirm(participant);
+        Firm firm = validateFirm(participant, data);
 
         //getName
         String name = validateName(firm);
@@ -58,7 +52,7 @@ public class CreateTeam {
         return newTeamCaptain;
     }
 
-    private Firm validateFirm(Participant participant){
+    static private Firm validateFirm(Participant participant, Data data){
         int count = 0;
         if(participant != null){
             if (participant.getFirm() != null){
@@ -78,9 +72,9 @@ public class CreateTeam {
 
     }
 
-    private String validateName(Firm firm){
+    static private String validateName(Firm firm){
         boolean error;
-        String name = "";
+        String name;
 
         while (true){
             error = false;
