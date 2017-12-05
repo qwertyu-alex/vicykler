@@ -105,7 +105,8 @@ class TeamCaptainController {
                 data.getPersons().remove(teamCaptain);
 
                 //gør holdkaptajnen til en participant
-                Participant newParticipant = data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(), teamCaptain.getPassword(), teamCaptain.getCyclistType());
+                Participant newParticipant = data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(),
+                        teamCaptain.getPassword(), teamCaptain.getCyclistType());
 
                 System.out.println("Dit hold er nu slettet");
                 return newParticipant;
@@ -177,7 +178,6 @@ class TeamCaptainController {
         String name = input.nextLine();
         teamCaptain.getTeam().setTeamName(name);
     }
-
 
     private void firmOverview(){
         Firm foundFirm = SearchForFirm.run(data.getFirms());
