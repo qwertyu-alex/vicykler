@@ -77,45 +77,43 @@ class TeamCaptainController {
         Team team = teamCaptain.getTeam();
         Firm firm = teamCaptain.getTeam().getFirm();
 
-        System.out.println("Vil du slette dit hold?: " + teamCaptain.getTeam().getTeamName() +
-                "\nIndtast 1 for Ja\nIndtast 2 for Nej");
 
-        boolean keepRunning = true;
-
-        confirm = input.nextLine();
         while(true){
+            System.out.println("Vil du slette dit hold?: " + teamCaptain.getTeam().getTeamName() +
+                    "\nIndtast 1 for Ja\nIndtast 2 for Nej");
+            confirm = input.nextLine();
             if (confirm.equals("1")){
-                //Slette alle medlemmeres hold i holdet
-                for (Participant participant:team.getParticipants()) {
-                    participant.setTeam(null);
-                }
-                //slet holdet fra virksomheden
-                firm.getTeamList().remove(team);
-
-                //slet holdet fra holdlisten
-                data.getTeams().remove(team);
-
-                //Fjern holdkaptainen fra holdet
-                team.setTeamCaptain(null);
-
-                //set holdkaptajnens hold til null
-                teamCaptain.setTeam(null);
-
-                //Fjern holdkaptajnen over listen over personer
-                data.getPersons().remove(teamCaptain);
-
-                //gør holdkaptajnen til en participant
-                Participant newParticipant = data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(),
-                        teamCaptain.getPassword(), teamCaptain.getCyclistType());
-
-                System.out.println("Dit hold er nu slettet");
-                return newParticipant;
-            } else {
-                System.out.println("Vil du prøve igen? 1) Ja 2) Nej");
+                System.out.println("Er du sikker? 1) Ja 2) Nej");
                 confirm = input.nextLine();
-                if (!confirm.equals("1")){
-                    return teamCaptain;
+                if (confirm.equals("1")){
+                    //Slette alle medlemmeres hold i holdet
+                    for (Participant participant:team.getParticipants()) {
+                        participant.setTeam(null);
+                    }
+                    //slet holdet fra virksomheden
+                    firm.getTeamList().remove(team);
+
+                    //slet holdet fra holdlisten
+                    data.getTeams().remove(team);
+
+                    //Fjern holdkaptainen fra holdet
+                    team.setTeamCaptain(null);
+
+                    //set holdkaptajnens hold til null
+                    teamCaptain.setTeam(null);
+
+                    //Fjern holdkaptajnen over listen over personer
+                    data.getPersons().remove(teamCaptain);
+
+                    //gør holdkaptajnen til en participant
+                    Participant newParticipant = data.generateParticipant(teamCaptain.getName(), teamCaptain.getEmail(),
+                            teamCaptain.getPassword(), teamCaptain.getCyclistType());
+
+                    System.out.println("Dit hold er nu slettet");
+                    return newParticipant;
                 }
+            } else {
+                return teamCaptain;
             }
         }
     }
