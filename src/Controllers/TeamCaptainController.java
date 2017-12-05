@@ -1,4 +1,4 @@
-//Oliver && Mikkel
+//Mikkel Storm && Oliver Lange
 
 package Controllers;
 
