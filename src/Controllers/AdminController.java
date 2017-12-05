@@ -1,4 +1,4 @@
-//Mikkel Storm && Astrid
+//Mikkel Storm && Astrid Christensen
 
 package Controllers;
 

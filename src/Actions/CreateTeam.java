@@ -1,4 +1,4 @@
-//Alexander Van Lee & Astrid Christensen
+//Alexander Van Lee && Astrid Christensen
 
 package Actions;
 

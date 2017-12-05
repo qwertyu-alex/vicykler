@@ -123,6 +123,9 @@ public class CreateParticipant {
         }
     }
 
+    //Kildehenvisning:
+    //Youtube.com: Password Validate Simple Java Program. (Internet).
+    //Wikipedia.org: ASCII. (Internet).
     private static String validatePassword() {
         System.out.println("Indtast password: ");
         String password = input.nextLine();
