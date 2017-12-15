@@ -120,14 +120,17 @@ class TeamCaptainController {
 
     private void addParticipantToTeam(TeamCaptain teamCaptain){
         Participant foundParticipant;
-
-        foundParticipant = SearchForParticipant.run(data.getParticipants());
-        if(foundParticipant != null){
-            if (foundParticipant.getTeam() != null){
-                foundParticipant.setTeam(teamCaptain.getTeam());
-            } else {
-                System.out.println("Personen er allerede i et hold");
+        if (teamCaptain.getTeam().getParticipants().size() < 16){
+            foundParticipant = SearchForParticipant.run(data.getParticipants());
+            if(foundParticipant != null){
+                if (foundParticipant.getTeam() == null){
+                    foundParticipant.setTeam(teamCaptain.getTeam());
+                } else {
+                    System.out.println("Personen er allerede i et hold");
+                }
             }
+        } else {
+            System.out.println("Der er for mange deltagere på dig hold. Slet en for at tilføje en ny");
         }
 
     }
