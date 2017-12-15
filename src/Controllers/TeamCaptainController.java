@@ -171,7 +171,7 @@ class TeamCaptainController {
     }
 
     private void changeTeamName(TeamCaptain teamCaptain){
-        System.out.println("Ændrer holdnavn");
+        System.out.println("Ændr holdnavn");
         System.out.println("Hvad skal det nye holdnavn være?");
         String name = input.nextLine();
         teamCaptain.getTeam().setTeamName(name);
