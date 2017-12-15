@@ -18,6 +18,9 @@ public class Data {
     public Data() {
     }
 
+    /**
+     * Genererer alle persons, firms og teams
+     */
     public void generateData() {
         //Generer admin
         Admin testAdmin = generateAdmin("Admin1", "support@vicykler.dk", "1234");
@@ -56,33 +59,44 @@ public class Data {
 
     }
 
+    /**
+     *Genererer en admin og lægger den i en liste over admins som en attribut i dataobjektet
+     */
     public Admin generateAdmin(String name, String email, String password){
         Admin newAdmin = new Admin(name, email, password);
         admins.add(newAdmin);
         persons.add(newAdmin);
         return newAdmin;
     }
-
+    /**
+     *Genererer en teamcaptain og lægger den i en liste over teamcaptains som en attribut i dataobjektet
+     */
     public TeamCaptain generateTeamCaptain(String name, String email, String password, String cyclistType){
         TeamCaptain newTeamCaptain = new TeamCaptain(name, email, password, cyclistType);
         teamCaptains.add(newTeamCaptain);
         persons.add(newTeamCaptain);
         return newTeamCaptain;
     }
-
+    /**
+     *Genererer en Participant og lægger den i en liste over Participant som en attribut i dataobjektet
+     */
     public Participant generateParticipant(String name, String email, String password, String cyclistType){
         Participant newParticipant = new Participant(name, email, password, cyclistType);
         participants.add(newParticipant);
         persons.add(newParticipant);
         return newParticipant;
     }
-
+    /**
+     *Genererer en Team og lægger den i en liste over Team som en attribut i dataobjektet
+     */
     public Team generateTeam(String teamName, Firm firm){
         Team newTeam = new Team(teamName, firm);
         teams.add(newTeam);
         return newTeam;
     }
-
+    /**
+     *Genererer en Firm og lægger den i en liste over Firm som en attribut i dataobjektet
+     */
     public Firm generateFirm(String firmName){
         Firm newFirm = new Firm(firmName);
         firms.add(newFirm);

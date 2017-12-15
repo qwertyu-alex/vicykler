@@ -13,7 +13,11 @@ import Data.Data;
 public class CreateTeam {
     static private Scanner input = new Scanner(System.in);
 
-    static public Team run(Data data){
+    /**
+     * Laver et hold. Denne metode bliver kun brugt at admin
+     * @param data Tager imod et dataobjekt i det dataobjektet genererer holdet
+     */
+    static public void run(Data data){
 
         //getFirm
         Firm firm = validateFirm(null, data);
@@ -26,9 +30,14 @@ public class CreateTeam {
 
         System.out.println("Nyt hold oprettet: " + newTeam.getTeamName());
         System.out.println("");
-        return newTeam;
     }
 
+    /**
+     * Overloaded metode. Laver et hold. Denne metoder bliver kun brugt af participant
+     * @param participant Tager imod den nuværende participant som har kaldt metoden
+     * @param data Tager imod et dataobjekt i det dataobjektet genererer holdet
+     * @return Retunerer en genereret teamcaptain som er baseret på den nuværende participant
+     */
     static public TeamCaptain run (Participant participant, Data data){
         //getFirm
         Firm firm = validateFirm(participant, data);
@@ -52,6 +61,12 @@ public class CreateTeam {
         return newTeamCaptain;
     }
 
+    /**
+     * Vælger et firma som holdet skal være inde under
+     * @param participant Tager imod den nuværende participant
+     * @param data Tager imod et dataobjekt for at få fat i nogle lister
+     * @return Returnerer et firma som man har valgt
+     */
     static private Firm validateFirm(Participant participant, Data data){
         int count = 0;
         if(participant != null){
@@ -67,11 +82,15 @@ public class CreateTeam {
                 System.out.println(count + ") " + firm.getFirmName());
             }
             String chosenFirm = input.nextLine();
-
             return data.getFirms().get(Integer.parseInt(chosenFirm ) - 1);
 
     }
 
+    /**
+     * Tjekker om det holdnavn man ønsker ikke allerede eksisterer i firmaet
+     * @param firm Modtager det firma den skal inde under
+     * @return Returnerer et navn som ikke er ens i firmaet
+     */
     static private String validateName(Firm firm){
         boolean error;
         String name;

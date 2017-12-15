@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 public class SearchForTeam {
 
+    /**
+     * Søger efter et bestemt team i en given liste
+     * @param teams Modtager en liste over teams som den leder i
+     * @return Returnerer et fundet team
+     */
     public static Team run (ArrayList<Team> teams){
         int choice;
         if (teams.size() < 1){

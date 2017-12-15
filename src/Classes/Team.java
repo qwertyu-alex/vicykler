@@ -54,16 +54,9 @@ public class Team {
         }
     }
 
-    //Remove
+    //Remover
     public void removeParticipant(Participant participant){
         participants.remove(participant);
     }
-
-    //Astrid
-    /*
-    public void removeTeam(){
-        this.firm.removeTeam(this);
-    }*/
-
 
 }

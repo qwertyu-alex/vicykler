@@ -6,8 +6,11 @@ import Classes.Firm;
 import Classes.Team;
 
 public class ShowTeamsInFirmAndTeamCaptains {
+    /**
+     * Viser alle hold i et bestemt firm og deres teamcaptains
+     * @param firm tager imod et bestemt firma
+     */
     public static void run(Firm firm){
-
         if (firm != null){
             System.out.println("Firma: " + firm.getFirmName());
             if (firm.getTeamList().size() != 0){

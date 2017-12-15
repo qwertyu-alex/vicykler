@@ -7,6 +7,10 @@ import Classes.Team;
 
 public class ShowTeamInformation {
 
+    /**
+     * Viser hold informationer
+     * @param team tager imod et bestem hold
+     */
     public static void run (Team team){
 
         if (team == null){

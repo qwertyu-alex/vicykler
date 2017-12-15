@@ -7,8 +7,11 @@ import Classes.TeamCaptain;
 
 public class ParticipantInformation {
 
+    /**
+     * Printer informationerne om en bestemt participant
+     * @param participant Tager imod en participant objekt hvis informationer skal vises
+     */
     public static void run(Participant participant){
-
         if (participant == null){
             return;
         }

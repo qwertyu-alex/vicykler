@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 public class SearchForFirm {
 
+    /**
+     * Søger efter et bestemt firma
+     * @param firms Modtager en ArrayListe af firms hvori der skal søges
+     * @return Returnerer det søgte firma
+     */
     public static Firm run (ArrayList<Firm> firms){
         int choice;
         if (firms.size() < 1){

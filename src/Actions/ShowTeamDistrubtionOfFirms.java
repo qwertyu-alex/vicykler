@@ -7,6 +7,10 @@ import Data.Data;
 
 public class ShowTeamDistrubtionOfFirms {
 
+    /**
+     * Viser en distribution af hvor mange hold der er i de forskellige firma, og hvor mange deltagere der er i de forskellige firmaer og hold
+     * @param data
+     */
     public static void run(Data data){
         int numberOfTeams = 0;
         int numberOfParticipants = 0;

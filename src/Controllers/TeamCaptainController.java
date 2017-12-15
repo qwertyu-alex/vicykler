@@ -18,14 +18,18 @@ class TeamCaptainController {
         this.data = data;
     }
 
+    /**
+     * Menu for teamcaptain
+     * @param teamCaptain tager imod den teamcaptain som har kaldt på metoden
+     * @return returnerer "null" når man logger ud
+     */
     Person showTeamCaptainMenu(TeamCaptain teamCaptain){
-
         while(true){
             System.out.println("\nHoldkaptajn menu for " + teamCaptain.getTeam().getTeamName());
-            System.out.println("1) Slet hold"); //mangler
+            System.out.println("1) Slet hold");
             System.out.println("2) Tilføj deltager til hold");
             System.out.println("3) Fjern deltager fra hold");
-            System.out.println("4) Ændre et holds oplysninger"); //mangler
+            System.out.println("4) Ændre et holds oplysninger");
             System.out.println("5) Se information om en deltager");
             System.out.println("6) Overblik over et firmas hold og tilhørende holdkaptajn");
             System.out.println("7) Se information om et hold og dets deltagere");
@@ -72,6 +76,12 @@ class TeamCaptainController {
         }
     }
 
+    /**
+     * sletter en hold
+     * @param teamCaptain tager imod den nuværende teamcaptain
+     * @return @if hvis det er et succesfuldt forsøg, så returner en participant, som er baseret ud fra den nuværende teamcaptain
+     * hvis det er et usuccesfuldt forsøg, så returner den nuværende teamcaptain
+     */
     private Participant removeTeam(TeamCaptain teamCaptain){
         String confirm;
         Team team = teamCaptain.getTeam();
@@ -118,6 +128,10 @@ class TeamCaptainController {
         }
     }
 
+    /**
+     * Tilføj en participant til holdet som teamcaptain er på
+     * @param teamCaptain tager imod den nuværende teamcaptain
+     */
     private void addParticipantToTeam(TeamCaptain teamCaptain){
         Participant foundParticipant;
         if (teamCaptain.getTeam().getParticipants().size() < 16){
@@ -135,6 +149,10 @@ class TeamCaptainController {
 
     }
 
+    /**
+     * Fjerner en participant fra holdet
+     * @param teamCaptain tager imod den nuværende teamcaptain
+     */
     private void removeParticipantFromTeam(TeamCaptain teamCaptain){
         ArrayList<Participant> participantsInTheTeam = teamCaptain.getTeam().getParticipants();
 
@@ -168,11 +186,18 @@ class TeamCaptainController {
         }
     }
 
+    /**
+     * Viser information om en bestemt deltager
+     */
     private void showParticipantInformation(){
         System.out.println("Se information om en deltager");
         ParticipantInformation.run(SearchForParticipant.run(data.getParticipants()));
     }
 
+    /**
+     * Ændrer i et holds oplysninger (navn)
+     * @param teamCaptain tager imod den nuværende teamcaptain
+     */
     private void changeTeamName(TeamCaptain teamCaptain){
         System.out.println("Ændr holdnavn");
         System.out.println("Hvad skal det nye holdnavn være?");
@@ -180,11 +205,17 @@ class TeamCaptainController {
         teamCaptain.getTeam().setTeamName(name);
     }
 
+    /**
+     * Viser alle hold og dens teamcaptain i et bestemt firma
+     */
     private void firmOverview(){
         Firm foundFirm = SearchForFirm.run(data.getFirms());
         ShowTeamsInFirmAndTeamCaptains.run(foundFirm);
     }
 
+    /**
+     * Viser information om et hold og hvilke deltagere der er på holdet
+     */
     private void showTeamInformation(){
         Firm foundFirm = SearchForFirm.run(data.getFirms());
         if (foundFirm != null){
@@ -195,6 +226,9 @@ class TeamCaptainController {
         }
     }
 
+    /**
+     * Viser alle hold og deltagere i et bestemt firma
+     */
     private void showAllTeamInformation(){
         for (Firm firm :data.getFirms()) {
             for (Team team : firm.getTeamList()) {
@@ -203,6 +237,9 @@ class TeamCaptainController {
         }
     }
 
+    /**
+     * Viser nogle statistikker over fordeling af deltagere på hold
+     */
     private void showTeamDistrubtionOfFirms(){
         ShowTeamDistrubtionOfFirms.run(data);
     }

@@ -10,6 +10,9 @@ public class TeamCaptain extends Participant {
         super(name, email, password, cyclistType);
     }
 
+    /**
+     * Overrider setTeam-metoden i participant klassen
+     */
     @Override
     public void setTeam(Team team) {
         super.setTeam(team);

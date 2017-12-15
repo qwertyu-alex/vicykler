@@ -39,9 +39,12 @@ public class CreateParticipant {
         } else {
             return null;
         }
-
     }
 
+    /**
+     * Denne metode validerer om det indtastede navn er valid
+     * @return returnerer navnet når det er valid
+     */
     private static String validateName() {
         System.out.println("Indtast deltagernavn: ");
 
@@ -57,7 +60,11 @@ public class CreateParticipant {
         } while (true);
     }
 
-
+    /**
+     * Denne metode finder ud af hvad participant typen er
+     * @param participantTypes den modtager en Array af strings med de forskellige typer man kan være
+     * @return returnerer den valgte type
+     */
     private static String validateType(String[] participantTypes){
         String choice;
         String type = "";
@@ -81,13 +88,16 @@ public class CreateParticipant {
                 default:
                     System.out.println("Venligst vælg én af cyklisttyperne");
                     check = true;
-
             }
         } while (check);
-
         return type;
     }
 
+    /**
+     * Denne metode tjekker om den indtastede email er valid
+     * @param data den modtager et dataobjekt som blandt andet indeholder en liste over brugte emails
+     * @return returnerer emailen når den er valid
+     */
     private static String validateEmail(Data data) {
         System.out.println("Indtast Email: ");
         String email;
@@ -123,6 +133,10 @@ public class CreateParticipant {
         }
     }
 
+    /**
+     *Denne metode tjekker om det indtastede password opfylder nogle bestemte kriterier
+     * @return returnerer password når den er valid
+     */
     //Kildehenvisning:
     //Youtube.com: Password Validate Simple Java Program. (Internet).
     //Wikipedia.org: ASCII. (Internet).
@@ -148,8 +162,8 @@ public class CreateParticipant {
                 // anden kigger på store bogstaver 65 = "A", 90 = "Z"
                 // tredje kigger på små bogstaver 97 = "a", 122 = "z"
                 onlyNumAndLetter = !((password.charAt(i) > 47 && password.charAt(i) < 58)
-                            || (password.charAt(i) > 64 && password.charAt(i) < 91)
-                            || (password.charAt(i) > 96 && password.charAt(i) < 123));
+                        || (password.charAt(i) > 64 && password.charAt(i) < 91)
+                        || (password.charAt(i) > 96 && password.charAt(i) < 123));
 
 
                 if ((password.charAt(i) > 47 && password.charAt(i) < 58)) {
@@ -196,6 +210,11 @@ public class CreateParticipant {
         }
     }
 
+    /**
+     * Tjekker om det gentagende password matcher det første password
+     * @param password tager imod det første password som parameter
+     * @return returnerer true når de matcher
+     */
     private static boolean matchPassword(String password){
         String matchPassword;
         System.out.println("Indtast password igen: ");

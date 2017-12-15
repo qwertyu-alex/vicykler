@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 public class SearchForParticipant {
 
+    /**
+     * Søger efter en participant baseret på en given mail
+     * @param participants Modtager en liste over participant hvori der skal søges
+     * @return Returnerer den fundne participant
+     */
     public static Participant run(ArrayList<Participant> participants){
         if (participants.size() < 1){
             System.out.println("Ingen deltagere");
