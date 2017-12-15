@@ -1,7 +1,5 @@
 package Classes;//Astrid Christensen
 
-import java.util.ArrayList;
-
 public abstract class Person {
 
     protected String name;

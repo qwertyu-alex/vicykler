@@ -33,7 +33,7 @@ class GuestController {
                     break;
                 case "2":
                     Person person = login();
-                    if (person == null){break;} else {return (Person) person;}
+                    if (person == null){break;} else {return person;}
                 case "3":
                     createParticipant();
                     break;

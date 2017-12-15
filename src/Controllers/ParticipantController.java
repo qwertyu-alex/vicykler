@@ -77,8 +77,10 @@ class ParticipantController {
 
     private void showAllTeamInformation(){
         Firm foundFirm = SearchForFirm.run(data.getFirms());
-        Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
-        ShowTeamInformation.run(foundTeam);
+        if  (foundFirm != null){
+            Team foundTeam = SearchForTeam.run(foundFirm.getTeamList());
+            ShowTeamInformation.run(foundTeam);
+        }
     }
 
     private void showTeamDistrubtionOfFirms(){

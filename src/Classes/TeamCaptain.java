@@ -1,8 +1,5 @@
 package Classes;//Alexander Van Le && Oliver Lange
 
-import Actions.SearchForParticipant;
-import java.util.ArrayList;
-
 public class TeamCaptain extends Participant {
     //Constructor
     public TeamCaptain(Participant participant){
