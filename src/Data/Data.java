@@ -26,24 +26,24 @@ public class Data {
         Admin testAdmin = generateAdmin("Admin1", "support@vicykler.dk", "1234");
 
         //Generer deltager
-        Participant testParticipant = generateParticipant("Brian Larsen", "Brian@gmail.com","4321", "Master");
+        Participant testParticipant = generateParticipant("Brian Larsen", "Brian@gmail.com","4321", "Mester");
 
         //Firma: Arla
         Firm arla = generateFirm("Arla");
 
             //Folk fra hold: Mælkekartonerne
             Team team1 = generateTeam("Mælkekarton", arla);
-            generateTeamCaptain("Flemming Sørensen", "Flemming.S@gmail.com","4321", "Master").setTeam(team1);
-            generateParticipant("Søren Henriksen", "Søren.H@gmail.com","4321", "Master").setTeam(team1);
-            generateParticipant("Tina Eriksen", "Tina.E@gmail.com","4321", "Master").setTeam(team1);
-            generateParticipant("Muhammed Ali", "Muhammed.A@gmail.com","4321", "Master").setTeam(team1);
-            generateParticipant("Torben Torbensen", "Torben.T@gmail.com","4321",  "Master").setTeam(team1);
+            generateTeamCaptain("Flemming Sørensen", "Flemming.S@gmail.com","4321", "Mester").setTeam(team1);
+            generateParticipant("Søren Henriksen", "Søren.H@gmail.com","4321", "Entusiast").setTeam(team1);
+            generateParticipant("Tina Eriksen", "Tina.E@gmail.com","4321", "Mester").setTeam(team1);
+            generateParticipant("Muhammed Ali", "Muhammed.A@gmail.com","4321", "Cruiser").setTeam(team1);
+            generateParticipant("Torben Torbensen", "Torben.T@gmail.com","4321",  "Debutant").setTeam(team1);
 
             //Folk fra hold: Førsteholdet
             Team team2 = generateTeam("Førsteholdet", arla);
-            generateTeamCaptain("Birthe Kjær", "Birthe.K@gmail.com", "9876", "Master").setTeam(team2);
-            generateParticipant("Richard Ragnvald", "Richard.R@gmail.com","9876", "Master").setTeam(team2);
-            generateParticipant("Peter Belli", "Ulven@gmail.com","9876", "Master").setTeam(team2);
+            generateTeamCaptain("Birthe Kjær", "Birthe.K@gmail.com", "9876", "Mester").setTeam(team2);
+            generateParticipant("Richard Ragnvald", "Richard.R@gmail.com","9876", "Debutant").setTeam(team2);
+            generateParticipant("Peter Belli", "Ulven@gmail.com","9876", "Cruiser").setTeam(team2);
 
 
         //Firma: Postnord
@@ -51,11 +51,11 @@ public class Data {
 
             //Folk fra hold: Cykelbudende
             Team team3 = generateTeam("Cykelbudene", postnord);
-            generateTeamCaptain("Per Person", "Per.P@gmail.com","6789", "Master").setTeam(team3);
-            generateParticipant("Tim Flemmingsen", "Tim.F@gmail.com","6789", "Master").setTeam(team3);
-            generateParticipant("Simon Thiesen", "Simon.T@gmail.com","6789", "Master").setTeam(team3);
-            generateParticipant("Carsten Madsen", "Carsten.M@gmail.com","6789", "Master").setTeam(team3);
-            generateParticipant("Jonas Johansen", "Jonas.J@gmail.com","6789",  "Master").setTeam(team3);
+            generateTeamCaptain("Per Person", "Per.P@gmail.com","6789", "Cruiser").setTeam(team3);
+            generateParticipant("Tim Flemmingsen", "Tim.F@gmail.com","6789", "Mester").setTeam(team3);
+            generateParticipant("Simon Thiesen", "Simon.T@gmail.com","6789", "Entusiast").setTeam(team3);
+            generateParticipant("Carsten Madsen", "Carsten.M@gmail.com","6789", "Debutant").setTeam(team3);
+            generateParticipant("Jonas Johansen", "Jonas.J@gmail.com","6789",  "Mester").setTeam(team3);
 
     }
 
