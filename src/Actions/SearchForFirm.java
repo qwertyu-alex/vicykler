@@ -30,7 +30,9 @@ public class SearchForFirm {
             System.out.println(numb + ") " + firm.getFirmName());
         }
 
-
+        /**
+         * Kilde: Y. Daniel Liang (2015), s. 470
+         */
         while (true){
             System.out.println("Indtast firmaets nummer:");
             try{

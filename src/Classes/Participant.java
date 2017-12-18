@@ -1,5 +1,8 @@
 package Classes;//Alexander Van Le && Oliver Lange
 
+/**
+ * Kilde: Y. Daniel Liang (2015), s. 431
+ */
 public class Participant extends Person {
     //Variabler
     private String cyclistType;

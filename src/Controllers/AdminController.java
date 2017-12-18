@@ -185,6 +185,10 @@ class AdminController {
         System.out.println("Ændre i et firma og holds oplysninger");
         System.out.println( "Tast 1 for at ændre firma navn" +
                 "\nTast 2 for at ændre holds navn");
+
+        /**
+         * Kilde: Y. Daniel Liang (2015), s. 470
+         */
         while (true){
             try {
                 inputAnswer = input.nextInt();
@@ -212,6 +216,9 @@ class AdminController {
             do {
                 System.out.println("\nIndtast nummmer på firma du vil ændre navn på");
                 while (true){
+                    /**
+                     * Kilde: Y. Daniel Liang (2015), s. 470
+                     */
                     try{
                         numOfFirm = input.nextInt();
                         break;
@@ -244,6 +251,9 @@ class AdminController {
             }
             System.out.println("\nVælg firma du vil ændre et hold navn i");
             while (true){
+                /**
+                 * Kilde: Y. Daniel Liang (2015), s. 470
+                 */
                 try{
                     numOfFirm = input.nextInt()-1;
                     break;
@@ -260,6 +270,9 @@ class AdminController {
 
             System.out.println("\nVælg hold du vil ændre navn på");
             while (true){
+                /**
+                 * Kilde: Y. Daniel Liang (2015), s. 470
+                 */
                 try{
                     numOfTeam = input.nextInt()-1;
                     break;
@@ -340,6 +353,9 @@ class AdminController {
         System.out.println("\nIndtast nummmer på firma du vil slette");
 
         while (true){
+            /**
+             * Kilde: Y. Daniel Liang (2015), s. 470
+             */
             try{
                 removeFirm = input.nextInt();
                 input.nextLine();

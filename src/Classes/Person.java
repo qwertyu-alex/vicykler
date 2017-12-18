@@ -1,5 +1,8 @@
 package Classes;//Astrid Christensen
 
+/**
+ * Kilde: Y. Daniel Liang (2015), s. 514
+ */
 public abstract class Person {
 
     protected String name;

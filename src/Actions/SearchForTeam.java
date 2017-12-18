@@ -32,6 +32,9 @@ public class SearchForTeam {
             System.out.println(numb + ") " + team.getTeamName());
         }
 
+        /**
+         * Kilde: Y. Daniel Liang (2015), s. 470
+         */
         while (true){
             System.out.println("Indtast holdets nummer:");
             try {

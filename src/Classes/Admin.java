@@ -2,6 +2,9 @@
 
 package Classes;
 
+/**
+ * Kilde: Y. Daniel Liang (2015), s. 431
+ */
 public class Admin extends Person {
 
     //Constructor
