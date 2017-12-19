@@ -32,7 +32,7 @@ public class ShowTeamDistrubtionOfFirms {
             firmNumber ++;
         }
 
-        System.out.print("Amtal firmaer i alt: ");
+        System.out.print("Antal firmaer i alt: ");
         System.out.println(data.getFirms().size());
 
         System.out.print("Antal af hold i alt: ");
